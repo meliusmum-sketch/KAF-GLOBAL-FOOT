@@ -1,20 +1,16 @@
-:root {
-  --primary: #0b1e33;
-  --secondary: #1c3d5a;
-  --accent: #00aaff;
-  --accent-soft: #e0f5ff;
-  --light: #f8f9fa;
-  --dark: #0a0a0a;
-}
+/* styles/globals.css
+   Palette :
+   - Vert Casamance (dark): #0B7A3E
+   - Vert sport (accent):   #34C759
+   - Blanc:                 #FFFFFF
+   - Gris texte:            #1A1A1A
+   - Gris clair:            #F5F5F5
+*/
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--light);
-  color: var(--dark);
-}
+:root{
+  --kaf-primary: #0B7A3E;
+  --kaf-accent:  #34C759;
+  --kaf-white:   #FFFFFF;
+  --kaf-text:    #1A1A1A;
+  --kaf-bg:      #F5F5F5;
+  --kaf-soft:    rgba
