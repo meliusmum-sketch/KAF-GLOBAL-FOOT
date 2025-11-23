@@ -9,7 +9,6 @@ export default function Home() {
           name="description"
           content="KAF GLOBAL FOOT - Académie Casamance - formation, stages, performance."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <header className="header">
@@ -18,104 +17,108 @@ export default function Home() {
             <div className="logo">KAF</div>
             <div className="brand-text">
               <h1>KAF GLOBAL FOOT</h1>
-              <span>Académie — Casamance & Paix</span>
+              <span>Académie — Casamance &amp; Paix</span>
             </div>
           </div>
 
-          <nav className="header-nav" aria-label="Main">
+          <nav className="header-nav">
             <a href="#about">À propos</a>
             <a href="#programmes">Programmes</a>
             <a href="#equipes">Équipes</a>
             <a href="#inscription">Inscription</a>
             <a href="#galerie">Galerie</a>
-            <a href="#staff">Staff</a>
-            <a href="#actus">Actualités</a>
             <a href="#contact">Contact</a>
           </nav>
 
           <div className="header-cta">
-            <a className="btn btn-primary" href="#inscription">Rejoindre</a>
+            <a className="btn btn-primary" href="#inscription">
+              Rejoindre
+            </a>
           </div>
         </div>
       </header>
 
       <main>
-        {/* HERO */}
         <section className="hero">
           <div className="hero-inner">
-            <h2>L'élite du football, formée en Casamance</h2>
-            <p>Encadrement professionnel, formation complète, discipline et valeurs humaines.</p>
+            <h2>VERSION TEST KAF GLOBAL FOOT</h2>
+            <p>
+              Encadrement professionnel, valeurs, et formation complète. KAF GLOBAL
+              FOOT forme des joueurs techniques, intelligents et respectueux.
+            </p>
             <div className="hero-cta">
-              <a className="btn btn-primary" href="#inscription">Inscrire un joueur</a>
-              <a className="btn btn-outline" href="#equipes">Nos équipes</a>
+              <a className="btn btn-primary" href="#inscription">
+                Inscrire un joueur
+              </a>
+              <a className="btn btn-outline" href="#equipes">
+                Découvrir nos équipes
+              </a>
             </div>
           </div>
         </section>
 
-        {/* ABOUT */}
         <section id="about" className="container">
-          <h2 className="section-title">À propos</h2>
+          <h2 className="section-title">À propos de l'académie</h2>
           <p className="section-sub">
-            KAF GLOBAL FOOT est une académie basée en Casamance dédiée au développement des jeunes talents,
-            à la formation technique et à la progression humaine par le sport.
+            KAF GLOBAL FOOT est une académie basée en Casamance, axée sur la
+            formation technique, la préparation physique et l'éducation.
           </p>
         </section>
 
-        {/* PROGRAMMES */}
         <section id="programmes" className="container">
           <h2 className="section-title">Programmes professionnels</h2>
           <p className="section-sub">
-            Des parcours adaptés pour découvrir, progresser ou atteindre le niveau élite.
+            Parcours adaptés pour chaque âge et chaque objectif — découverte,
+            développement, élite.
           </p>
 
           <div className="cards">
             <div className="card">
               <span className="badge">Formation Jeunes</span>
               <h3>Centre de formation U10–U18</h3>
-              <p>Développement technique, discipline et progression tactique.</p>
+              <p>Technique, tactique, discipline et valeurs collectives.</p>
             </div>
 
             <div className="card">
               <span className="badge">Élite</span>
-              <h3>Performance & Analyse</h3>
-              <p>Suivi individualisé, préparation physique, objectifs professionnels.</p>
+              <h3>Programme Performance Pro</h3>
+              <p>Analyse vidéo, suivi individuel et optimisation physique.</p>
             </div>
 
             <div className="card">
               <span className="badge">Stages</span>
-              <h3>Stages & Détections</h3>
-              <p>Sessions intensives avec rapport individuel et progression rapide.</p>
+              <h3>Stages &amp; Détections</h3>
+              <p>Stages intensifs pendant les vacances avec rapport individuel.</p>
             </div>
           </div>
         </section>
 
-        {/* EQUIPES */}
-        <section id="equipes" className="container">
-          <h2 className="section-title">Nos équipes</h2>
-          <p className="section-sub">Des catégories structurées pour accompagner chaque étape de la formation.</p>
+        <section id="galerie" className="container">
+          <h2 className="section-title">Galerie</h2>
+          <p className="section-sub">
+            Quelques images du stade et des entraînements de KAF GLOBAL FOOT.
+          </p>
 
-          <div className="cards">
-            <div className="card">
-              <span className="badge">U10 – U12</span>
-              <h3>École de foot</h3>
-              <ul>
-                <li>Motricité & coordination</li>
-                <li>Apprentissage par le jeu</li>
-                <li>Découverte technique</li>
-              </ul>
-            </div>
+          <div className="gallery-grid">
+            <img src="/gallery6.jpg" alt="KAF GLOBAL FOOT - galerie" />
+          </div>
+        </section>
+      </main>
 
-            <div className="card">
-              <span className="badge">U13 – U15</span>
-              <h3>Préformation</h3>
-              <ul>
-                <li>Technique avancée</li>
-                <li>Travail tactique</li>
-                <li>Esprit collectif</li>
-              </ul>
-            </div>
+      <footer>
+        <div className="footer-inner container">
+          <div>
+            <strong>KAF GLOBAL FOOT</strong>
+            <div style={{ opacity: 0.9 }}>Académie — Casamance</div>
+          </div>
 
-            <div className="card">
-              <span className="badge">U16 – U18</span>
-              <h3>Pré-élite</h3>
-              <u
+          <div className="footer-links">
+            <a href="#about">À propos</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
