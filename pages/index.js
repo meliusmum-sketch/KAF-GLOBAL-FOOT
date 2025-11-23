@@ -144,7 +144,9 @@ export default function Home() {
               <ul>
                 <li>Préparation physique ciblée</li>
                 <li>Analyse vidéo</li>
-                <li>Accompagnement scolaire &amp; orientation</li>
+                <li>
+                  Accompagnement scolaire &amp; orientation (à adapter plus tard)
+                </li>
               </ul>
             </div>
           </div>
@@ -181,12 +183,24 @@ export default function Home() {
                   body: JSON.stringify(data),
                 });
 
+                let body = null;
+                try {
+                  body = await res.json();
+                } catch (e) {
+                  body = null;
+                }
+
                 if (!res.ok) {
-                  alert("Erreur lors de l'envoi. Merci de réessayer.");
+                  alert(
+                    body?.error ||
+                      "Erreur lors de l'envoi. Merci de réessayer."
+                  );
                   return;
                 }
 
-                alert("Inscription envoyée. Nous vous contacterons rapidement.");
+                alert(
+                  "Inscription envoyée. Nous vous contacterons rapidement."
+                );
                 form.reset();
               } catch (err) {
                 console.error(err);
@@ -292,7 +306,6 @@ export default function Home() {
         </section>
       </main>
 
-      {/* FOOTER */}
       <footer>
         <div className="footer-inner container">
           <div>
