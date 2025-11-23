@@ -11,6 +11,7 @@ export default function Home() {
         />
       </Head>
 
+      {/* HEADER */}
       <header className="header">
         <div className="header-inner">
           <div className="brand">
@@ -143,13 +144,15 @@ export default function Home() {
               <ul>
                 <li>Préparation physique ciblée</li>
                 <li>Analyse vidéo</li>
-                <li>Accompagnement scolaire &amp; orientation</li>
+                <li>
+                  Accompagnement scolaire &amp; orientation (à adapter plus tard)
+                </li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* INSCRIPTION */}
+        {/* INSCRIPTION – CONNECTÉE À /api/inscription */}
         <section id="inscription" className="container">
           <h2 className="section-title">Inscription</h2>
           <p className="section-sub">
@@ -159,19 +162,50 @@ export default function Home() {
 
           <form
             className="contact-box"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              alert("Demande envoyée (démo).");
+              const form = e.target;
+
+              const data = {
+                nom: form.nom.value,
+                date_naissance: form.date_naissance.value,
+                categorie: form.categorie.value,
+                parent: form.parent.value,
+                telephone: form.telephone.value,
+                email: form.email.value,
+                message: form.message.value,
+              };
+
+              try {
+                const res = await fetch("/api/inscription", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(data),
+                });
+
+                if (!res.ok) {
+                  alert("Erreur lors de l'envoi. Merci de réessayer.");
+                  return;
+                }
+
+                alert(
+                  "Inscription envoyée. Nous vous contacterons rapidement."
+                );
+                form.reset();
+              } catch (err) {
+                console.error(err);
+                alert("Erreur réseau. Merci de réessayer.");
+              }
             }}
           >
             <label>Nom complet du joueur</label>
-            <input required />
+            <input name="nom" required />
 
             <label>Date de naissance</label>
-            <input type="date" required />
+            <input type="date" name="date_naissance" required />
 
             <label>Catégorie</label>
-            <select required>
+            <select name="categorie" required>
               <option value="">Sélectionner</option>
               <option>U10</option>
               <option>U12</option>
@@ -182,16 +216,16 @@ export default function Home() {
             </select>
 
             <label>Parent / Tuteur</label>
-            <input required />
+            <input name="parent" required />
 
             <label>Téléphone</label>
-            <input required />
+            <input name="telephone" required />
 
             <label>Email</label>
-            <input type="email" />
+            <input type="email" name="email" />
 
             <label>Message</label>
-            <textarea />
+            <textarea name="message" />
 
             <button
               className="btn btn-primary"
