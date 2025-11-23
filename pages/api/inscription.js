@@ -36,7 +36,10 @@ export default async function handler(req, res) {
 
     if (error) {
       console.error("Supabase insert error:", error);
-      return res.status(500).json({ error: "Erreur lors de l'enregistrement." });
+      // On renvoie le message détaillé pour le voir côté navigateur
+      return res
+        .status(500)
+        .json({ error: error.message || "Erreur lors de l'enregistrement." });
     }
 
     return res.status(200).json({ ok: true });
