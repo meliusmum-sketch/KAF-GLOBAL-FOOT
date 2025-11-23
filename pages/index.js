@@ -41,7 +41,7 @@ export default function Home() {
       <main>
         <section className="hero">
           <div className="hero-inner">
-            <h2>VERSION TEST KAF GLOBAL FOOT</h2>
+            <h2>L'élite du football formée en Casamance</h2>
             <p>
               Encadrement professionnel, valeurs, et formation complète. KAF GLOBAL
               FOOT forme des joueurs techniques, intelligents et respectueux.
