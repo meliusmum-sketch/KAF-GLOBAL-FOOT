@@ -1,6 +1,38 @@
 import Head from "next/head";
+import { supabase } from "../lib/supabaseClient";
 
 export default function Home() {
+  async function handleInscription(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    const data = {
+      nom: form.nom.value,
+      date_naissance: form.date_naissance.value,
+      categorie: form.categorie.value,
+      parent: form.parent.value,
+      telephone: form.telephone.value,
+      // email et message existent dans le formulaire
+      // mais pour l'instant on ne les enregistre pas encore en base
+    };
+
+    try {
+      const { error } = await supabase.from("inscriptions").insert([data]);
+
+      if (error) {
+        console.error("Supabase insert error:", error);
+        alert("Erreur Supabase : " + error.message);
+        return;
+      }
+
+      alert("Inscription envoyée. Nous vous contacterons rapidement.");
+      form.reset();
+    } catch (err) {
+      console.error("Erreur réseau:", err);
+      alert("Erreur réseau : " + err.message);
+    }
+  }
+
   return (
     <>
       <Head>
@@ -144,15 +176,13 @@ export default function Home() {
               <ul>
                 <li>Préparation physique ciblée</li>
                 <li>Analyse vidéo</li>
-                <li>
-                  Accompagnement scolaire &amp; orientation (à adapter plus tard)
-                </li>
+                <li>Accompagnement scolaire &amp; orientation</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* INSCRIPTION avec DEBUG */}
+        {/* INSCRIPTION (direct Supabase) */}
         <section id="inscription" className="container">
           <h2 className="section-title">Inscription</h2>
           <p className="section-sub">
@@ -160,51 +190,7 @@ export default function Home() {
             dossier et planifier une rencontre.
           </p>
 
-          <form
-            className="contact-box"
-            onSubmit={async (e) => {
-              e.preventDefault();
-              const form = e.target;
-
-              const data = {
-                nom: form.nom.value,
-                date_naissance: form.date_naissance.value,
-                categorie: form.categorie.value,
-                parent: form.parent.value,
-                telephone: form.telephone.value,
-                email: form.email.value,
-                message: form.message.value,
-              };
-
-              try {
-                const res = await fetch("/api/inscription", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify(data),
-                });
-
-                const text = await res.text();
-
-                if (!res.ok) {
-                  alert(
-                    "Erreur lors de l'envoi (code " +
-                      res.status +
-                      ") : " +
-                      text
-                  );
-                  return;
-                }
-
-                alert(
-                  "Inscription envoyée. Nous vous contacterons rapidement."
-                );
-                form.reset();
-              } catch (err) {
-                console.error(err);
-                alert("Erreur réseau. Merci de réessayer.");
-              }
-            }}
-          >
+          <form className="contact-box" onSubmit={handleInscription}>
             <label>Nom complet du joueur</label>
             <input name="nom" required />
 
