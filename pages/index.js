@@ -144,15 +144,13 @@ export default function Home() {
               <ul>
                 <li>Préparation physique ciblée</li>
                 <li>Analyse vidéo</li>
-                <li>
-                  Accompagnement scolaire &amp; orientation (à adapter plus tard)
-                </li>
+                <li>Accompagnement scolaire &amp; orientation</li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* INSCRIPTION – CONNECTÉE À /api/inscription */}
+        {/* INSCRIPTION */}
         <section id="inscription" className="container">
           <h2 className="section-title">Inscription</h2>
           <p className="section-sub">
@@ -188,9 +186,7 @@ export default function Home() {
                   return;
                 }
 
-                alert(
-                  "Inscription envoyée. Nous vous contacterons rapidement."
-                );
+                alert("Inscription envoyée. Nous vous contacterons rapidement.");
                 form.reset();
               } catch (err) {
                 console.error(err);
@@ -296,6 +292,7 @@ export default function Home() {
         </section>
       </main>
 
+      {/* FOOTER */}
       <footer>
         <div className="footer-inner container">
           <div>
