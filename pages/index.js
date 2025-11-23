@@ -152,7 +152,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* INSCRIPTION */}
+        {/* INSCRIPTION avec DEBUG */}
         <section id="inscription" className="container">
           <h2 className="section-title">Inscription</h2>
           <p className="section-sub">
@@ -183,17 +183,14 @@ export default function Home() {
                   body: JSON.stringify(data),
                 });
 
-                let body = null;
-                try {
-                  body = await res.json();
-                } catch (e) {
-                  body = null;
-                }
+                const text = await res.text();
 
                 if (!res.ok) {
                   alert(
-                    body?.error ||
-                      "Erreur lors de l'envoi. Merci de réessayer."
+                    "Erreur lors de l'envoi (code " +
+                      res.status +
+                      ") : " +
+                      text
                   );
                   return;
                 }
