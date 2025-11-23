@@ -22,6 +22,8 @@ export default async function handler(req, res) {
   }
 
   try {
+    // ⚠️ On n'insère que les colonnes qui existent dans la table :
+    // id, nom, date_naissance, categorie, parent, telephone
     const { error } = await supabase.from("inscriptions").insert([
       {
         nom,
@@ -29,17 +31,16 @@ export default async function handler(req, res) {
         categorie,
         parent,
         telephone,
-        email,
-        message,
+        // email et message NE SONT PAS insérés tant que la table
+        // n'a pas ces colonnes. On les ajoutera plus tard.
       },
     ]);
 
     if (error) {
       console.error("Supabase insert error:", error);
-      // On renvoie le message détaillé pour le voir côté navigateur
       return res
         .status(500)
-        .json({ error: error.message || "Erreur lors de l'enregistrement." });
+        .json({ error: "Erreur lors de l'enregistrement." });
     }
 
     return res.status(200).json({ ok: true });
