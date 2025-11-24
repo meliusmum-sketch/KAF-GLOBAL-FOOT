@@ -1,3 +1,4 @@
+// pages/index.js
 import Head from "next/head";
 import Link from "next/link";
 
@@ -8,7 +9,7 @@ export default function Home() {
         <title>KAF Global Foot - Académie de Football</title>
         <meta
           name="description"
-          content="KAF Global Foot - Académie de football pour jeunes talents. Entraînements encadrés, méthodologie moderne et ambiance familiale à Kafountine."
+          content="KAF Global Foot - Académie de football pour jeunes talents à Kafountine, Casamance. Entraînements encadrés, méthodologie moderne et ambiance familiale."
         />
       </Head>
 
@@ -16,7 +17,9 @@ export default function Home() {
         {/* NAVBAR */}
         <header className="navbar">
           <div className="container nav-content">
-            <div className="logo">KAF Global Foot</div>
+            <div className="logo">
+              <img src="/logo-kaf.svg" alt="KAF Global Foot" />
+            </div>
             <nav className="nav-links">
               <a href="#apropos">À propos</a>
               <a href="#programmes">Programmes</a>
@@ -40,10 +43,10 @@ export default function Home() {
                   <span>footballeurs</span>
                 </h1>
                 <p>
-                  Académie de football basée à Kafountine, dédiée à la formation
-                  des jeunes, avec un encadrement sérieux, une méthodologie
-                  moderne et un cadre sécurisé pour progresser tout en prenant
-                  du plaisir.
+                  Académie de football basée à Kafountine (Casamance), dédiée à
+                  la formation des jeunes, avec un encadrement sérieux, une
+                  méthodologie moderne et un cadre sécurisé pour progresser tout
+                  en prenant du plaisir.
                 </p>
                 <div className="hero-cta">
                   <Link href="/inscription" className="btn">
@@ -78,10 +81,10 @@ export default function Home() {
               <h2 className="section-title">À propos de KAF Global Foot</h2>
               <p className="section-text">
                 KAF Global Foot est une académie de football implantée à
-                Kafountine. Notre objectif est d&apos;offrir aux jeunes un
-                véritable cadre de formation, en développant la technique,
-                l&apos;intelligence de jeu, le mental et les valeurs fortes :
-                respect, discipline, travail et esprit d&apos;équipe.
+                Kafountine, en Casamance. Notre objectif est d&apos;offrir aux
+                jeunes un véritable cadre de formation, en développant la
+                technique, l&apos;intelligence de jeu, le mental et des valeurs
+                fortes : respect, discipline, travail et esprit d&apos;équipe.
               </p>
               <div className="cards">
                 <div className="card">
@@ -104,9 +107,10 @@ export default function Home() {
                 <div className="card">
                   <h3>Vision</h3>
                   <p>
-                    Offrir une vraie base de formation aux jeunes de la région,
-                    qu&apos;ils visent le haut niveau ou qu&apos;ils souhaitent
-                    simplement pratiquer le foot dans un bon cadre éducatif.
+                    Offrir une base de formation de qualité aux jeunes de la
+                    région, qu&apos;ils visent le haut niveau ou qu&apos;ils
+                    souhaitent simplement pratiquer le foot dans un bon cadre
+                    éducatif.
                   </p>
                 </div>
               </div>
@@ -239,7 +243,7 @@ export default function Home() {
                   <p className="section-text small">
                     Bientôt, tu pourras retrouver ici nos liens vers les réseaux
                     sociaux (Instagram, Facebook, TikTok, YouTube) pour suivre
-                    la vie de l&apos;académie : matchs, entraînements, stages,
+                    la vie de l&apos;académie : matchs, entraînements, stages
                     et moments forts.
                   </p>
                 </div>
