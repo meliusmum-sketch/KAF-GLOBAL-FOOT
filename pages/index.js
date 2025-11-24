@@ -5,10 +5,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Académie de Foot - Accueil</title>
+        <title>KAF Global Foot - Académie de Football</title>
         <meta
           name="description"
-          content="Académie de football pour jeunes talents. Entraînements structurés, encadrement professionnel et ambiance familiale."
+          content="KAF Global Foot - Académie de football pour jeunes talents. Entraînements encadrés, méthodologie moderne et ambiance familiale."
         />
       </Head>
 
@@ -16,7 +16,7 @@ export default function Home() {
         {/* NAVBAR */}
         <header className="navbar">
           <div className="container nav-content">
-            <div className="logo">Académie de Foot</div>
+            <div className="logo">KAF Global Foot</div>
             <nav className="nav-links">
               <a href="#apropos">À propos</a>
               <a href="#programmes">Programmes</a>
@@ -35,12 +35,13 @@ export default function Home() {
             <div className="container hero-content">
               <div className="hero-text">
                 <h1>
-                  Révèle le talent des jeunes <span>footballeurs</span>
+                  KAF Global Foot : révèle le talent des jeunes{" "}
+                  <span>footballeurs</span>
                 </h1>
                 <p>
-                  Entraînements de qualité, coachs diplômés, et un cadre
-                  sécurisé pour faire progresser chaque enfant, quel que soit
-                  son niveau.
+                  Académie de football dédiée à la formation des jeunes, avec un
+                  encadrement sérieux, une méthodologie moderne et un cadre
+                  sécurisé pour progresser tout en prenant du plaisir.
                 </p>
                 <div className="hero-cta">
                   <Link href="/inscription" className="btn">
@@ -53,7 +54,7 @@ export default function Home() {
               </div>
               <div className="hero-side">
                 <div className="hero-card">
-                  <h2>Catégories</h2>
+                  <h2>Catégories KAF Global Foot</h2>
                   <ul>
                     <li>U8 (6–8 ans)</li>
                     <li>U10 (8–10 ans)</li>
@@ -61,7 +62,8 @@ export default function Home() {
                     <li>U14 &amp; plus</li>
                   </ul>
                   <p className="hero-note">
-                    Garçons &amp; filles bienvenus, tous niveaux.
+                    Garçons &amp; filles bienvenus, tous niveaux (débutants à
+                    confirmés).
                   </p>
                 </div>
               </div>
@@ -71,33 +73,37 @@ export default function Home() {
           {/* A PROPOS */}
           <section id="apropos" className="section">
             <div className="container">
-              <h2 className="section-title">À propos de l&apos;académie</h2>
+              <h2 className="section-title">À propos de KAF Global Foot</h2>
               <p className="section-text">
-                Notre académie a pour mission de former des jeunes joueurs
-                techniquement, tactiquement et mentalement. Nous travaillons sur
-                les valeurs de respect, discipline et esprit d&apos;équipe, tout
-                en gardant le plaisir de jouer au centre du projet.
+                KAF Global Foot est une académie de football qui met le
+                développement du jeune joueur au centre du projet. Nous
+                travaillons la technique, l&apos;intelligence de jeu, le mental
+                et les valeurs : respect, discipline, travail et esprit
+                d&apos;équipe.
               </p>
               <div className="cards">
                 <div className="card">
                   <h3>Encadrement</h3>
                   <p>
-                    Coachs expérimentés, diplômés et passionnés, avec une
-                    approche pédagogique adaptée à chaque âge.
+                    Coachs passionnés et expérimentés, avec une approche adaptée
+                    à chaque âge. Nous accompagnons les enfants avec bienveillance
+                    tout en étant exigeants sur l&apos;attitude.
                   </p>
                 </div>
                 <div className="card">
                   <h3>Méthodologie</h3>
                   <p>
-                    Exercices ludiques pour les plus petits, travail tactique
-                    et physique progressif pour les plus grands.
+                    Séances structurées avec ballon, travail de motricité pour
+                    les plus jeunes, développement technique et tactique pour les
+                    plus grands, le tout dans un climat positif.
                   </p>
                 </div>
                 <div className="card">
-                  <h3>Objectifs</h3>
+                  <h3>Vision</h3>
                   <p>
-                    Développer le potentiel des joueurs, préparer aux détections
-                    et offrir un cadre sain de pratique sportive.
+                    Offrir une vraie base de formation aux jeunes, qu&apos;ils
+                    visent le haut niveau ou qu&apos;ils veulent simplement
+                    pratiquer le foot dans un bon cadre.
                   </p>
                 </div>
               </div>
@@ -114,8 +120,8 @@ export default function Home() {
                   <p>Pour les plus jeunes (U8 à U12).</p>
                   <ul className="list">
                     <li>2 séances par semaine</li>
-                    <li>Travail de motricité & technique</li>
-                    <li>Mini-matchs & tournois internes</li>
+                    <li>Travail technique, coordination, motricité</li>
+                    <li>Jeux, mini-matchs et tournois internes</li>
                   </ul>
                 </div>
                 <div className="card">
@@ -123,8 +129,8 @@ export default function Home() {
                   <p>Pour les joueurs les plus motivés.</p>
                   <ul className="list">
                     <li>3 séances par semaine</li>
-                    <li>Préparation athlétique</li>
-                    <li>Accompagnement détections & essais</li>
+                    <li>Préparation athlétique & mentale</li>
+                    <li>Accompagnement pour détections & essais</li>
                   </ul>
                 </div>
               </div>
@@ -134,10 +140,10 @@ export default function Home() {
           {/* HORAIRES / LIEU */}
           <section id="horaires" className="section">
             <div className="container">
-              <h2 className="section-title">Horaires & lieu</h2>
+              <h2 className="section-title">Horaires & lieu d&apos;entraînement</h2>
               <div className="grid-2">
                 <div>
-                  <h3>Exemple d&apos;horaires</h3>
+                  <h3>Horaires KAF Global Foot</h3>
                   <ul className="list">
                     <li>
                       <strong>Mercredi :</strong> 16h00 – 18h00
@@ -147,18 +153,18 @@ export default function Home() {
                     </li>
                   </ul>
                   <p className="section-text small">
-                    (Tu pourras adapter ici avec tes vrais jours et heures
-                    d&apos;entraînement.)
+                    👉 Remplace ici par tes vrais jours et horaires
+                    d&apos;entraînement dès que tu veux.
                   </p>
                 </div>
                 <div>
                   <h3>Terrain d&apos;entraînement</h3>
                   <p>
-                    Indique ici le nom du stade / terrain, le quartier et la
-                    ville.
+                    Terrain KAF Global Foot – Quartier / Stade / Ville à préciser.
                   </p>
                   <p className="section-text small">
-                    Ex : Terrain municipal de XXX, Quartier YYY, Ville ZZZ.
+                    Exemple : Terrain municipal de XYZ, Quartier ABC, Dakar.
+                    Tu peux adapter ce texte à ta localisation exacte.
                   </p>
                 </div>
               </div>
@@ -169,10 +175,11 @@ export default function Home() {
           <section id="inscription" className="section section-accent">
             <div className="container cta-banner">
               <div>
-                <h2>Prêt à inscrire ton enfant ?</h2>
+                <h2>Prêt à inscrire ton enfant à KAF Global Foot ?</h2>
                 <p>
                   Clique sur le bouton ci-dessous pour remplir le formulaire
-                  d&apos;inscription. Nous te recontacterons rapidement.
+                  de pré-inscription. Nous te recontacterons rapidement pour les
+                  détails.
                 </p>
               </div>
               <Link href="/inscription" className="btn btn-light">
@@ -184,29 +191,34 @@ export default function Home() {
           {/* CONTACT */}
           <section id="contact" className="section section-alt">
             <div className="container">
-              <h2 className="section-title">Contact</h2>
+              <h2 className="section-title">Contact KAF Global Foot</h2>
               <div className="grid-2">
                 <div>
                   <p className="section-text">
-                    Pour toute question, tu peux nous contacter :
+                    Pour toute question (inscriptions, horaires, tarifs,
+                    partenariats), contacte-nous :
                   </p>
                   <ul className="list">
                     <li>
-                      <strong>Téléphone :</strong> +221 XX XX XX XX (à adapter)
+                      <strong>Téléphone :</strong> +221 77 000 00 00
                     </li>
                     <li>
-                      <strong>WhatsApp :</strong> +221 XX XX XX XX
+                      <strong>WhatsApp :</strong> +221 77 000 00 00
                     </li>
                     <li>
-                      <strong>Email :</strong> contact@ton-academie.com
+                      <strong>Email :</strong> kafglobalfoot@gmail.com
                     </li>
                   </ul>
+                  <p className="section-text small" style={{ marginTop: "0.5rem" }}>
+                    (Pense à remplacer ces coordonnées par tes vrais numéros et
+                    ton vrai email.)
+                  </p>
                 </div>
                 <div>
                   <p className="section-text small">
-                    Tu pourras également intégrer ici une carte Google Maps ou
-                    un lien vers tes réseaux sociaux (Instagram, Facebook,
-                    TikTok, etc.) pour montrer la vie de l&apos;académie.
+                    Tu pourras aussi ajouter ici des liens vers tes réseaux
+                    sociaux (Instagram, Facebook, TikTok, YouTube) et une carte
+                    Google Maps pour montrer l&apos;emplacement exact du terrain.
                   </p>
                 </div>
               </div>
@@ -217,13 +229,11 @@ export default function Home() {
         {/* FOOTER */}
         <footer className="footer">
           <div className="container footer-content">
-            <p>© {new Date().getFullYear()} Académie de Foot. Tous droits réservés.</p>
+            <p>
+              © {new Date().getFullYear()} KAF Global Foot. Tous droits réservés.
+            </p>
             <p className="footer-small">
               Site développé avec Next.js &amp; déployé sur Vercel.
             </p>
           </div>
-        </footer>
-      </div>
-    </>
-  );
-}
+        </footer
