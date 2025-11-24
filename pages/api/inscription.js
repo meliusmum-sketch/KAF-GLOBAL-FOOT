@@ -1,47 +1,134 @@
-import { supabase } from "../../lib/supabaseClient";
+import Head from "next/head";
+import Link from "next/link";
 
-export default async function handler(req, res) {
-  console.log("Méthode reçue :", req.method);
-  console.log("Corps reçu :", req.body);
+export default function Inscription() {
+  return (
+    <>
+      <Head>
+        <title>Inscription - Académie de Foot</title>
+      </Head>
 
-  // On récupère les champs envoyés par le formulaire
-  const {
-    nom,
-    date_naissance,
-    categorie,
-    parent,
-    telephone,
-    email,
-    message,
-  } = req.body || {};
+      <div className="page section-alt">
+        <header className="navbar">
+          <div className="container nav-content">
+            <div className="logo">Académie de Foot</div>
+            <nav className="nav-links">
+              <Link href="/">Accueil</Link>
+            </nav>
+          </div>
+        </header>
 
-  try {
-    // Si on a bien les infos principales, on enregistre dans la table
-    if (nom && date_naissance && categorie && parent && telephone) {
-      const { error } = await supabase.from("inscriptions").insert([
-        {
-          nom,
-          date_naissance,
-          categorie,
-          parent,
-          telephone,
-          // La table actuelle n'a pas encore email / message
-          // donc on ne les enregistre pas pour l'instant.
-        },
-      ]);
+        <main className="section">
+          <div className="container">
+            <h1 className="section-title">Formulaire d&apos;inscription</h1>
+            <p className="section-text">
+              Remplis ce formulaire pour pré-inscrire ton enfant. Nous te
+              contacterons pour confirmer l&apos;inscription et donner tous les
+              détails (documents à fournir, paiement, etc.).
+            </p>
 
-      if (error) {
-        console.error("Supabase insert error:", error);
-        return res
-          .status(500)
-          .json({ error: "Erreur Supabase: " + error.message });
-      }
-    }
+            <form
+              className="card"
+              style={{ marginTop: "1.5rem", maxWidth: "640px" }}
+              action="mailto:contact@ton-academie.com"
+              method="post"
+              encType="text/plain"
+            >
+              <div className="form-group">
+                <label>Nom de l&apos;enfant</label>
+                <input type="text" name="nom_enfant" required />
+              </div>
 
-    // ⚠️ Très important : on NE renvoie plus jamais 405 ici.
-    return res.status(200).json({ ok: true });
-  } catch (err) {
-    console.error("Server error:", err);
-    return res.status(500).json({ error: "Erreur serveur: " + err.message });
-  }
+              <div className="form-group">
+                <label>Prénom de l&apos;enfant</label>
+                <input type="text" name="prenom_enfant" required />
+              </div>
+
+              <div className="form-group">
+                <label>Âge de l&apos;enfant</label>
+                <input type="number" name="age" min="4" max="18" required />
+              </div>
+
+              <div className="form-group">
+                <label>Catégorie souhaitée</label>
+                <select name="categorie" required>
+                  <option value="">Sélectionner une catégorie</option>
+                  <option value="U8">U8 (6–8 ans)</option>
+                  <option value="U10">U10 (8–10 ans)</option>
+                  <option value="U12">U12 (10–12 ans)</option>
+                  <option value="U14+">U14 et plus</option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                <label>Nom du parent / tuteur</label>
+                <input type="text" name="nom_parent" required />
+              </div>
+
+              <div className="form-group">
+                <label>Téléphone du parent</label>
+                <input type="tel" name="telephone_parent" required />
+              </div>
+
+              <div className="form-group">
+                <label>Email du parent</label>
+                <input type="email" name="email_parent" required />
+              </div>
+
+              <div className="form-group">
+                <label>Message / Informations complémentaires</label>
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Ex : niveau de l'enfant, éventuels problèmes de santé, disponibilité..."
+                ></textarea>
+              </div>
+
+              <button type="submit" className="btn">
+                Envoyer la pré-inscription
+              </button>
+
+              <p className="section-text small" style={{ marginTop: "0.75rem" }}>
+                En cliquant sur &quot;Envoyer&quot;, un email s&apos;ouvrira
+                avec les informations du formulaire. Tu pourras ensuite
+                l&apos;envoyer directement.
+              </p>
+            </form>
+          </div>
+        </main>
+      </div>
+
+      <style jsx>{`
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          gap: 0.35rem;
+          margin-bottom: 1rem;
+          font-size: 0.95rem;
+        }
+
+        label {
+          font-weight: 500;
+        }
+
+        input,
+        select,
+        textarea {
+          padding: 0.55rem 0.6rem;
+          border-radius: 0.6rem;
+          border: 1px solid rgba(148, 163, 184, 0.6);
+          background: #020617;
+          color: #f9fafb;
+          font: inherit;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+          outline: 2px solid #1d4ed8;
+          outline-offset: 1px;
+        }
+      `}</style>
+    </>
+  );
 }
