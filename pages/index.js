@@ -1,3 +1,4 @@
+// pages/index.js
 import Head from "next/head";
 import Link from "next/link";
 
@@ -29,8 +30,9 @@ export default function Home() {
           </div>
         </header>
 
-        {/* HERO */}
+        {/* CONTENU */}
         <main>
+          {/* HERO */}
           <section className="hero">
             <div className="container hero-content">
               <div className="hero-text">
@@ -86,16 +88,16 @@ export default function Home() {
                   <h3>Encadrement</h3>
                   <p>
                     Coachs passionnés et expérimentés, avec une approche adaptée
-                    à chaque âge. Nous accompagnons les enfants avec bienveillance
-                    tout en étant exigeants sur l&apos;attitude.
+                    à chaque âge. Nous accompagnons les enfants avec
+                    bienveillance tout en étant exigeants sur l&apos;attitude.
                   </p>
                 </div>
                 <div className="card">
                   <h3>Méthodologie</h3>
                   <p>
                     Séances structurées avec ballon, travail de motricité pour
-                    les plus jeunes, développement technique et tactique pour les
-                    plus grands, le tout dans un climat positif.
+                    les plus jeunes, développement technique et tactique pour
+                    les plus grands, le tout dans un climat positif.
                   </p>
                 </div>
                 <div className="card">
@@ -129,8 +131,8 @@ export default function Home() {
                   <p>Pour les joueurs les plus motivés.</p>
                   <ul className="list">
                     <li>3 séances par semaine</li>
-                    <li>Préparation athlétique & mentale</li>
-                    <li>Accompagnement pour détections & essais</li>
+                    <li>Préparation athlétique &amp; mentale</li>
+                    <li>Accompagnement pour détections &amp; essais</li>
                   </ul>
                 </div>
               </div>
@@ -140,34 +142,37 @@ export default function Home() {
           {/* HORAIRES / LIEU */}
           <section id="horaires" className="section">
             <div className="container">
-              <h2 className="section-title">Horaires & lieu d&apos;entraînement</h2>
-              <div className="grid-2">
-                <div>
-                  <h3>Horaires KAF Global Foot</h3>
-                  <ul className="list">
-                    <li>
-                      <strong>Mercredi :</strong> 16h00 – 18h00
-                    </li>
-                    <li>
-                      <strong>Samedi :</strong> 9h30 – 11h30
-                    </li>
-                  </ul>
-                  <p className="section-text small">
-                    👉 Remplace ici par tes vrais jours et horaires
-                    d&apos;entraînement dès que tu veux.
-                  </p>
-                </div>
-                <div>
-                  <h3>Terrain d&apos;entraînement</h3>
-                  <p>
-                    Terrain KAF Global Foot – Quartier / Stade / Ville à préciser.
-                  </p>
-                  <p className="section-text small">
-                    Exemple : Terrain municipal de XYZ, Quartier ABC, Dakar.
-                    Tu peux adapter ce texte à ta localisation exacte.
-                  </p>
-                </div>
+              <h2 className="section-title">
+                Horaires &amp; lieu d&apos;entraînement
+              </h2>
+            <div className="grid-2">
+              <div>
+                <h3>Horaires KAF Global Foot</h3>
+                <ul className="list">
+                  <li>
+                    <strong>Mercredi :</strong> 16h00 – 18h00
+                  </li>
+                  <li>
+                    <strong>Samedi :</strong> 9h30 – 11h30
+                  </li>
+                </ul>
+                <p className="section-text small">
+                  👉 Remplace ici par tes vrais jours et horaires
+                  d&apos;entraînement dès que tu veux.
+                </p>
               </div>
+              <div>
+                <h3>Terrain d&apos;entraînement</h3>
+                <p>
+                  Terrain KAF Global Foot – Quartier / Stade / Ville à
+                  préciser.
+                </p>
+                <p className="section-text small">
+                  Exemple : Terrain municipal de XYZ, Quartier ABC, Dakar.
+                  Tu peux adapter ce texte à ta localisation exacte.
+                </p>
+              </div>
+            </div>
             </div>
           </section>
 
@@ -209,9 +214,12 @@ export default function Home() {
                       <strong>Email :</strong> kafglobalfoot@gmail.com
                     </li>
                   </ul>
-                  <p className="section-text small" style={{ marginTop: "0.5rem" }}>
-                    (Pense à remplacer ces coordonnées par tes vrais numéros et
-                    ton vrai email.)
+                  <p
+                    className="section-text small"
+                    style={{ marginTop: "0.5rem" }}
+                  >
+                    (Remplace ces coordonnées par tes vrais numéros et ton vrai
+                    email.)
                   </p>
                 </div>
                 <div>
@@ -236,4 +244,8 @@ export default function Home() {
               Site développé avec Next.js &amp; déployé sur Vercel.
             </p>
           </div>
-        </footer
+        </footer>
+      </div>
+    </>
+  );
+}
