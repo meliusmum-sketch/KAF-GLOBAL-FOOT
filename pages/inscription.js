@@ -1,8 +1,14 @@
-// pages/inscription.js
 import Head from "next/head";
 import Link from "next/link";
 
 export default function Inscription() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(
+      "Merci pour la pré-inscription !\n\nPour finaliser, contacte-nous par WhatsApp ou par email."
+    );
+  };
+
   return (
     <>
       <Head>
@@ -27,18 +33,15 @@ export default function Inscription() {
           <div className="container">
             <h1 className="section-title">Formulaire d&apos;inscription</h1>
             <p className="section-text">
-              Remplis ce formulaire pour pré-inscrire ton enfant à KAF Global
-              Foot. Nous te contacterons pour confirmer l&apos;inscription,
-              envoyer les détails (documents, tarif, planning) et répondre à tes
-              questions.
+              Remplis ce formulaire pour préparer l&apos;inscription de ton
+              enfant à KAF Global Foot. Ensuite, contacte-nous par WhatsApp ou
+              par email pour finaliser.
             </p>
 
             <form
               className="card"
               style={{ marginTop: "1.5rem", maxWidth: "640px" }}
-              action="mailto:kafglobalfoot@gmail.com"
-              method="post"
-              encType="text/plain"
+              onSubmit={handleSubmit}
             >
               <div className="form-group">
                 <label>Nom de l&apos;enfant</label>
@@ -91,14 +94,31 @@ export default function Inscription() {
               </div>
 
               <button type="submit" className="btn">
-                Envoyer la pré-inscription
+                Valider la pré-inscription
               </button>
 
               <p className="section-text small" style={{ marginTop: "0.75rem" }}>
-                En cliquant sur &quot;Envoyer&quot;, ton application mail
-                s&apos;ouvrira avec les informations du formulaire. Vérifie les
-                données puis envoie-nous l&apos;email.
+                Pour finaliser l&apos;inscription et recevoir toutes les infos
+                (tarifs, documents, planning), contacte-nous :
               </p>
+              <ul className="list">
+                <li>
+                  <strong>WhatsApp :</strong>{" "}
+                  <a
+                    href="https://wa.me/221782702457"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    +221 78 270 24 57
+                  </a>
+                </li>
+                <li>
+                  <strong>Email :</strong>{" "}
+                  <a href="mailto:kafglobalfoot@gmail.com">
+                    kafglobalfoot@gmail.com
+                  </a>
+                </li>
+              </ul>
             </form>
           </div>
         </main>
