@@ -118,4 +118,149 @@ export default function Home() {
             <div className="container">
               <h2 className="section-title">Nos programmes</h2>
               <div className="cards cards-2">
-                <div className="card
+                <div className="card">
+                  <h3>École de foot</h3>
+                  <p>Pour les plus jeunes (U8 à U12).</p>
+                  <ul className="list">
+                    <li>2 séances par semaine</li>
+                    <li>Travail technique, coordination, motricité</li>
+                    <li>Jeux, mini-matchs et tournois internes</li>
+                  </ul>
+                </div>
+                <div className="card">
+                  <h3>Groupe performance</h3>
+                  <p>Pour les joueurs les plus motivés.</p>
+                  <ul className="list">
+                    <li>3 séances par semaine</li>
+                    <li>Préparation athlétique &amp; mentale</li>
+                    <li>Accompagnement pour détections &amp; essais</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* HORAIRES / LIEU */}
+          <section id="horaires" className="section">
+            <div className="container">
+              <h2 className="section-title">
+                Horaires &amp; lieu d&apos;entraînement
+              </h2>
+              <div className="grid-2">
+                <div>
+                  <h3>Horaires KAF Global Foot</h3>
+                  <ul className="list">
+                    <li>
+                      <strong>Mercredi :</strong> 16h00 – 18h00
+                    </li>
+                    <li>
+                      <strong>Samedi :</strong> 9h30 – 11h30
+                    </li>
+                  </ul>
+                  <p className="section-text small">
+                    Ces horaires peuvent évoluer en fonction des catégories et
+                    de la saison. Contacte-nous pour confirmer les créneaux de
+                    ton enfant.
+                  </p>
+                </div>
+                <div>
+                  <h3>Terrain d&apos;entraînement</h3>
+                  <p>
+                    Terrain du Lycée de Kafountine CREWANE KAFOUNTINE,
+                    Bignona, Ziguinchor.
+                  </p>
+                  <p className="section-text small">
+                    Entraînements à Kafountine, dans la région de Ziguinchor.
+                    Un accès facile pour les jeunes de la zone et des
+                    alentours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* BLOC INSCRIPTION */}
+          <section id="inscription" className="section section-accent">
+            <div className="container cta-banner">
+              <div>
+                <h2>Prêt à inscrire ton enfant à KAF Global Foot ?</h2>
+                <p>
+                  Clique sur le bouton ci-dessous pour remplir le formulaire
+                  de pré-inscription. Nous te recontacterons rapidement pour les
+                  détails (tarifs, documents, planning).
+                </p>
+              </div>
+              <Link href="/inscription" className="btn btn-light">
+                Aller au formulaire d&apos;inscription
+              </Link>
+            </div>
+          </section>
+
+          {/* CONTACT */}
+          <section id="contact" className="section section-alt">
+            <div className="container">
+              <h2 className="section-title">Contact KAF Global Foot</h2>
+              <div className="grid-2">
+                <div>
+                  <p className="section-text">
+                    Pour toute question (inscriptions, horaires, tarifs,
+                    partenariats), contacte-nous :
+                  </p>
+                  <ul className="list">
+                    <li>
+                      <strong>Téléphone :</strong> +221 78 270 24 57
+                    </li>
+                    <li>
+                      <strong>WhatsApp :</strong>{" "}
+                      <a
+                        href="https://wa.me/221782702457"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        +221 78 270 24 57
+                      </a>
+                    </li>
+                    <li>
+                      <strong>Email :</strong>{" "}
+                      <a href="mailto:kafglobalfoot@gmail.com">
+                        kafglobalfoot@gmail.com
+                      </a>
+                    </li>
+                  </ul>
+                  <p
+                    className="section-text small"
+                    style={{ marginTop: "0.5rem" }}
+                  >
+                    N&apos;hésite pas à nous écrire ou à nous envoyer un vocal
+                    sur WhatsApp pour toute demande d&apos;information.
+                  </p>
+                </div>
+                <div>
+                  <p className="section-text small">
+                    Bientôt, tu pourras retrouver ici nos liens vers les réseaux
+                    sociaux (Instagram, Facebook, TikTok, YouTube) pour suivre
+                    la vie de l&apos;académie : matchs, entraînements, stages,
+                    et moments forts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        {/* FOOTER */}
+        <footer className="footer">
+          <div className="container footer-content">
+            <p>
+              © {new Date().getFullYear()} KAF Global Foot. Tous droits
+              réservés.
+            </p>
+            <p className="footer-small">
+              Site développé avec Next.js &amp; déployé sur Vercel.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+}
