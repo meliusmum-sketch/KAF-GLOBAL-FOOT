@@ -1,3 +1,4 @@
+// pages/inscription.js
 import Head from "next/head";
 import Link from "next/link";
 
@@ -101,39 +102,39 @@ export default function Inscription() {
             </form>
           </div>
         </main>
+
+        <style jsx>{`
+          .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+          }
+
+          label {
+            font-weight: 500;
+          }
+
+          input,
+          select,
+          textarea {
+            padding: 0.55rem 0.6rem;
+            border-radius: 0.6rem;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            background: #020617;
+            color: #f9fafb;
+            font: inherit;
+          }
+
+          input:focus,
+          select:focus,
+          textarea:focus {
+            outline: 2px solid #1d4ed8;
+            outline-offset: 1px;
+          }
+        `}</style>
       </div>
-
-      <style jsx>{`
-        .form-group {
-          display: flex;
-          flex-direction: column;
-          gap: 0.35rem;
-          margin-bottom: 1rem;
-          font-size: 0.95rem;
-        }
-
-        label {
-          font-weight: 500;
-        }
-
-        input,
-        select,
-        textarea {
-          padding: 0.55rem 0.6rem;
-          border-radius: 0.6rem;
-          border: 1px solid rgba(148, 163, 184, 0.6);
-          background: #020617;
-          color: #f9fafb;
-          font: inherit;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-          outline: 2px solid #1d4ed8;
-          outline-offset: 1px;
-        }
-      `}</style>
     </>
   );
 }
