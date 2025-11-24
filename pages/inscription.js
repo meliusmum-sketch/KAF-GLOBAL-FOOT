@@ -1,3 +1,4 @@
+// pages/inscription.js
 import Head from "next/head";
 import Link from "next/link";
 
@@ -15,14 +16,16 @@ export default function Inscription() {
         <title>Inscription - KAF Global Foot</title>
         <meta
           name="description"
-          content="Formulaire de pré-inscription à KAF Global Foot, académie de football pour jeunes."
+          content="Formulaire de pré-inscription à KAF Global Foot, académie de football pour jeunes à Kafountine (Casamance)."
         />
       </Head>
 
       <div className="page section-alt">
         <header className="navbar">
           <div className="container nav-content">
-            <div className="logo">KAF Global Foot</div>
+            <div className="logo">
+              <img src="/logo-kaf.svg" alt="KAF Global Foot" />
+            </div>
             <nav className="nav-links">
               <Link href="/">Accueil</Link>
             </nav>
@@ -142,15 +145,15 @@ export default function Inscription() {
             padding: 0.55rem 0.6rem;
             border-radius: 0.6rem;
             border: 1px solid rgba(148, 163, 184, 0.6);
-            background: #020617;
-            color: #f9fafb;
+            background: #ffffff;
+            color: #111827;
             font: inherit;
           }
 
           input:focus,
           select:focus,
           textarea:focus {
-            outline: 2px solid #1d4ed8;
+            outline: 2px solid #16a34a;
             outline-offset: 1px;
           }
         `}</style>
