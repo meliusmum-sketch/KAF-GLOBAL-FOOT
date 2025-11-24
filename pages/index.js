@@ -1,7 +1,8 @@
 import Head from "next/head";
-import { supabase } from "../lib/supabaseClient";
+import { supabase } from "../supabaseClient"; // <– on importe le client déjà créé
 
 export default function Home() {
+  // Fonction appelée quand on envoie le formulaire
   async function handleInscription(e) {
     e.preventDefault();
     const form = e.target;
@@ -12,8 +13,7 @@ export default function Home() {
       categorie: form.categorie.value,
       parent: form.parent.value,
       telephone: form.telephone.value,
-      // email et message existent dans le formulaire
-      // mais pour l'instant on ne les enregistre pas encore en base
+      // email et message ne sont pas encore enregistrés en base
     };
 
     try {
@@ -182,7 +182,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* INSCRIPTION (direct Supabase) */}
+        {/* INSCRIPTION – DIRECT SUPABASE */}
         <section id="inscription" className="container">
           <h2 className="section-title">Inscription</h2>
           <p className="section-sub">
