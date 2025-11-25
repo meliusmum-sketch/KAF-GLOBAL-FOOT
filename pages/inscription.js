@@ -2,9 +2,14 @@
 import Head from "next/head";
 import Link from "next/link";
 
-// Ces variables seront remplacées par Next au build
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+// Ces variables sont injectées par Next côté navigateur
+const RAW_SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+// On nettoie l'URL au cas où tu aurais mis /rest/v1 ou un / final
+const SUPABASE_URL = RAW_SUPABASE_URL
+  ? RAW_SUPABASE_URL.replace(/\/rest\/v1\/?$/, "").replace(/\/$/, "")
+  : null;
 
 export default function Inscription() {
   const handleSubmit = async (e) => {
@@ -12,7 +17,7 @@ export default function Inscription() {
 
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
       alert(
-        "Erreur de configuration technique.\nVeuillez nous contacter directement sur WhatsApp."
+        "Erreur de configuration technique (Supabase).\nVeuillez nous contacter directement sur WhatsApp."
       );
       return;
     }
@@ -32,25 +37,26 @@ export default function Inscription() {
     };
 
     try {
-      const response = await fetch(
-        `${SUPABASE_URL}/rest/v1/inscriptions`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            apikey: SUPABASE_ANON_KEY,
-            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-            Prefer: "return=minimal"
-          },
-          body: JSON.stringify(inscription),
-        }
-      );
+      const url = `${SUPABASE_URL}/rest/v1/inscriptions`;
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          apikey: SUPABASE_ANON_KEY,
+          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          Prefer: "return=minimal",
+        },
+        body: JSON.stringify(inscription),
+      });
 
       if (!response.ok) {
         const text = await response.text();
         console.error("Supabase REST error:", text);
         alert(
-          "Une erreur est survenue lors de l'enregistrement.\nVous pouvez aussi nous contacter directement sur WhatsApp."
+          "Une erreur est survenue lors de l'enregistrement :\n\n" +
+            text +
+            "\n\nVous pouvez aussi nous contacter directement sur WhatsApp."
         );
         return;
       }
@@ -60,7 +66,7 @@ export default function Inscription() {
     } catch (err) {
       console.error("Network error:", err);
       alert(
-        "Une erreur technique est survenue.\nVous pouvez nous écrire directement sur WhatsApp."
+        "Une erreur technique est survenue (réseau).\nVous pouvez nous écrire directement sur WhatsApp."
       );
     }
   };
