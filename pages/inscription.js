@@ -29,19 +29,17 @@ export default function Inscription() {
       if (error) {
         console.error("Erreur Supabase :", error);
         alert(
-          "Une erreur est survenue lors de l'enregistrement.\nTu peux aussi nous contacter directement sur WhatsApp."
+          "Une erreur est survenue lors de l'enregistrement.\nVous pouvez aussi nous contacter directement sur WhatsApp."
         );
         return;
       }
 
-      alert(
-        "Merci pour la pré-inscription !\n\nLes informations ont été enregistrées. Nous te contacterons pour finaliser l'inscription."
-      );
+      alert("Merci pour la préinscription, nous vous reviendrons bientôt.");
       form.reset();
     } catch (err) {
       console.error("Erreur inattendue :", err);
       alert(
-        "Une erreur technique est survenue.\nTu peux nous écrire directement sur WhatsApp."
+        "Une erreur technique est survenue.\nVous pouvez nous écrire directement sur WhatsApp."
       );
     }
   };
@@ -138,7 +136,7 @@ export default function Inscription() {
 
               <p className="section-text small" style={{ marginTop: "0.75rem" }}>
                 Pour finaliser l&apos;inscription et recevoir toutes les infos
-                (tarifs, documents, planning), contacte-nous :
+                (tarifs, documents, planning), contactez-nous :
               </p>
               <ul className="list">
                 <li>
