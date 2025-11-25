@@ -151,34 +151,33 @@ export default function Home() {
             <div className="container">
               <h2 className="section-title">Horaires & lieu d&apos;entraînement</h2>
 
-              <div className="grid-2">
-                <div className="card">
-                  <h3>Horaires KAF Global Foot</h3>
-                  <ul className="list">
-                    <li>Mercredi : 16h00 – 18h00</li>
-                    <li>Samedi : 9h30 – 11h30</li>
-                  </ul>
-                  <p className="section-text small">
-                    Tu pourras ajuster ces horaires selon ton planning exact.
-                  </p>
-                </div>
+             <div className="grid-2">
+  <div className="card">
+    <h3>Horaires KAF Global Foot</h3>
+    <ul className="list">
+      <li>Mercredi : 16h00 – 18h00</li>
+      <li>Samedi : 9h30 – 11h30</li>
+    </ul>
+    <p className="section-text small">
+      Les horaires peuvent légèrement varier en fonction du planning et des compétitions.
+      En cas de changement, les joueurs et les parents sont informés à l’avance.
+    </p>
+  </div>
 
-                <div className="card">
-                  <h3>Terrain d&apos;entraînement</h3>
-                  <p>
-                    <strong>Terrain du Lycée de Kafountine</strong>
-                    <br />
-                    Crewane, Kafountine, département de Bignona, région de
-                    Ziguinchor (Casamance).
-                  </p>
-                  <p className="section-text small">
-                    Possibilité d&apos;ajouter plus tard une carte Google Maps
-                    pour montrer l&apos;emplacement exact.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+  <div className="card">
+    <h3>Terrain d&apos;entraînement</h3>
+    <p>
+      <strong>Terrain du Lycée de Kafountine</strong>
+      <br />
+      Crewane, Kafountine, département de Bignona, région de
+      Ziguinchor (Casamance).
+    </p>
+    <p className="section-text small">
+      Une carte Google Maps sera bientôt disponible ici pour vous aider à trouver facilement l’emplacement du terrain.
+    </p>
+  </div>
+</div>
+
 
           {/* GALERIE PHOTOS */}
           <section id="galerie" className="section section-alt">
