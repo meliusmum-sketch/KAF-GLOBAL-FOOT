@@ -334,3 +334,26 @@ export default function MyApp({ Component, pageProps }) {
     </>
   );
 }
+/* Bouton WhatsApp flottant */
+.whatsapp-float {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 50;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  background: #16a34a;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(22, 163, 74, 0.6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 35px rgba(22, 163, 74, 0.7);
+}
