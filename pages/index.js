@@ -79,9 +79,9 @@ export default function Home() {
                 <div className="card">
                   <h3>Encadrement</h3>
                   <p>
-                    Coachs passionnés et expérimentés, avec une approche
-                    adaptée à chaque âge. Exigence sur l&apos;attitude, mais
-                    toujours dans la bienveillance.
+                    Coachs passionnés et expérimentés, avec une approche adaptée
+                    à chaque âge. Exigence sur l&apos;attitude, mais toujours
+                    dans la bienveillance.
                   </p>
                 </div>
                 <div className="card">
@@ -149,35 +149,40 @@ export default function Home() {
           {/* HORAIRES & LIEU */}
           <section id="horaires" className="section section-alt">
             <div className="container">
-              <h2 className="section-title">Horaires & lieu d&apos;entraînement</h2>
+              <h2 className="section-title">
+                Horaires & lieu d&apos;entraînement
+              </h2>
 
-             <div className="grid-2">
-  <div className="card">
-    <h3>Horaires KAF Global Foot</h3>
-    <ul className="list">
-      <li>Mercredi : 16h00 – 18h00</li>
-      <li>Samedi : 9h30 – 11h30</li>
-    </ul>
-    <p className="section-text small">
-      Les horaires peuvent légèrement varier en fonction du planning et des compétitions.
-      En cas de changement, les joueurs et les parents sont informés à l’avance.
-    </p>
-  </div>
+              <div className="grid-2">
+                <div className="card">
+                  <h3>Horaires KAF Global Foot</h3>
+                  <ul className="list">
+                    <li>Mercredi : 16h00 – 18h00</li>
+                    <li>Samedi : 9h30 – 11h30</li>
+                  </ul>
+                  <p className="section-text small">
+                    Les horaires peuvent légèrement varier en fonction du
+                    planning et des compétitions. En cas de changement, les
+                    joueurs et les parents sont informés à l’avance.
+                  </p>
+                </div>
 
-  <div className="card">
-    <h3>Terrain d&apos;entraînement</h3>
-    <p>
-      <strong>Terrain du Lycée de Kafountine</strong>
-      <br />
-      Crewane, Kafountine, département de Bignona, région de
-      Ziguinchor (Casamance).
-    </p>
-    <p className="section-text small">
-      Une carte Google Maps sera bientôt disponible ici pour vous aider à trouver facilement l’emplacement du terrain.
-    </p>
-  </div>
-</div>
-
+                <div className="card">
+                  <h3>Terrain d&apos;entraînement</h3>
+                  <p>
+                    <strong>Terrain du Lycée de Kafountine</strong>
+                    <br />
+                    Crewane, Kafountine, département de Bignona, région de
+                    Ziguinchor (Casamance).
+                  </p>
+                  <p className="section-text small">
+                    Une carte Google Maps sera bientôt disponible ici pour vous
+                    aider à trouver facilement l’emplacement du terrain.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* GALERIE PHOTOS */}
           <section id="galerie" className="section section-alt">
@@ -214,10 +219,7 @@ export default function Home() {
                   />
                 </figure>
                 <figure className="gallery-item">
-                  <img
-                    src="/gallery5.jpg"
-                    alt="Match à l'entraînement"
-                  />
+                  <img src="/gallery5.jpg" alt="Match à l'entraînement" />
                 </figure>
                 <figure className="gallery-item">
                   <img
