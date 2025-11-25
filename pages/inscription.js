@@ -2,73 +2,10 @@
 import Head from "next/head";
 import Link from "next/link";
 
-// Ces variables sont injectées par Next côté navigateur
-const RAW_SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-// On nettoie l'URL au cas où tu aurais mis /rest/v1 ou un / final
-const SUPABASE_URL = RAW_SUPABASE_URL
-  ? RAW_SUPABASE_URL.replace(/\/rest\/v1\/?$/, "").replace(/\/$/, "")
-  : null;
-
 export default function Inscription() {
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-      alert(
-        "Erreur de configuration technique (Supabase).\nVeuillez nous contacter directement sur WhatsApp."
-      );
-      return;
-    }
-
-    const form = e.target;
-    const formData = new FormData(form);
-
-    const inscription = {
-      nom_enfant: formData.get("nom_enfant"),
-      prenom_enfant: formData.get("prenom_enfant"),
-      age: formData.get("age") ? Number(formData.get("age")) : null,
-      categorie: formData.get("categorie"),
-      nom_parent: formData.get("nom_parent"),
-      telephone_parent: formData.get("telephone_parent"),
-      email_parent: formData.get("email_parent"),
-      message: formData.get("message") || null,
-    };
-
-    try {
-      const url = `${SUPABASE_URL}/rest/v1/inscriptions`;
-
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: SUPABASE_ANON_KEY,
-          Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
-          Prefer: "return=minimal",
-        },
-        body: JSON.stringify(inscription),
-      });
-
-      if (!response.ok) {
-        const text = await response.text();
-        console.error("Supabase REST error:", text);
-        alert(
-          "Une erreur est survenue lors de l'enregistrement :\n\n" +
-            text +
-            "\n\nVous pouvez aussi nous contacter directement sur WhatsApp."
-        );
-        return;
-      }
-
-      alert("Merci pour la préinscription, nous vous reviendrons bientôt.");
-      form.reset();
-    } catch (err) {
-      console.error("Network error:", err);
-      alert(
-        "Une erreur technique est survenue (réseau).\nVous pouvez nous écrire directement sur WhatsApp."
-      );
-    }
+    alert("Merci pour la préinscription, nous vous reviendrons bientôt.");
   };
 
   return (
