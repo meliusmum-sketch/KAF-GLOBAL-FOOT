@@ -2,27 +2,17 @@
 import Head from "next/head";
 import Link from "next/link";
 
+// Ces variables seront remplacées par Next au build
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
 export default function Inscription() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let supabase;
-
-    try {
-      // On charge Supabase uniquement côté navigateur
-      const module = await import("../lib/supabaseClient");
-      supabase = module.supabase;
-    } catch (err) {
-      console.error("Erreur lors du chargement de Supabase :", err);
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
       alert(
-        "Erreur technique lors du chargement du service.\nVous pouvez nous contacter sur WhatsApp."
-      );
-      return;
-    }
-
-    if (!supabase) {
-      alert(
-        "Erreur de configuration Supabase.\nVeuillez nous contacter directement sur WhatsApp."
+        "Erreur de configuration technique.\nVeuillez nous contacter directement sur WhatsApp."
       );
       return;
     }
@@ -42,12 +32,23 @@ export default function Inscription() {
     };
 
     try {
-      const { error } = await supabase
-        .from("inscriptions")
-        .insert([inscription]);
+      const response = await fetch(
+        `${SUPABASE_URL}/rest/v1/inscriptions`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: SUPABASE_ANON_KEY,
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+            Prefer: "return=minimal"
+          },
+          body: JSON.stringify(inscription),
+        }
+      );
 
-      if (error) {
-        console.error("Erreur Supabase :", error);
+      if (!response.ok) {
+        const text = await response.text();
+        console.error("Supabase REST error:", text);
         alert(
           "Une erreur est survenue lors de l'enregistrement.\nVous pouvez aussi nous contacter directement sur WhatsApp."
         );
@@ -57,7 +58,7 @@ export default function Inscription() {
       alert("Merci pour la préinscription, nous vous reviendrons bientôt.");
       form.reset();
     } catch (err) {
-      console.error("Erreur inattendue :", err);
+      console.error("Network error:", err);
       alert(
         "Une erreur technique est survenue.\nVous pouvez nous écrire directement sur WhatsApp."
       );
