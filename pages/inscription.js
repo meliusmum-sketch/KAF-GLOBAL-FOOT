@@ -1,11 +1,20 @@
 // pages/inscription.js
 import Head from "next/head";
 import Link from "next/link";
-import { supabase } from "../lib/supabaseClient";
 
 export default function Inscription() {
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // On charge Supabase uniquement côté navigateur (pas pendant le build)
+    const { supabase } = await import("../lib/supabaseClient");
+
+    if (!supabase) {
+      alert(
+        "Erreur de configuration technique. Merci de réessayer plus tard ou de nous contacter par WhatsApp."
+      );
+      return;
+    }
 
     const form = e.target;
     const formData = new FormData(form);
