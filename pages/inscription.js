@@ -6,12 +6,23 @@ export default function Inscription() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // On charge Supabase uniquement côté navigateur (pas pendant le build)
-    const { supabase } = await import("../lib/supabaseClient");
+    let supabase;
+
+    try {
+      // On charge Supabase uniquement côté navigateur
+      const module = await import("../lib/supabaseClient");
+      supabase = module.supabase;
+    } catch (err) {
+      console.error("Erreur lors du chargement de Supabase :", err);
+      alert(
+        "Erreur technique lors du chargement du service.\nVous pouvez nous contacter sur WhatsApp."
+      );
+      return;
+    }
 
     if (!supabase) {
       alert(
-        "Erreur de configuration technique. Merci de réessayer plus tard ou de nous contacter par WhatsApp."
+        "Erreur de configuration Supabase.\nVeuillez nous contacter directement sur WhatsApp."
       );
       return;
     }
