@@ -219,7 +219,10 @@ export default function Home() {
                   />
                 </figure>
                 <figure className="gallery-item">
-                  <img src="/gallery5.jpg" alt="Match à l'entraînement" />
+                  <img
+                    src="/gallery5.jpg"
+                    alt="Match à l'entraînement"
+                  />
                 </figure>
                 <figure className="gallery-item">
                   <img
