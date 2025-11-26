@@ -9,11 +9,16 @@ export default function Inscription() {
     e.preventDefault();
     setStatus("loading");
 
-    const form = e.target;
-    const formData = new FormData(form);
-    const body = Object.fromEntries(formData.entries());
-
     try {
+      const form = e.target;
+      const formData = new FormData(form);
+
+      // ⚠️ On évite Object.fromEntries pour plus de compatibilité
+      const body = {};
+      formData.forEach((value, key) => {
+        body[key] = value;
+      });
+
       const res = await fetch("/api/inscription", {
         method: "POST",
         headers: {
@@ -29,7 +34,7 @@ export default function Inscription() {
         setStatus("error");
       }
     } catch (err) {
-      console.error(err);
+      console.error("Erreur côté navigateur:", err);
       setStatus("error");
     }
   };
