@@ -60,6 +60,12 @@ export default function Inscription() {
                   />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_template" value="table" />
+                  {/* 🔴 Redirection vers la page de remerciement */}
+                  <input
+                    type="hidden"
+                    name="_next"
+                    value="https://kafglobalfoot.com/merci"
+                  />
 
                   <h2
                     className="section-text small"
