@@ -5,10 +5,12 @@ export default function Merci() {
   return (
     <>
       <Head>
-        <title>Merci - KAF Global Foot</title>
+        <title>
+          Pré-inscription envoyée | KAF Global Foot académie de football
+        </title>
         <meta
           name="description"
-          content="Merci pour votre pré-inscription à KAF Global Foot."
+          content="Merci pour votre pré-inscription à l’académie de football KAF Global Foot. Nous reviendrons vers vous pour confirmer les détails de l’inscription."
         />
       </Head>
 
@@ -32,7 +34,9 @@ export default function Merci() {
         <main>
           <section className="section section-alt">
             <div className="container">
-              <h1 className="section-title">Merci pour votre pré-inscription</h1>
+              <h1 className="section-title">
+                Merci pour votre pré-inscription
+              </h1>
               <p className="section-text">
                 Votre demande a bien été envoyée à l&apos;académie KAF Global
                 Foot. ✅
