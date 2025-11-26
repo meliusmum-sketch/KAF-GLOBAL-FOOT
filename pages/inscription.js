@@ -43,21 +43,23 @@ export default function Inscription() {
               </p>
 
               <div className="card">
-                {/* 🔴 FORMULAIRE SANS JAVASCRIPT */}
+                {/* Formulaire envoyé via FormSubmit */}
                 <form
-                  action="https://formspree.io/f/xgvjeedq"
+                  action="https://formsubmit.co/contact@kafglobalfoot.com"
                   method="POST"
                   style={{
                     display: "grid",
                     gap: "1rem",
                   }}
                 >
-                  {/* Sujet de l'email Formspree */}
+                  {/* Options FormSubmit */}
                   <input
                     type="hidden"
                     name="_subject"
-                    value="Nouvelle pré-inscription KAF Global Foot"
+                    value="Préinscription KAF Global Foot"
                   />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
 
                   <h2
                     className="section-text small"
