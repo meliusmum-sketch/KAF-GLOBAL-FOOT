@@ -1,40 +1,7 @@
 // pages/inscription.js
 import Head from "next/head";
-import { useState } from "react";
-
-// ✅ Ton endpoint Formspree
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xgvjeedq";
 
 export default function Inscription() {
-  const [status, setStatus] = useState(null); // "loading" | "success" | "error" | null
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    const form = e.target;
-    const data = new FormData(form);
-
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        body: data,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        form.reset();
-      } else {
-        setStatus("error");
-      }
-    } catch (err) {
-      setStatus("error");
-    }
-  };
-
   return (
     <>
       <Head>
@@ -76,8 +43,10 @@ export default function Inscription() {
               </p>
 
               <div className="card">
+                {/* 🔴 FORMULAIRE SIMPLE HTML → envoi direct vers Formspree */}
                 <form
-                  onSubmit={handleSubmit}
+                  action="https://formspree.io/f/xgvjeedq"
+                  method="POST"
                   style={{
                     display: "grid",
                     gap: "1rem",
@@ -255,36 +224,9 @@ export default function Inscription() {
                     type="submit"
                     className="btn"
                     style={{ marginTop: "0.75rem" }}
-                    disabled={status === "loading"}
                   >
-                    {status === "loading"
-                      ? "Envoi en cours..."
-                      : "Envoyer la pré-inscription"}
+                    Envoyer la pré-inscription
                   </button>
-
-                  {status === "success" && (
-                    <p
-                      className="section-text small"
-                      style={{ color: "#15803d", marginTop: "0.5rem" }}
-                    >
-                      Merci ! Votre pré-inscription a bien été envoyée. Nous
-                      vous contacterons rapidement.
-                    </p>
-                  )}
-
-                  {status === "error" && (
-                    <p
-                      className="section-text small"
-                      style={{ color: "#b91c1c", marginTop: "0.5rem" }}
-                    >
-                      Une erreur est survenue lors de l&apos;envoi. Vous pouvez
-                      aussi nous écrire à{" "}
-                      <a href="mailto:contact@kafglobalfoot.com">
-                        contact@kafglobalfoot.com
-                      </a>{" "}
-                      ou via WhatsApp.
-                    </p>
-                  )}
                 </form>
               </div>
 
