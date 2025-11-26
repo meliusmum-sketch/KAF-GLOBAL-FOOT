@@ -1,28 +1,7 @@
 // pages/inscription.js
 import Head from "next/head";
-import { useState } from "react";
 
 export default function Inscription() {
-  const [status, setStatus] = useState(null); // "loading" | "success" | "error" | null
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    try {
-      const form = e.target;
-
-      // 🔹 Version TEST : on simule un envoi réussi après 1 seconde
-      setTimeout(() => {
-        setStatus("success");
-        form.reset();
-      }, 1000);
-    } catch (err) {
-      console.error("Erreur côté navigateur:", err);
-      setStatus("error");
-    }
-  };
-
   return (
     <>
       <Head>
@@ -64,13 +43,22 @@ export default function Inscription() {
               </p>
 
               <div className="card">
+                {/* 🔴 FORMULAIRE SANS JAVASCRIPT */}
                 <form
-                  onSubmit={handleSubmit}
+                  action="https://formspree.io/f/xgvjeedq"
+                  method="POST"
                   style={{
                     display: "grid",
                     gap: "1rem",
                   }}
                 >
+                  {/* Sujet de l'email Formspree */}
+                  <input
+                    type="hidden"
+                    name="_subject"
+                    value="Nouvelle pré-inscription KAF Global Foot"
+                  />
+
                   <h2
                     className="section-text small"
                     style={{ fontWeight: 600 }}
@@ -83,7 +71,7 @@ export default function Inscription() {
                     <br />
                     <input
                       type="text"
-                      name="joueurNom"
+                      name="Nom du joueur"
                       required
                       style={{
                         width: "100%",
@@ -98,7 +86,7 @@ export default function Inscription() {
                     <br />
                     <input
                       type="date"
-                      name="joueurNaissance"
+                      name="Date de naissance"
                       required
                       style={{
                         width: "100%",
@@ -112,7 +100,7 @@ export default function Inscription() {
                     Catégorie d&apos;âge du joueur
                     <br />
                     <select
-                      name="categorieAge"
+                      name="Catégorie d'âge"
                       required
                       style={{
                         width: "100%",
@@ -138,7 +126,7 @@ export default function Inscription() {
                     <br />
                     <input
                       type="text"
-                      name="poste"
+                      name="Poste préféré"
                       placeholder="Gardien, défenseur, milieu, attaquant..."
                       style={{
                         width: "100%",
@@ -160,7 +148,7 @@ export default function Inscription() {
                     <br />
                     <input
                       type="text"
-                      name="parentNom"
+                      name="Parent / tuteur"
                       required
                       style={{
                         width: "100%",
@@ -175,7 +163,7 @@ export default function Inscription() {
                     <br />
                     <input
                       type="tel"
-                      name="parentTel"
+                      name="Téléphone parent"
                       required
                       placeholder="+221 ..."
                       style={{
@@ -191,7 +179,7 @@ export default function Inscription() {
                     <br />
                     <input
                       type="email"
-                      name="parentEmail"
+                      name="Email parent"
                       required
                       placeholder="exemple@mail.com"
                       style={{
@@ -214,7 +202,7 @@ export default function Inscription() {
                     disponibilité...)
                     <br />
                     <textarea
-                      name="message"
+                      name="Message"
                       rows={4}
                       style={{
                         width: "100%",
@@ -236,36 +224,9 @@ export default function Inscription() {
                     type="submit"
                     className="btn"
                     style={{ marginTop: "0.75rem" }}
-                    disabled={status === "loading"}
                   >
-                    {status === "loading"
-                      ? "Envoi en cours..."
-                      : "Envoyer la pré-inscription"}
+                    Envoyer la pré-inscription
                   </button>
-
-                  {status === "success" && (
-                    <p
-                      className="section-text small"
-                      style={{ color: "#15803d", marginTop: "0.5rem" }}
-                    >
-                      Merci ! Votre pré-inscription a bien été envoyée (test).
-                      Nous vous contacterons rapidement.
-                    </p>
-                  )}
-
-                  {status === "error" && (
-                    <p
-                      className="section-text small"
-                      style={{ color: "#b91c1c", marginTop: "0.5rem" }}
-                    >
-                      Une erreur est survenue dans le navigateur. Vous pouvez
-                      aussi nous écrire à{" "}
-                      <a href="mailto:contact@kafglobalfoot.com">
-                        contact@kafglobalfoot.com
-                      </a>{" "}
-                      ou via WhatsApp.
-                    </p>
-                  )}
                 </form>
               </div>
 
