@@ -1,15 +1,15 @@
-// pages/index.js
+// pages/en.js
 import Head from "next/head";
 import Link from "next/link";
 
-export default function Home() {
+export default function HomeEn() {
   return (
     <>
       <Head>
-        <title>KAF Global Foot - Académie de football à Kafountine</title>
+        <title>KAF Global Foot - Football academy in Kafountine</title>
         <meta
           name="description"
-          content="KAF Global Foot, académie de football à Kafountine (Casamance) : formation des jeunes, encadrement sérieux, valeurs et plaisir du jeu."
+          content="KAF Global Foot, football academy in Kafountine (Casamance): serious training environment for young players aged 14 to 23."
         />
       </Head>
 
@@ -22,12 +22,13 @@ export default function Home() {
               <span className="logo-text">KAF Global Foot</span>
             </div>
             <nav className="nav-links">
-              <a href="#apropos">À propos</a>
-              <a href="#programmes">Programmes</a>
-              <a href="#horaires">Horaires</a>
-              <a href="#galerie">Photos</a>
+              <a href="#about">About</a>
+              <a href="#programs">Programs</a>
+              <a href="#schedule">Schedule</a>
+              <a href="#gallery">Photos</a>
               <a href="#contact">Contact</a>
-              <Link href="/inscription">Inscription</Link>
+              <Link href="/inscription">Registration (FR)</Link>
+              <Link href="/">Français</Link>
             </nav>
           </div>
         </header>
@@ -38,149 +39,141 @@ export default function Home() {
             <div className="container hero-content">
               <div className="hero-text">
                 <h1 className="hero-title">
-                  KAF Global Foot : révèle le talent des jeunes footballeurs
+                  KAF Global Foot: developing young football talent
                 </h1>
                 <p className="hero-subtitle">
-                  Académie de football à Kafountine (Casamance), dédiée à la
-                  formation des jeunes dans un cadre sérieux, sécurisé et
-                  convivial.
+                  Football academy based in Kafountine (Casamance, Senegal),
+                  offering a serious, safe and friendly environment for young
+                  players.
                 </p>
                 <div className="hero-actions">
                   <Link href="/inscription" className="btn">
-                    Je pré-inscris mon enfant
+                    Pre-register a player (FR)
                   </Link>
-                  <a href="#programmes" className="btn btn-outline">
-                    Voir les programmes
-                  </a>
                 </div>
                 <p className="hero-badge">
-                  Joueurs de 14 à 23 ans · Tous niveaux
+                  Players aged 14 to 23 · All levels
                 </p>
               </div>
               <div className="hero-image">
-                <img src="/hero.jpg" alt="Entraînement KAF Global Foot" />
+                <img src="/hero.jpg" alt="KAF Global Foot training session" />
               </div>
             </div>
           </section>
 
-          {/* À PROPOS */}
-          <section id="apropos" className="section section-alt">
+          {/* ABOUT */}
+          <section id="about" className="section section-alt">
             <div className="container">
-              <h2 className="section-title">À propos de KAF Global Foot</h2>
+              <h2 className="section-title">About KAF Global Foot</h2>
               <p className="section-text">
-                KAF Global Foot est une académie de football qui met le
-                développement du jeune joueur au centre du projet. Nous
-                travaillons la technique, l&apos;intelligence de jeu, le mental
-                et les valeurs : respect, discipline, travail et esprit
-                d&apos;équipe.
+                KAF Global Foot is a football academy that places the
+                development of the young player at the heart of the project. We
+                work on technique, game intelligence, mentality and core values:
+                respect, discipline, hard work and team spirit.
               </p>
 
               <div className="grid-3">
                 <div className="card">
-                  <h3>Encadrement</h3>
+                  <h3>Coaching staff</h3>
                   <p>
-                    Coachs passionnés et expérimentés, avec une approche adaptée
-                    à chaque âge. Exigence sur l&apos;attitude, mais toujours
-                    dans la bienveillance.
+                    Passionate and experienced coaches, with an approach
+                    adapted to each age group. High standards regarding
+                    attitude, always with a positive mindset.
                   </p>
                 </div>
                 <div className="card">
-                  <h3>Méthodologie</h3>
+                  <h3>Methodology</h3>
                   <p>
-                    Séances structurées avec ballon, travail de motricité pour
-                    les plus jeunes, développement technique et tactique pour
-                    les plus grands.
+                    Structured sessions with the ball, coordination and
+                    movement work for the youngest, technical and tactical
+                    development for the older players.
                   </p>
                 </div>
                 <div className="card">
                   <h3>Vision</h3>
                   <p>
-                    Offrir une base solide aux jeunes, qu&apos;ils visent le
-                    haut niveau ou qu&apos;ils veuillent simplement pratiquer
-                    dans un bon cadre.
+                    Provide a solid base for young players, whether they aim
+                    for high-level football or simply want to train seriously
+                    in a good environment.
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* PROGRAMMES */}
-          <section id="programmes" className="section">
+          {/* PROGRAMS */}
+          <section id="programs" className="section">
             <div className="container">
-              <h2 className="section-title">Nos programmes</h2>
+              <h2 className="section-title">Our programs</h2>
 
               <div className="grid-2">
                 <div className="card">
-                  <h3>Groupe formation</h3>
+                  <h3>Development group</h3>
                   <p>
-                    Pour les plus jeunes du groupe (14–16 ans – catégorie
+                    For the youngest players in the academy (14–16 years old –
                     Cadets).
                   </p>
                   <ul className="list">
-                    <li>Travail technique, coordination, motricité</li>
-                    <li>Jeux, oppositions et travail tactique simple</li>
-                    <li>Accompagnement sur le comportement et les valeurs</li>
+                    <li>Technical work, coordination and motor skills</li>
+                    <li>Small-sided games and simple tactical work</li>
+                    <li>Focus on behaviour, discipline and core values</li>
                   </ul>
                 </div>
                 <div className="card">
-                  <h3>Groupe performance</h3>
-                  <p>Pour les joueurs les plus motivés (17–23 ans).</p>
+                  <h3>Performance group</h3>
+                  <p>For the most motivated players (17–23 years old).</p>
                   <ul className="list">
-                    <li>Préparation athlétique &amp; mentale</li>
-                    <li>Travail tactique avancé et séances spécifiques</li>
-                    <li>Accompagnement pour détections &amp; essais</li>
+                    <li>Physical and mental preparation</li>
+                    <li>Advanced tactical work and specific sessions</li>
+                    <li>Support for trials and scouting opportunities</li>
                   </ul>
                 </div>
               </div>
 
               <div className="categories">
-                <h3>Catégories KAF Global Foot</h3>
+                <h3>KAF Global Foot age groups</h3>
                 <div className="chip-row">
-                  <span className="chip">Cadets – U17 (14–16 ans)</span>
-                  <span className="chip">Juniors – U20 (17–20 ans)</span>
-                  <span className="chip">Espoirs – U23 (21–23 ans)</span>
+                  <span className="chip">Cadets – U17 (14–16)</span>
+                  <span className="chip">Juniors – U20 (17–20)</span>
+                  <span className="chip">Prospects – U23 (21–23)</span>
                 </div>
                 <p className="section-text small">
-                  Académie ouverte aux joueurs de 14 à 23 ans, répartis par
-                  catégorie (Cadets U17, Juniors U20 et Espoirs U23) selon
-                  l&apos;âge et le niveau.
+                  The academy is open to players aged 14 to 23, organized into
+                  age groups (Cadets U17, Juniors U20 and Prospects U23) based
+                  on age and level.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* HORAIRES & LIEU */}
-          <section id="horaires" className="section section-alt">
+          {/* SCHEDULE & LOCATION */}
+          <section id="schedule" className="section section-alt">
             <div className="container">
-              <h2 className="section-title">
-                Horaires &amp; lieu d&apos;entraînement
-              </h2>
+              <h2 className="section-title">Training schedule & location</h2>
 
               <div className="grid-2">
                 <div className="card">
-                  <h3>Horaires KAF Global Foot</h3>
+                  <h3>Training schedule</h3>
                   <ul className="list">
-                    <li>Entraînement du lundi au samedi</li>
-                    <li>Dimanche : repos</li>
+                    <li>Training from Monday to Saturday</li>
+                    <li>Sunday: rest day</li>
                   </ul>
                   <p className="section-text small">
-                    Les horaires précis sont organisés par groupes d&apos;âge
-                    et communiqués aux joueurs et aux parents. Ils peuvent
-                    légèrement varier en fonction du planning et des
-                    compétitions.
+                    Exact training times are organized by age group and
+                    communicated to players and parents. They may slightly
+                    change depending on competitions and events.
                   </p>
                 </div>
 
                 <div className="card">
-                  <h3>Terrain d&apos;entraînement</h3>
+                  <h3>Training ground</h3>
                   <p>
-                    <strong>Terrain du Lycée de Kafountine</strong>
+                    <strong>Kafountine High School pitch</strong>
                     <br />
-                    Crewane, Kafountine, département de Bignona, région de
-                    Ziguinchor (Casamance).
+                    Crewane, Kafountine, Bignona department, Ziguinchor region
+                    (Casamance, Senegal).
                   </p>
 
-                  {/* Carte Google Maps */}
                   <div
                     style={{
                       marginTop: "0.75rem",
@@ -191,7 +184,7 @@ export default function Home() {
                     }}
                   >
                     <iframe
-                      title="Carte du terrain KAF Global Foot"
+                      title="KAF Global Foot training ground map"
                       src="https://www.google.com/maps?q=Terrain+du+Lyc%C3%A9e+de+Kafountine+Crewane+Kafountine+Senegal&output=embed"
                       width="100%"
                       height="260"
@@ -204,54 +197,51 @@ export default function Home() {
                     className="section-text small"
                     style={{ marginTop: "0.5rem" }}
                   >
-                    Utilisez la carte pour repérer facilement le terrain
-                    d&apos;entraînement.
+                    Use the map to easily locate the training ground in
+                    Kafountine.
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* GALERIE PHOTOS */}
-          <section id="galerie" className="section section-alt">
+          {/* GALLERY */}
+          <section id="gallery" className="section section-alt">
             <div className="container">
-              <h2 className="section-title">Photos de KAF Global Foot</h2>
+              <h2 className="section-title">KAF Global Foot in pictures</h2>
 
               <div className="gallery-grid">
                 <figure className="gallery-item">
                   <img
                     src="/gallery1.jpg"
-                    alt="Séance d'entraînement KAF Global Foot"
+                    alt="KAF Global Foot training session"
                   />
                 </figure>
                 <figure className="gallery-item">
                   <img
                     src="/gallery2.jpg"
-                    alt="Jeunes joueurs de KAF Global Foot"
+                    alt="Young players at KAF Global Foot"
                   />
                 </figure>
                 <figure className="gallery-item">
                   <img
                     src="/gallery3.jpg"
-                    alt="Travail technique à l'entraînement"
+                    alt="Technical work during training"
                   />
                 </figure>
                 <figure className="gallery-item">
                   <img
                     src="/gallery4.jpg"
-                    alt="Photo de groupe KAF Global Foot"
+                    alt="Team photo at KAF Global Foot"
                   />
                 </figure>
                 <figure className="gallery-item">
-                  <img
-                    src="/gallery5.jpg"
-                    alt="Match à l'entraînement"
-                  />
+                  <img src="/gallery5.jpg" alt="Match during training" />
                 </figure>
                 <figure className="gallery-item">
                   <img
                     src="/gallery6.jpg"
-                    alt="Ambiance à l'académie KAF Global Foot"
+                    alt="Atmosphere at the academy"
                   />
                 </figure>
               </div>
@@ -263,21 +253,21 @@ export default function Home() {
             <div className="container">
               <h2 className="section-title">Contact KAF Global Foot</h2>
               <p className="section-text">
-                Pour toute question (inscriptions, horaires, tarifs,
-                partenariats), contactez-nous :
+                For any questions (registrations, schedule, fees, partnerships),
+                feel free to contact us:
               </p>
               <ul className="list">
                 <li>
-                  <strong>Téléphone / WhatsApp :</strong> +221 78 270 24 57
+                  <strong>Phone / WhatsApp:</strong> +221 78 270 24 57
                 </li>
                 <li>
-                  <strong>Email pro :</strong>{" "}
+                  <strong>Professional email:</strong>{" "}
                   <a href="mailto:contact@kafglobalfoot.com">
                     contact@kafglobalfoot.com
                   </a>
                 </li>
                 <li>
-                  <strong>Email secondaire :</strong>{" "}
+                  <strong>Secondary email:</strong>{" "}
                   <a href="mailto:kafglobalfoot@gmail.com">
                     kafglobalfoot@gmail.com
                   </a>
@@ -286,7 +276,7 @@ export default function Home() {
 
               <div style={{ marginTop: "1.5rem" }}>
                 <Link href="/inscription" className="btn">
-                  Aller au formulaire d&apos;inscription
+                  Pre-registration form (French)
                 </Link>
               </div>
             </div>
@@ -297,16 +287,16 @@ export default function Home() {
         <footer className="footer">
           <div className="container footer-content">
             <p>
-              © {new Date().getFullYear()} KAF Global Foot. Tous droits
-              réservés.
+              © {new Date().getFullYear()} KAF Global Foot. All rights
+              reserved.
             </p>
             <p className="footer-meta">
-              Site développé avec Next.js &amp; déployé sur Vercel.
+              Website built with Next.js &amp; deployed on Vercel.
             </p>
           </div>
         </footer>
 
-        {/* BOUTON WHATSAPP FLOTTANT */}
+        {/* WHATSAPP BUTTON */}
         <a
           href="https://wa.me/221782702457"
           target="_blank"
@@ -332,4 +322,3 @@ export default function Home() {
     </>
   );
 }
-
