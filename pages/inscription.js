@@ -5,10 +5,12 @@ export default function Inscription() {
   return (
     <>
       <Head>
-        <title>Inscription - KAF Global Foot</title>
+        <title>
+          Pré-inscription académie de football | KAF Global Foot Kafountine
+        </title>
         <meta
           name="description"
-          content="Formulaire de pré-inscription à l'académie de football KAF Global Foot à Kafountine."
+          content="Remplissez le formulaire de pré-inscription à l’académie de football KAF Global Foot à Kafountine pour inscrire un joueur de 14 à 23 ans."
         />
       </Head>
 
@@ -60,7 +62,7 @@ export default function Inscription() {
                   />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_template" value="table" />
-                  {/* 🔴 Redirection vers la page de remerciement */}
+                  {/* Redirection vers la page de remerciement */}
                   <input
                     type="hidden"
                     name="_next"
