@@ -1,22 +1,14 @@
-// pages/inscription.js
+// pages/index.js
 import Head from "next/head";
 
-export default function Inscription() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(
-      "Merci ! Votre pré-inscription a bien été envoyée. Nous vous contacterons rapidement."
-    );
-    e.target.reset();
-  };
-
+export default function Home() {
   return (
     <>
       <Head>
-        <title>Inscription - KAF Global Foot</title>
+        <title>KAF Global Foot - Académie de football à Kafountine</title>
         <meta
           name="description"
-          content="Formulaire de pré-inscription à l'académie de football KAF Global Foot à Kafountine."
+          content="KAF Global Foot, académie de football à Kafountine (Casamance) : formation des jeunes, encadrement sérieux, valeurs et plaisir du jeu."
         />
       </Head>
 
@@ -29,245 +21,273 @@ export default function Inscription() {
               <span className="logo-text">KAF Global Foot</span>
             </div>
             <nav className="nav-links">
-              <a href="/">Accueil</a>
-              <a href="/#programmes">Programmes</a>
-              <a href="/#horaires">Horaires</a>
-              <a href="/#contact">Contact</a>
-              <a href="/en">English</a>
+              <a href="#apropos">À propos</a>
+              <a href="#programmes">Programmes</a>
+              <a href="#horaires">Horaires</a>
+              <a href="#galerie">Photos</a>
+              <a href="#contact">Contact</a>
+              <a href="/inscription">Inscription</a>
             </nav>
           </div>
         </header>
 
         <main>
-          <section className="section">
+          {/* HERO */}
+          <section className="hero section">
+            <div className="container hero-content">
+              <div className="hero-text">
+                <h1 className="hero-title">
+                  KAF Global Foot : révèle le talent des jeunes footballeurs
+                </h1>
+                <p className="hero-subtitle">
+                  Académie de football à Kafountine (Casamance), dédiée à la
+                  formation des jeunes dans un cadre sérieux, sécurisé et
+                  convivial.
+                </p>
+                <div className="hero-actions">
+                  <a href="/inscription" className="btn">
+                    Je pré-inscris mon enfant
+                  </a>
+                  <a href="#programmes" className="btn btn-outline">
+                    Voir les programmes
+                  </a>
+                </div>
+                <p className="hero-badge">
+                  Joueurs de 14 à 23 ans · Tous niveaux
+                </p>
+              </div>
+              <div className="hero-image">
+                <img src="/hero.jpg" alt="Entraînement KAF Global Foot" />
+              </div>
+            </div>
+          </section>
+
+          {/* À PROPOS */}
+          <section id="apropos" className="section section-alt">
             <div className="container">
-              <h1 className="section-title">Formulaire de pré-inscription</h1>
-              <p
-                className="section-text small"
-                style={{ marginBottom: "1.5rem" }}
-              >
-                Ce formulaire permet de pré-inscrire un joueur à KAF Global
-                Foot. Après réception, nous vous contacterons pour confirmer
-                les détails (catégorie, horaires, documents à fournir, etc.).
+              <h2 className="section-title">À propos de KAF Global Foot</h2>
+              <p className="section-text">
+                KAF Global Foot est une académie de football qui met le
+                développement du jeune joueur au centre du projet. Nous
+                travaillons la technique, l&apos;intelligence de jeu, le mental
+                et les valeurs : respect, discipline, travail et esprit
+                d&apos;équipe.
               </p>
 
-              <div className="card">
-                <form
-                  onSubmit={handleSubmit}
-                  style={{
-                    display: "grid",
-                    gap: "1rem",
-                  }}
-                >
-                  {/* Infos joueur */}
-                  <h2
-                    className="section-text small"
-                    style={{ fontWeight: 600, marginBottom: "0.25rem" }}
-                  >
-                    Informations du joueur
-                  </h2>
+              <div className="grid-3">
+                <div className="card">
+                  <h3>Encadrement</h3>
+                  <p>
+                    Coachs passionnés et expérimentés, avec une approche adaptée
+                    à chaque âge. Exigence sur l&apos;attitude, mais toujours
+                    dans la bienveillance.
+                  </p>
+                </div>
+                <div className="card">
+                  <h3>Méthodologie</h3>
+                  <p>
+                    Séances structurées avec ballon, travail de motricité pour
+                    les plus jeunes, développement technique et tactique pour
+                    les plus grands.
+                  </p>
+                </div>
+                <div className="card">
+                  <h3>Vision</h3>
+                  <p>
+                    Offrir une base solide aux jeunes, qu&apos;ils visent le
+                    haut niveau ou qu&apos;ils veuillent simplement pratiquer
+                    dans un bon cadre.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
 
-                  <div style={{ display: "grid", gap: "0.5rem" }}>
-                    <label>
-                      Nom et prénom du joueur
-                      <br />
-                      <input
-                        type="text"
-                        name="joueurNom"
-                        required
-                        style={{
-                          width: "100%",
-                          padding: "0.4rem",
-                          marginTop: "0.2rem",
-                        }}
-                      />
-                    </label>
-                  </div>
+          {/* PROGRAMMES */}
+          <section id="programmes" className="section">
+            <div className="container">
+              <h2 className="section-title">Nos programmes</h2>
 
-                  <div style={{ display: "grid", gap: "0.5rem" }}>
-                    <label>
-                      Date de naissance du joueur
-                      <br />
-                      <input
-                        type="date"
-                        name="joueurNaissance"
-                        required
-                        style={{
-                          width: "100%",
-                          padding: "0.4rem",
-                          marginTop: "0.2rem",
-                        }}
-                      />
-                    </label>
-                  </div>
-
-                  <div style={{ display: "grid", gap: "0.5rem" }}>
-                    <label>
-                      Catégorie d&apos;âge du joueur
-                      <br />
-                      <select
-                        name="categorieAge"
-                        required
-                        style={{
-                          width: "100%",
-                          padding: "0.4rem",
-                          marginTop: "0.2rem",
-                        }}
-                      >
-                        <option value="">Sélectionner une catégorie</option>
-                        <option value="cadets">
-                          Cadets – U17 (14–16 ans)
-                        </option>
-                        <option value="juniors">
-                          Juniors – U20 (17–20 ans)
-                        </option>
-                        <option value="espoirs">
-                          Espoirs – U23 (21–23 ans)
-                        </option>
-                      </select>
-                    </label>
-                  </div>
-
-                  <div style={{ display: "grid", gap: "0.5rem" }}>
-                    <label>
-                      Poste préféré (optionnel)
-                      <br />
-                      <input
-                        type="text"
-                        name="poste"
-                        placeholder="Gardien, défenseur, milieu, attaquant..."
-                        style={{
-                          width: "100%",
-                          padding: "0.4rem",
-                          marginTop: "0.2rem",
-                        }}
-                      />
-                    </label>
-                  </div>
-
-                  {/* Parent / tuteur */}
-                  <h2
-                    className="section-text small"
-                    style={{
-                      fontWeight: 600,
-                      marginTop: "1rem",
-                      marginBottom: "0.25rem",
-                    }}
-                  >
-                    Parent / tuteur légal
-                  </h2>
-
-                  <div style={{ display: "grid", gap: "0.5rem" }}>
-                    <label>
-                      Nom et prénom du parent / tuteur
-                      <br />
-                      <input
-                        type="text"
-                        name="parentNom"
-                        required
-                        style={{
-                          width: "100%",
-                          padding: "0.4rem",
-                          marginTop: "0.2rem",
-                        }}
-                      />
-                    </label>
-                  </div>
-
-                  <div style={{ display: "grid", gap: "0.5rem" }}>
-                    <label>
-                      Téléphone du parent / tuteur
-                      <br />
-                      <input
-                        type="tel"
-                        name="parentTelephone"
-                        required
-                        placeholder="+221 ..."
-                        style={{
-                          width: "100%",
-                          padding: "0.4rem",
-                          marginTop: "0.2rem",
-                        }}
-                      />
-                    </label>
-                  </div>
-
-                  <div style={{ display: "grid", gap: "0.5rem" }}>
-                    <label>
-                      Email du parent / tuteur
-                      <br />
-                      <input
-                        type="email"
-                        name="parentEmail"
-                        required
-                        placeholder="exemple@mail.com"
-                        style={{
-                          width: "100%",
-                          padding: "0.4rem",
-                          marginTop: "0.2rem",
-                        }}
-                      />
-                    </label>
-                  </div>
-
-                  {/* Infos pratiques */}
-                  <h2
-                    className="section-text small"
-                    style={{
-                      fontWeight: 600,
-                      marginTop: "1rem",
-                      marginBottom: "0.25rem",
-                    }}
-                  >
-                    Informations complémentaires
-                  </h2>
-
-                  <div style={{ display: "grid", gap: "0.5rem" }}>
-                    <label>
-                      Message ou informations utiles (santé, niveau,
-                      disponibilité...)
-                      <br />
-                      <textarea
-                        name="message"
-                        rows={4}
-                        style={{
-                          width: "100%",
-                          padding: "0.4rem",
-                          marginTop: "0.2rem",
-                          resize: "vertical",
-                        }}
-                      />
-                    </label>
-                  </div>
-
-                  <div style={{ fontSize: "0.85rem", color: "#4b5563" }}>
-                    En envoyant ce formulaire, le parent / tuteur confirme
-                    être d&apos;accord pour la participation du joueur aux
-                    activités de KAF Global Foot, sous réserve de la visite
-                    médicale et des documents à fournir.
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="btn"
-                    style={{ marginTop: "0.75rem" }}
-                  >
-                    Envoyer la pré-inscription
-                  </button>
-                </form>
+              <div className="grid-2">
+                <div className="card">
+                  <h3>Groupe formation</h3>
+                  <p>
+                    Pour les plus jeunes du groupe (14–16 ans – catégorie
+                    Cadets).
+                  </p>
+                  <ul className="list">
+                    <li>Travail technique, coordination, motricité</li>
+                    <li>Jeux, oppositions et travail tactique simple</li>
+                    <li>Accompagnement sur le comportement et les valeurs</li>
+                  </ul>
+                </div>
+                <div className="card">
+                  <h3>Groupe performance</h3>
+                  <p>Pour les joueurs les plus motivés (17–23 ans).</p>
+                  <ul className="list">
+                    <li>Préparation athlétique &amp; mentale</li>
+                    <li>Travail tactique avancé et séances spécifiques</li>
+                    <li>Accompagnement pour détections &amp; essais</li>
+                  </ul>
+                </div>
               </div>
 
-              <p
-                className="section-text small"
-                style={{ marginTop: "1rem" }}
-              >
-                Vous pouvez également nous contacter directement par WhatsApp au{" "}
-                <strong>+221 78 270 24 57</strong> ou par email à{" "}
-                <a href="mailto:contact@kafglobalfoot.com">
-                  contact@kafglobalfoot.com
-                </a>
-                .
+              <div className="categories">
+                <h3>Catégories KAF Global Foot</h3>
+                <div className="chip-row">
+                  <span className="chip">Cadets – U17 (14–16 ans)</span>
+                  <span className="chip">Juniors – U20 (17–20 ans)</span>
+                  <span className="chip">Espoirs – U23 (21–23 ans)</span>
+                </div>
+                <p className="section-text small">
+                  Académie ouverte aux joueurs de 14 à 23 ans, répartis par
+                  catégorie (Cadets U17, Juniors U20 et Espoirs U23) selon
+                  l&apos;âge et le niveau.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* HORAIRES & LIEU */}
+          <section id="horaires" className="section section-alt">
+            <div className="container">
+              <h2 className="section-title">
+                Horaires &amp; lieu d&apos;entraînement
+              </h2>
+
+              <div className="grid-2">
+                <div className="card">
+                  <h3>Horaires KAF Global Foot</h3>
+                  <ul className="list">
+                    <li>Entraînement du lundi au samedi</li>
+                    <li>Dimanche : repos</li>
+                  </ul>
+                  <p className="section-text small">
+                    Les horaires précis sont organisés par groupes d&apos;âge
+                    et communiqués aux joueurs et aux parents. Ils peuvent
+                    légèrement varier en fonction du planning et des
+                    compétitions.
+                  </p>
+                </div>
+
+                <div className="card">
+                  <h3>Terrain d&apos;entraînement</h3>
+                  <p>
+                    <strong>Terrain du Lycée de Kafountine</strong>
+                    <br />
+                    Crewane, Kafountine, département de Bignona, région de
+                    Ziguinchor (Casamance).
+                  </p>
+
+                  {/* Carte Google Maps */}
+                  <div
+                    style={{
+                      marginTop: "0.75rem",
+                      borderRadius: "0.75rem",
+                      overflow: "hidden",
+                      border: "1px solid #e5e7eb",
+                      boxShadow: "0 10px 25px -18px rgba(15, 23, 42, 0.35)",
+                    }}
+                  >
+                    <iframe
+                      title="Carte du terrain KAF Global Foot"
+                      src="https://www.google.com/maps?q=Terrain+du+Lyc%C3%A9e+de+Kafountine+Crewane+Kafountine+Senegal&output=embed"
+                      width="100%"
+                      height="260"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                    ></iframe>
+                  </div>
+
+                  <p
+                    className="section-text small"
+                    style={{ marginTop: "0.5rem" }}
+                  >
+                    Utilisez la carte pour repérer facilement le terrain
+                    d&apos;entraînement.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* GALERIE PHOTOS */}
+          <section id="galerie" className="section section-alt">
+            <div className="container">
+              <h2 className="section-title">Photos de KAF Global Foot</h2>
+
+              <div className="gallery-grid">
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery1.jpg"
+                    alt="Séance d'entraînement KAF Global Foot"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery2.jpg"
+                    alt="Jeunes joueurs de KAF Global Foot"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery3.jpg"
+                    alt="Travail technique à l'entraînement"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery4.jpg"
+                    alt="Photo de groupe KAF Global Foot"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery5.jpg"
+                    alt="Match à l'entraînement"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery6.jpg"
+                    alt="Ambiance à l'académie KAF Global Foot"
+                  />
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          {/* CONTACT */}
+          <section id="contact" className="section">
+            <div className="container">
+              <h2 className="section-title">Contact KAF Global Foot</h2>
+              <p className="section-text">
+                Pour toute question (inscriptions, horaires, tarifs,
+                partenariats), contactez-nous :
               </p>
+              <ul className="list">
+                <li>
+                  <strong>Téléphone / WhatsApp :</strong> +221 78 270 24 57
+                </li>
+                <li>
+                  <strong>Email pro :</strong>{" "}
+                  <a href="mailto:contact@kafglobalfoot.com">
+                    contact@kafglobalfoot.com
+                  </a>
+                </li>
+                <li>
+                  <strong>Email secondaire :</strong>{" "}
+                  <a href="mailto:kafglobalfoot@gmail.com">
+                    kafglobalfoot@gmail.com
+                  </a>
+                </li>
+              </ul>
+
+              <div style={{ marginTop: "1.5rem" }}>
+                <a href="/inscription" className="btn">
+                  Aller au formulaire d&apos;inscription
+                </a>
+              </div>
             </div>
           </section>
         </main>
@@ -295,19 +315,3 @@ export default function Inscription() {
             right: "1.2rem",
             bottom: "1.2rem",
             zIndex: 9999,
-            padding: "0.75rem 1.1rem",
-            borderRadius: "9999px",
-            background: "#16a34a",
-            color: "#ffffff",
-            fontWeight: 600,
-            fontSize: "0.95rem",
-            textDecoration: "none",
-            boxShadow: "0 12px 30px rgba(22, 163, 74, 0.6)",
-          }}
-        >
-          WhatsApp
-        </a>
-      </div>
-    </>
-  );
-}
