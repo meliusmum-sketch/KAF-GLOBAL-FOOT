@@ -87,6 +87,37 @@ export default function Home() {
                 et sens des responsabilités.
               </p>
 
+              {/* Bloc anglais */}
+              <h3
+                className="section-title"
+                style={{ fontSize: "1.2rem", marginTop: "2rem" }}
+              >
+                About KAF Global Foot (English)
+              </h3>
+
+              <p className="section-text">
+                KAF Global Foot is a football academy based in Kafountine, in
+                the Casamance region of Senegal. Its mission is to support young
+                players aged 14 to 23 in their sporting and personal
+                development.
+              </p>
+
+              <p className="section-text" style={{ marginTop: "1rem" }}>
+                The project is built on three main pillars: serious coaching, a
+                safe environment, and an educational vision of football. Beyond
+                performance, we aim to transmit strong values such as respect,
+                discipline, team spirit, work ethic, and a sense of
+                responsibility.
+              </p>
+
+              <p className="section-text" style={{ marginTop: "1rem" }}>
+                Training sessions take place from Monday to Saturday on the
+                pitch of the Lycée de Kafountine, with a program adapted to each
+                player’s age and level. KAF Global Foot welcomes motivated
+                players, whether they aspire to a higher level or simply want to
+                train in a structured and supportive environment.
+              </p>
+
               <div className="grid-3" style={{ marginTop: "2rem" }}>
                 <div className="card">
                   <h3>Encadrement</h3>
