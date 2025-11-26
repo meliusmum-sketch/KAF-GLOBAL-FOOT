@@ -54,7 +54,7 @@ export default function Home() {
                   </a>
                 </div>
                 <p className="hero-badge">
-                  Garçons & filles · 6 à 18 ans · Tous niveaux
+                  Garçons & filles · 14 à 23 ans · Tous niveaux
                 </p>
               </div>
               <div className="hero-image">
@@ -111,21 +111,21 @@ export default function Home() {
 
               <div className="grid-2">
                 <div className="card">
-                  <h3>École de foot</h3>
-                  <p>Pour les plus jeunes (U8 à U12).</p>
+                  <h3>Groupe formation</h3>
+                  <p>Pour les plus jeunes du groupe (14–16 ans – catégorie Cadets).</p>
                   <ul className="list">
-                    <li>2 séances par semaine</li>
                     <li>Travail technique, coordination, motricité</li>
-                    <li>Jeux, mini-matchs et tournois internes</li>
+                    <li>Jeux, oppositions et travail tactique simple</li>
+                    <li>Accompagnement sur le comportement et les valeurs</li>
                   </ul>
                 </div>
                 <div className="card">
                   <h3>Groupe performance</h3>
-                  <p>Pour les joueurs les plus motivés.</p>
+                  <p>Pour les joueurs les plus motivés (17–23 ans).</p>
                   <ul className="list">
-                    <li>3 séances par semaine</li>
-                    <li>Préparation athlétique & mentale</li>
-                    <li>Accompagnement pour détections & essais</li>
+                    <li>Préparation athlétique &amp; mentale</li>
+                    <li>Travail tactique avancé et séances spécifiques</li>
+                    <li>Accompagnement pour détections &amp; essais</li>
                   </ul>
                 </div>
               </div>
@@ -133,14 +133,14 @@ export default function Home() {
               <div className="categories">
                 <h3>Catégories KAF Global Foot</h3>
                 <div className="chip-row">
-                  <span className="chip">U8 (6–8 ans)</span>
-                  <span className="chip">U10 (8–10 ans)</span>
-                  <span className="chip">U12 (10–12 ans)</span>
-                  <span className="chip">U14 & plus</span>
+                  <span className="chip">Cadets – U17 (14–16 ans)</span>
+                  <span className="chip">Juniors – U20 (17–20 ans)</span>
+                  <span className="chip">Espoirs – U23 (21–23 ans)</span>
                 </div>
                 <p className="section-text small">
-                  Garçons & filles bienvenus, pour tous niveaux (débutants à
-                  confirmés).
+                  Académie ouverte aux joueurs et joueuses de 14 à 23 ans,
+                  répartis par catégorie (Cadets U17, Juniors U20 et Espoirs
+                  U23) selon l&apos;âge et le niveau.
                 </p>
               </div>
             </div>
@@ -150,20 +150,21 @@ export default function Home() {
           <section id="horaires" className="section section-alt">
             <div className="container">
               <h2 className="section-title">
-                Horaires & lieu d&apos;entraînement
+                Horaires &amp; lieu d&apos;entraînement
               </h2>
 
               <div className="grid-2">
                 <div className="card">
                   <h3>Horaires KAF Global Foot</h3>
                   <ul className="list">
-                    <li>Mercredi : 16h00 – 18h00</li>
-                    <li>Samedi : 9h30 – 11h30</li>
+                    <li>Entraînement du lundi au samedi</li>
+                    <li>Dimanche : repos</li>
                   </ul>
                   <p className="section-text small">
-                    Les horaires peuvent légèrement varier en fonction du
-                    planning et des compétitions. En cas de changement, les
-                    joueurs et les parents sont informés à l’avance.
+                    Les horaires précis sont organisés par groupes d&apos;âge
+                    et communiqués aux joueurs et aux parents. Ils peuvent
+                    légèrement varier en fonction du planning et des
+                    compétitions.
                   </p>
                 </div>
 
@@ -247,7 +248,13 @@ export default function Home() {
                   <strong>Téléphone / WhatsApp :</strong> +221 78 270 24 57
                 </li>
                 <li>
-                  <strong>Email :</strong>{" "}
+                  <strong>Email pro :</strong>{" "}
+                  <a href="mailto:contact@kafglobalfoot.com">
+                    contact@kafglobalfoot.com
+                  </a>
+                </li>
+                <li>
+                  <strong>Email secondaire :</strong>{" "}
                   <a href="mailto:kafglobalfoot@gmail.com">
                     kafglobalfoot@gmail.com
                   </a>
