@@ -179,9 +179,33 @@ export default function Home() {
                     Crewane, Kafountine, département de Bignona, région de
                     Ziguinchor (Casamance).
                   </p>
-                  <p className="section-text small">
-                    Une carte Google Maps sera bientôt disponible ici pour vous
-                    aider à trouver facilement l’emplacement du terrain.
+
+                  {/* Carte Google Maps */}
+                  <div
+                    style={{
+                      marginTop: "0.75rem",
+                      borderRadius: "0.75rem",
+                      overflow: "hidden",
+                      border: "1px solid #e5e7eb",
+                      boxShadow: "0 10px 25px -18px rgba(15, 23, 42, 0.35)",
+                    }}
+                  >
+                    <iframe
+                      title="Carte du terrain KAF Global Foot"
+                      src="https://www.google.com/maps?q=Terrain+du+Lyc%C3%A9e+de+Kafountine+Crewane+Kafountine+Senegal&output=embed"
+                      width="100%"
+                      height="260"
+                      style={{ border: 0 }}
+                      loading="lazy"
+                    ></iframe>
+                  </div>
+
+                  <p
+                    className="section-text small"
+                    style={{ marginTop: "0.5rem" }}
+                  >
+                    Utilisez la carte pour repérer facilement le terrain
+                    d&apos;entraînement.
                   </p>
                 </div>
               </div>
