@@ -112,7 +112,10 @@ export default function Home() {
               <div className="grid-2">
                 <div className="card">
                   <h3>Groupe formation</h3>
-                  <p>Pour les plus jeunes du groupe (14–16 ans – catégorie Cadets).</p>
+                  <p>
+                    Pour les plus jeunes du groupe (14–16 ans – catégorie
+                    Cadets).
+                  </p>
                   <ul className="list">
                     <li>Travail technique, coordination, motricité</li>
                     <li>Jeux, oppositions et travail tactique simple</li>
@@ -189,10 +192,6 @@ export default function Home() {
           <section id="galerie" className="section section-alt">
             <div className="container">
               <h2 className="section-title">Photos de KAF Global Foot</h2>
-              <p className="section-text">
-                Quelques images de nos séances d&apos;entraînement à
-                Kafountine : travail, plaisir et esprit d&apos;équipe.
-              </p>
 
               <div className="gallery-grid">
                 <figure className="gallery-item">
