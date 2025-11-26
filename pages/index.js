@@ -7,7 +7,8 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Académie de football à Kafountine | KAF Global Foot – Formation des jeunes
+          Académie de football à Kafountine | KAF Global Foot – Formation des
+          jeunes
         </title>
         <meta
           name="description"
@@ -40,7 +41,8 @@ export default function Home() {
             <div className="container hero-content">
               <div className="hero-text">
                 <h1 className="hero-title">
-                  KAF Global Foot – académie de football à Kafountine pour les jeunes
+                  KAF Global Foot – académie de football à Kafountine pour les
+                  jeunes
                 </h1>
                 <p className="hero-subtitle">
                   Académie de football à Kafountine (Casamance), dédiée à la
@@ -69,37 +71,46 @@ export default function Home() {
           <section id="apropos" className="section section-alt">
             <div className="container">
               <h2 className="section-title">À propos de KAF Global Foot</h2>
+
               <p className="section-text">
-                KAF Global Foot est une académie de football qui met le
-                développement du jeune joueur au centre du projet. Nous
-                travaillons la technique, l&apos;intelligence de jeu, le mental
-                et les valeurs : respect, discipline, travail et esprit
-                d&apos;équipe.
+                KAF Global Foot est une académie de football basée à Kafountine,
+                en Casamance (Sénégal), qui a pour mission d’accompagner les
+                jeunes joueurs de 14 à 23 ans dans leur progression sportive et
+                humaine.
               </p>
 
-              <div className="grid-3">
+              <p className="section-text" style={{ marginTop: "1rem" }}>
+                Notre projet repose sur trois piliers : un encadrement sérieux,
+                un cadre sécurisé et une vision éducative du football. Au-delà
+                de la performance, nous cherchons à transmettre des valeurs
+                fortes : respect, discipline, esprit d’équipe, goût de l’effort
+                et sens des responsabilités.
+              </p>
+
+              <div className="grid-3" style={{ marginTop: "2rem" }}>
                 <div className="card">
                   <h3>Encadrement</h3>
                   <p>
                     Coachs passionnés et expérimentés, avec une approche adaptée
-                    à chaque âge. Exigence sur l&apos;attitude, mais toujours
-                    dans la bienveillance.
+                    à l’âge et au niveau de chaque joueur. Exigence sur
+                    l’attitude, mais toujours dans la bienveillance.
                   </p>
                 </div>
                 <div className="card">
-                  <h3>Méthodologie</h3>
+                  <h3>Travail au quotidien</h3>
                   <p>
-                    Séances structurées avec ballon, travail physique et
-                    travail tactique pour accompagner le joueur dans sa
-                    progression.
+                    Entraînements du lundi au samedi sur le terrain du Lycée de
+                    Kafountine : développement technique, compréhension
+                    tactique, coordination, préparation physique et mentale.
                   </p>
                 </div>
                 <div className="card">
                   <h3>Vision</h3>
                   <p>
-                    Offrir une base solide aux jeunes, qu&apos;ils visent le
-                    haut niveau ou qu&apos;ils veuillent simplement pratiquer
-                    dans un bon cadre à Kafountine et en Casamance.
+                    Offrir une base solide aux jeunes, qu’ils visent un
+                    parcours de haut niveau ou qu’ils souhaitent simplement
+                    pratiquer dans un cadre structuré. KAF Global Foot veut
+                    aussi être un acteur de la vie sportive de la Casamance.
                   </p>
                 </div>
               </div>
@@ -140,9 +151,8 @@ export default function Home() {
                   <span className="chip">Espoirs – U23 (21–23 ans)</span>
                 </div>
                 <p className="section-text small">
-                  Joueurs de 14 à 23 ans, tous niveaux. L&apos;affectation
-                  dans une catégorie se fait en fonction de l&apos;âge et du
-                  niveau.
+                  Joueurs de 14 à 23 ans, tous niveaux. L&apos;affectation dans
+                  une catégorie se fait en fonction de l&apos;âge et du niveau.
                 </p>
               </div>
             </div>
@@ -237,7 +247,7 @@ export default function Home() {
           <section id="contact" className="section">
             <div className="container">
               <h2 className="section-title">Contact KAF Global Foot</h2>
-            <p className="section-text">
+              <p className="section-text">
                 Pour toute question (pré-inscriptions, horaires, tarifs,
                 partenariats), contactez-nous :
               </p>
