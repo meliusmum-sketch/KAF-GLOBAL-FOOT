@@ -3,158 +3,247 @@ import Head from "next/head";
 import Link from "next/link";
 
 export default function Inscription() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Merci pour la préinscription, nous vous reviendrons bientôt.");
-  };
-
   return (
     <>
       <Head>
         <title>Inscription - KAF Global Foot</title>
         <meta
           name="description"
-          content="Formulaire de pré-inscription à KAF Global Foot, académie de football pour jeunes à Kafountine (Casamance)."
+          content="Formulaire de pré-inscription à l'académie de football KAF Global Foot à Kafountine."
         />
       </Head>
 
-      <div className="page section-alt">
+      <div className="page">
+        {/* NAVBAR */}
         <header className="navbar">
           <div className="container nav-content">
             <div className="logo">
               <img src="/logo-kaf.svg" alt="KAF Global Foot" />
+              <span className="logo-text">KAF Global Foot</span>
             </div>
             <nav className="nav-links">
-              <Link href="/">Accueil</Link>
+              <Link href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = "/";
+                }}
+              >
+                Accueil
+              </Link>
+              <Link href="/#programmes">Programmes</Link>
+              <Link href="/#horaires">Horaires</Link>
+              <Link href="/#contact">Contact</Link>
+              <Link href="/inscription">Inscription</Link>
             </nav>
           </div>
         </header>
 
-        <main className="section">
-          <div className="container">
-            <h1 className="section-title">Formulaire d&apos;inscription</h1>
-            <p className="section-text">
-              Remplis ce formulaire pour préparer l&apos;inscription de ton
-              enfant à KAF Global Foot. Ensuite, contacte-nous par WhatsApp ou
-              par email pour finaliser.
-            </p>
-
-            <form
-              className="card"
-              style={{ marginTop: "1.5rem", maxWidth: "640px" }}
-              onSubmit={handleSubmit}
-            >
-              <div className="form-group">
-                <label>Nom de l&apos;enfant</label>
-                <input type="text" name="nom_enfant" required />
-              </div>
-
-              <div className="form-group">
-                <label>Prénom de l&apos;enfant</label>
-                <input type="text" name="prenom_enfant" required />
-              </div>
-
-              <div className="form-group">
-                <label>Âge de l&apos;enfant</label>
-                <input type="number" name="age" min="4" max="18" required />
-              </div>
-
-              <div className="form-group">
-                <label>Catégorie souhaitée</label>
-                <select name="categorie" required>
-                  <option value="">Sélectionner une catégorie</option>
-                  <option value="U8">U8 (6–8 ans)</option>
-                  <option value="U10">U10 (8–10 ans)</option>
-                  <option value="U12">U12 (10–12 ans)</option>
-                  <option value="U14+">U14 et plus</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label>Nom du parent / tuteur</label>
-                <input type="text" name="nom_parent" required />
-              </div>
-
-              <div className="form-group">
-                <label>Téléphone du parent</label>
-                <input type="tel" name="telephone_parent" required />
-              </div>
-
-              <div className="form-group">
-                <label>Email du parent</label>
-                <input type="email" name="email_parent" required />
-              </div>
-
-              <div className="form-group">
-                <label>Message / Informations complémentaires</label>
-                <textarea
-                  name="message"
-                  rows="4"
-                  placeholder="Ex : niveau de l'enfant, éventuels problèmes de santé, disponibilité..."
-                ></textarea>
-              </div>
-
-              <button type="submit" className="btn">
-                Valider la pré-inscription
-              </button>
-
-              <p className="section-text small" style={{ marginTop: "0.75rem" }}>
-                Pour finaliser l&apos;inscription et recevoir toutes les infos
-                (tarifs, documents, planning), contactez-nous :
+        <main>
+          <section className="section">
+            <div className="container">
+              <h1 className="section-title">Formulaire de pré-inscription</h1>
+              <p className="section-text small" style={{ marginBottom: "1.5rem" }}>
+                Ce formulaire permet de pré-inscrire un joueur à KAF Global Foot.
+                Après réception, nous te contacterons pour confirmer les détails
+                (catégorie, horaires, documents à fournir, etc.).
               </p>
-              <ul className="list">
-                <li>
-                  <strong>WhatsApp :</strong>{" "}
-                  <a
-                    href="https://wa.me/221782702457"
-                    target="_blank"
-                    rel="noreferrer"
+
+              <div className="card">
+                <form
+                  style={{
+                    display: "grid",
+                    gap: "1rem",
+                  }}
+                >
+                  {/* Infos joueur */}
+                  <h2
+                    className="section-text small"
+                    style={{ fontWeight: 600, marginBottom: "0.25rem" }}
                   >
-                    +221 78 270 24 57
-                  </a>
-                </li>
-                <li>
-                  <strong>Email :</strong>{" "}
-                  <a href="mailto:kafglobalfoot@gmail.com">
-                    kafglobalfoot@gmail.com
-                  </a>
-                </li>
-              </ul>
-            </form>
-          </div>
+                    Informations du joueur
+                  </h2>
+
+                  <div style={{ display: "grid", gap: "0.5rem" }}>
+                    <label>
+                      Nom et prénom du joueur
+                      <br />
+                      <input
+                        type="text"
+                        name="joueurNom"
+                        required
+                        style={{ width: "100%", padding: "0.4rem", marginTop: "0.2rem" }}
+                      />
+                    </label>
+                  </div>
+
+                  <div style={{ display: "grid", gap: "0.5rem" }}>
+                    <label>
+                      Date de naissance du joueur
+                      <br />
+                      <input
+                        type="date"
+                        name="joueurNaissance"
+                        required
+                        style={{ width: "100%", padding: "0.4rem", marginTop: "0.2rem" }}
+                      />
+                    </label>
+                  </div>
+
+                  <div style={{ display: "grid", gap: "0.5rem" }}>
+                    <label>
+                      Catégorie d&apos;âge du joueur
+                      <br />
+                      <select
+                        name="categorieAge"
+                        required
+                        style={{ width: "100%", padding: "0.4rem", marginTop: "0.2rem" }}
+                      >
+                        <option value="">Sélectionner une catégorie</option>
+                        <option value="cadets">
+                          Cadets – U17 (14–16 ans)
+                        </option>
+                        <option value="juniors">
+                          Juniors – U20 (17–20 ans)
+                        </option>
+                        <option value="espoirs">
+                          Espoirs – U23 (21–23 ans)
+                        </option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div style={{ display: "grid", gap: "0.5rem" }}>
+                    <label>
+                      Poste préféré (optionnel)
+                      <br />
+                      <input
+                        type="text"
+                        name="poste"
+                        placeholder="Gardien, défenseur, milieu, attaquant..."
+                        style={{ width: "100%", padding: "0.4rem", marginTop: "0.2rem" }}
+                      />
+                    </label>
+                  </div>
+
+                  {/* Parent / tuteur */}
+                  <h2
+                    className="section-text small"
+                    style={{
+                      fontWeight: 600,
+                      marginTop: "1rem",
+                      marginBottom: "0.25rem",
+                    }}
+                  >
+                    Parent / tuteur légal
+                  </h2>
+
+                  <div style={{ display: "grid", gap: "0.5rem" }}>
+                    <label>
+                      Nom et prénom du parent / tuteur
+                      <br />
+                      <input
+                        type="text"
+                        name="parentNom"
+                        required
+                        style={{ width: "100%", padding: "0.4rem", marginTop: "0.2rem" }}
+                      />
+                    </label>
+                  </div>
+
+                  <div style={{ display: "grid", gap: "0.5rem" }}>
+                    <label>
+                      Téléphone du parent / tuteur
+                      <br />
+                      <input
+                        type="tel"
+                        name="parentTelephone"
+                        required
+                        placeholder="+221 ..."
+                        style={{ width: "100%", padding: "0.4rem", marginTop: "0.2rem" }}
+                      />
+                    </label>
+                  </div>
+
+                  <div style={{ display: "grid", gap: "0.5rem" }}>
+                    <label>
+                      Email du parent / tuteur
+                      <br />
+                      <input
+                        type="email"
+                        name="parentEmail"
+                        required
+                        placeholder="exemple@mail.com"
+                        style={{ width: "100%", padding: "0.4rem", marginTop: "0.2rem" }}
+                      />
+                    </label>
+                  </div>
+
+                  {/* Infos pratiques */}
+                  <h2
+                    className="section-text small"
+                    style={{
+                      fontWeight: 600,
+                      marginTop: "1rem",
+                      marginBottom: "0.25rem",
+                    }}
+                  >
+                    Informations complémentaires
+                  </h2>
+
+                  <div style={{ display: "grid", gap: "0.5rem" }}>
+                    <label>
+                      Message ou informations utiles (santé, niveau, disponibilité...)
+                      <br />
+                      <textarea
+                        name="message"
+                        rows={4}
+                        style={{
+                          width: "100%",
+                          padding: "0.4rem",
+                          marginTop: "0.2rem",
+                          resize: "vertical",
+                        }}
+                      />
+                    </label>
+                  </div>
+
+                  <div style={{ fontSize: "0.85rem", color: "#4b5563" }}>
+                    En envoyant ce formulaire, le parent / tuteur confirme
+                    être d&apos;accord pour la participation du joueur aux
+                    activités de KAF Global Foot, sous réserve de la visite
+                    médicale et des documents à fournir.
+                  </div>
+
+                  <button type="submit" className="btn" style={{ marginTop: "0.75rem" }}>
+                    Envoyer la pré-inscription
+                  </button>
+                </form>
+              </div>
+
+              <p className="section-text small" style={{ marginTop: "1rem" }}>
+                Tu peux aussi nous contacter directement par WhatsApp au{" "}
+                <strong>+221 78 270 24 57</strong> ou par email à{" "}
+                <a href="mailto:contact@kafglobalfoot.com">
+                  contact@kafglobalfoot.com
+                </a>
+                .
+              </p>
+            </div>
+          </section>
         </main>
 
-        <style jsx>{`
-          .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-          }
-
-          label {
-            font-weight: 500;
-          }
-
-          input,
-          select,
-          textarea {
-            padding: 0.55rem 0.6rem;
-            border-radius: 0.6rem;
-            border: 1px solid rgba(148, 163, 184, 0.6);
-            background: #ffffff;
-            color: #111827;
-            font: inherit;
-          }
-
-          input:focus,
-          select:focus,
-          textarea:focus {
-            outline: 2px solid #16a34a;
-            outline-offset: 1px;
-          }
-        `}</style>
+        {/* FOOTER */}
+        <footer className="footer">
+          <div className="container footer-content">
+            <p>
+              © {new Date().getFullYear()} KAF Global Foot. Tous droits
+              réservés.
+            </p>
+            <p className="footer-meta">
+              Site développé avec Next.js &amp; déployé sur Vercel.
+            </p>
+          </div>
+        </footer>
 
         {/* BOUTON WHATSAPP FLOTTANT */}
         <a
