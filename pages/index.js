@@ -1,6 +1,5 @@
 // pages/index.js
 import Head from "next/head";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -27,7 +26,7 @@ export default function Home() {
               <a href="#horaires">Horaires</a>
               <a href="#galerie">Photos</a>
               <a href="#contact">Contact</a>
-              <Link href="/inscription">Inscription</Link>
+              <a href="/inscription">Inscription</a>
             </nav>
           </div>
         </header>
@@ -44,10 +43,17 @@ export default function Home() {
                 formation des jeunes dans un cadre sérieux, sécurisé et
                 convivial.
               </p>
-              <div style={{ marginTop: "1rem", display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                <Link href="/inscription" className="btn">
+              <div
+                style={{
+                  marginTop: "1rem",
+                  display: "flex",
+                  gap: "0.75rem",
+                  flexWrap: "wrap",
+                }}
+              >
+                <a href="/inscription" className="btn">
                   Je pré-inscris mon enfant
-                </Link>
+                </a>
                 <a href="#programmes" className="btn btn-outline">
                   Voir les programmes
                 </a>
@@ -82,10 +88,10 @@ export default function Home() {
                 <div className="card">
                   <h3>Méthodologie & vision</h3>
                   <p>
-                    Séances structurées, travail technique et tactique, motricité
-                    pour les plus jeunes et accompagnement global pour offrir une
-                    base solide aux joueurs, qu&apos;ils visent le haut niveau ou
-                    un bon cadre de pratique.
+                    Séances structurées, travail technique et tactique,
+                    motricité pour les plus jeunes et accompagnement global pour
+                    offrir une base solide aux joueurs, qu&apos;ils visent le
+                    haut niveau ou un bon cadre de pratique.
                   </p>
                 </div>
               </div>
@@ -127,7 +133,12 @@ export default function Home() {
                 </h3>
                 <div
                   className="chip-row"
-                  style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginTop: "0.5rem" }}
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "0.5rem",
+                    marginTop: "0.5rem",
+                  }}
                 >
                   <span className="chip">Cadets – U17 (14–16 ans)</span>
                   <span className="chip">Juniors – U20 (17–20 ans)</span>
@@ -234,10 +245,7 @@ export default function Home() {
                   />
                 </figure>
                 <figure className="gallery-item">
-                  <img
-                    src="/gallery5.jpg"
-                    alt="Match à l'entraînement"
-                  />
+                  <img src="/gallery5.jpg" alt="Match à l'entraînement" />
                 </figure>
                 <figure className="gallery-item">
                   <img
@@ -276,9 +284,9 @@ export default function Home() {
               </ul>
 
               <div style={{ marginTop: "1.5rem" }}>
-                <Link href="/inscription" className="btn">
+                <a href="/inscription" className="btn">
                   Aller au formulaire d&apos;inscription
-                </Link>
+                </a>
               </div>
             </div>
           </section>
