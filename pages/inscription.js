@@ -287,3 +287,65 @@ export default function Inscription() {
                       id="consentement"
                       name="consentement_parent"
                       type="checkbox"
+                      required
+                      style={{ marginTop: "0.25rem" }}
+                    />
+                    <label
+                      htmlFor="consentement"
+                      className="section-text small"
+                    >
+                      En envoyant ce formulaire, le parent / tuteur confirme
+                      être d&apos;accord pour la participation du joueur aux
+                      activités de KAF Global Foot, sous réserve de la visite
+                      médicale et des documents à fournir.
+                    </label>
+                  </div>
+                </div>
+
+                {/* Bouton d'envoi */}
+                <button type="submit" className="btn">
+                  Envoyer la pré-inscription
+                </button>
+              </form>
+
+              <p
+                className="section-text small"
+                style={{ marginTop: "1.5rem" }}
+              >
+                Vous pouvez aussi nous contacter directement par WhatsApp au{" "}
+                <strong>+221 78 270 24 57</strong> ou par email à{" "}
+                <a href="mailto:contact@kafglobalfoot.com">
+                  contact@kafglobalfoot.com
+                </a>
+                .
+              </p>
+
+              <p className="section-text small" style={{ marginTop: "0.5rem" }}>
+                Après réception du formulaire, l&apos;académie vous recontactera
+                pour la suite (confirmation, documents, rendez-vous…).
+              </p>
+
+              <div style={{ marginTop: "1.5rem" }}>
+                <Link href="/" className="btn btn-secondary">
+                  ← Retour à la page d&apos;accueil
+                </Link>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer className="footer">
+          <div className="container footer-content">
+            <p>
+              © {new Date().getFullYear()} KAF Global Foot. Tous droits
+              réservés.
+            </p>
+            <p className="footer-meta">
+              Site développé avec Next.js &amp; déployé sur Vercel.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+}
