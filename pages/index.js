@@ -179,26 +179,157 @@ export default function Home() {
                     Crewane, Kafountine, département de Bignona, région de
                     Ziguinchor (Casamance).
                   </p>
-                  <p className="section-text small">
-                    Vous pouvez visualiser l&apos;emplacement exact du terrain
-                    sur la carte Google Maps ci-dessous.
-                  </p>
 
+                  {/* Carte Google Maps */}
                   <div
                     style={{
                       marginTop: "0.75rem",
                       borderRadius: "0.75rem",
                       overflow: "hidden",
-                      boxShadow: "0 10px 25px rgba(15, 23, 42, 0.25)",
+                      border: "1px solid #e5e7eb",
+                      boxShadow: "0 10px 25px -18px rgba(15, 23, 42, 0.35)",
                     }}
                   >
                     <iframe
-                      title="Plan d'accès - Terrain du Lycée de Kafountine"
-                      src="https://www.google.com/maps?q=Lycee+de+Kafountine,+Crewane,+Kafountine,+Senegal&output=embed"
-                      style={{
-                        width: "100%",
-                        height: "260px",
-                        border: 0,
-                      }}
+                      title="Carte du terrain KAF Global Foot"
+                      src="https://www.google.com/maps?q=Terrain+du+Lyc%C3%A9e+de+Kafountine+Crewane+Kafountine+Senegal&output=embed"
+                      width="100%"
+                      height="260"
+                      style={{ border: 0 }}
                       loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+
+                  <p
+                    className="section-text small"
+                    style={{ marginTop: "0.5rem" }}
+                  >
+                    Utilisez la carte pour repérer facilement le terrain
+                    d&apos;entraînement.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* GALERIE PHOTOS */}
+          <section id="galerie" className="section section-alt">
+            <div className="container">
+              <h2 className="section-title">Photos de KAF Global Foot</h2>
+
+              <div className="gallery-grid">
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery1.jpg"
+                    alt="Séance d'entraînement KAF Global Foot"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery2.jpg"
+                    alt="Jeunes joueurs de KAF Global Foot"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery3.jpg"
+                    alt="Travail technique à l'entraînement"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery4.jpg"
+                    alt="Photo de groupe KAF Global Foot"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery5.jpg"
+                    alt="Match à l'entraînement"
+                  />
+                </figure>
+                <figure className="gallery-item">
+                  <img
+                    src="/gallery6.jpg"
+                    alt="Ambiance à l'académie KAF Global Foot"
+                  />
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          {/* CONTACT */}
+          <section id="contact" className="section">
+            <div className="container">
+              <h2 className="section-title">Contact KAF Global Foot</h2>
+              <p className="section-text">
+                Pour toute question (inscriptions, horaires, tarifs,
+                partenariats), contactez-nous :
+              </p>
+              <ul className="list">
+                <li>
+                  <strong>Téléphone / WhatsApp :</strong> +221 78 270 24 57
+                </li>
+                <li>
+                  <strong>Email pro :</strong>{" "}
+                  <a href="mailto:contact@kafglobalfoot.com">
+                    contact@kafglobalfoot.com
+                  </a>
+                </li>
+                <li>
+                  <strong>Email secondaire :</strong>{" "}
+                  <a href="mailto:kafglobalfoot@gmail.com">
+                    kafglobalfoot@gmail.com
+                  </a>
+                </li>
+              </ul>
+
+              <div style={{ marginTop: "1.5rem" }}>
+                <Link href="/inscription" className="btn">
+                  Aller au formulaire d&apos;inscription
+                </Link>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        {/* FOOTER */}
+        <footer className="footer">
+          <div className="container footer-content">
+            <p>
+              © {new Date().getFullYear()} KAF Global Foot. Tous droits
+              réservés.
+            </p>
+            <p className="footer-meta">
+              Site développé avec Next.js &amp; déployé sur Vercel.
+            </p>
+          </div>
+        </footer>
+
+        {/* BOUTON WHATSAPP FLOTTANT */}
+        <a
+          href="https://wa.me/221782702457"
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            position: "fixed",
+            right: "1.2rem",
+            bottom: "1.2rem",
+            zIndex: 9999,
+            padding: "0.75rem 1.1rem",
+            borderRadius: "9999px",
+            background: "#16a34a",
+            color: "#ffffff",
+            fontWeight: 600,
+            fontSize: "0.95rem",
+            textDecoration: "none",
+            boxShadow: "0 12px 30px rgba(22, 163, 74, 0.6)",
+          }}
+        >
+          WhatsApp
+        </a>
+      </div>
+    </>
+  );
+}
+
