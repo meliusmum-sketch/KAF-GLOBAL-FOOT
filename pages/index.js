@@ -45,6 +45,7 @@ export default function Home() {
         <meta property="og:url" content={siteUrl} />
         <meta property="og:site_name" content="KAF Global Foot" />
         <meta property="og:locale" content="fr_FR" />
+        {/* image qui existe bien dans /public */}
         <meta property="og:image" content={`${siteUrl}/hero.jpg`} />
 
         {/* Twitter Card */}
@@ -268,7 +269,7 @@ export default function Home() {
             <div className="photos-grid">
               <div className="photo-card">
                 <img
-                  src="/terrain-kafountine.jpg"
+                  src="/gallery1.jpg"
                   alt="Terrain de football à Kafountine"
                   className="photo-image"
                 />
@@ -276,7 +277,7 @@ export default function Home() {
               </div>
               <div className="photo-card">
                 <img
-                  src="/jeunes-joueurs-kafountine.jpg"
+                  src="/gallery2.jpg"
                   alt="Jeunes joueurs de Kafountine au football"
                   className="photo-image"
                 />
@@ -284,7 +285,7 @@ export default function Home() {
               </div>
               <div className="photo-card">
                 <img
-                  src="/entrainement-technique.jpg"
+                  src="/gallery3.jpg"
                   alt="Travail technique à l'entraînement"
                   className="photo-image"
                 />
@@ -292,7 +293,7 @@ export default function Home() {
               </div>
               <div className="photo-card">
                 <img
-                  src="/vue-academie-kaf-global-foot.jpg"
+                  src="/gallery4.jpg"
                   alt="Vue d'ensemble de l'académie KAF Global Foot"
                   className="photo-image"
                 />
@@ -300,7 +301,7 @@ export default function Home() {
               </div>
               <div className="photo-card">
                 <img
-                  src="/match-entrainement.jpg"
+                  src="/gallery5.jpg"
                   alt="Match d'entraînement à Kafountine"
                   className="photo-image"
                 />
@@ -308,7 +309,7 @@ export default function Home() {
               </div>
               <div className="photo-card">
                 <img
-                  src="/ambiance-kaf-global-foot.jpg"
+                  src="/gallery6.jpg"
                   alt="Ambiance au sein de KAF Global Foot"
                   className="photo-image"
                 />
@@ -326,7 +327,8 @@ export default function Home() {
             </p>
             <ul>
               <li>
-                Téléphone / WhatsApp : <strong>+221 78 270 24 57</strong>
+                Téléphone / WhatsApp :{" "}
+                <strong>+221 78 270 24 57</strong>
               </li>
               <li>
                 Email : <strong>contact@kafglobalfoot.com</strong>
