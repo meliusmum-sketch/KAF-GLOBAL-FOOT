@@ -5,7 +5,7 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  color: #111827;
+  color: #0f172a;
   background: #f3f4f6;
 }
 
@@ -75,7 +75,7 @@ a:hover {
   display: inline-block;
   padding: 0.45rem 1rem;
   border-radius: 9999px;
-  background: #2563eb;
+  background: #16a34a; /* vert Casamance */
   color: #ffffff;
   font-size: 0.9rem;
 }
@@ -122,7 +122,7 @@ a:hover {
 }
 
 .btn-principal {
-  background: #2563eb;
+  background: #16a34a; /* vert principal */
   color: #ffffff;
 }
 
@@ -184,8 +184,8 @@ a:hover {
 
 .categories {
   margin-top: 1.5rem;
-  background: #eff6ff;
-  border-color: #bfdbfe;
+  background: #ecfdf3; /* fond vert très clair */
+  border-color: #bbf7d0;
 }
 
 .photos-grid {
@@ -206,7 +206,7 @@ a:hover {
   aspect-ratio: 4 / 3;
 }
 
-/* Ancienne classe placeholder (au cas où) */
+/* Au cas où l'ancienne classe soit encore utilisée */
 .photo-placeholder {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -248,7 +248,7 @@ a:hover {
   right: 1.25rem;
   bottom: 1.25rem;
   z-index: 50;
-  background: #22c55e;
+  background: #22c55e; /* vert WhatsApp */
   color: #ffffff;
   padding: 0.6rem 1rem;
   border-radius: 9999px;
