@@ -1,140 +1,113 @@
-// pages/inscription.js
-import Head from "next/head";
-import Link from "next/link";
+import nodemailer from "nodemailer";
 
-export default function Inscription() {
-  return (
-    <>
-      <Head>
-        <title>Inscription - KAF Global Foot</title>
-        <meta
-          name="description"
-          content="Formulaire de pré-inscription à KAF Global Foot, académie de football pour jeunes."
-        />
-      </Head>
+export default async function handler(req, res) {
+  // On n'accepte que le POST (les envois du formulaire)
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Méthode non autorisée" });
+  }
 
-      <div className="page section-alt">
-        <header className="navbar">
-          <div className="container nav-content">
-            <div className="logo">KAF Global Foot</div>
-            <nav className="nav-links">
-              <Link href="/">Accueil</Link>
-            </nav>
-          </div>
-        </header>
+  const {
+    nom,
+    age,
+    poste,
+    nomParent,
+    telephone,
+    email,
+    niveau,
+    club,
+    message,
+  } = req.body || {};
 
-        <main className="section">
-          <div className="container">
-            <h1 className="section-title">Formulaire d&apos;inscription</h1>
-            <p className="section-text">
-              Remplis ce formulaire pour pré-inscrire ton enfant à KAF Global
-              Foot. Nous te contacterons pour confirmer l&apos;inscription,
-              envoyer les détails (documents, tarif, planning) et répondre à tes
-              questions.
-            </p>
+  // Quelques champs obligatoires
+  if (!nom || !age || !telephone || !niveau) {
+    return res
+      .status(400)
+      .json({ message: "Merci de remplir tous les champs obligatoires." });
+  }
 
-            <form
-              className="card"
-              style={{ marginTop: "1.5rem", maxWidth: "640px" }}
-              action="mailto:kafglobalfoot@gmail.com"
-              method="post"
-              encType="text/plain"
-            >
-              <div className="form-group">
-                <label>Nom de l&apos;enfant</label>
-                <input type="text" name="nom_enfant" required />
-              </div>
+  try {
+    // Transporteur Nodemailer (configuration SMTP)
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: true,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
 
-              <div className="form-group">
-                <label>Prénom de l&apos;enfant</label>
-                <input type="text" name="prenom_enfant" required />
-              </div>
+    // Adresse qui reçoit les pré-inscriptions
+    const toEmail = process.env.CONTACT_EMAIL || "contact@kafglobalfoot.com";
 
-              <div className="form-group">
-                <label>Âge de l&apos;enfant</label>
-                <input type="number" name="age" min="4" max="18" required />
-              </div>
+    const subject = `Nouvelle pré-inscription : ${nom} (${age} ans)`;
 
-              <div className="form-group">
-                <label>Catégorie souhaitée</label>
-                <select name="categorie" required>
-                  <option value="">Sélectionner une catégorie</option>
-                  <option value="U8">U8 (6–8 ans)</option>
-                  <option value="U10">U10 (8–10 ans)</option>
-                  <option value="U12">U12 (10–12 ans)</option>
-                  <option value="U14+">U14 et plus</option>
-                </select>
-              </div>
+    const plainText = `
+Nouvelle pré-inscription KAF Global Foot
 
-              <div className="form-group">
-                <label>Nom du parent / tuteur</label>
-                <input type="text" name="nom_parent" required />
-              </div>
+--- Joueur ---
+Nom : ${nom}
+Âge : ${age}
+Poste : ${poste || "Non précisé"}
 
-              <div className="form-group">
-                <label>Téléphone du parent</label>
-                <input type="tel" name="telephone_parent" required />
-              </div>
+--- Parent / tuteur ---
+Nom : ${nomParent || "Non précisé"}
+Téléphone / WhatsApp : ${telephone}
+E-mail : ${email || "Non précisé"}
 
-              <div className="form-group">
-                <label>Email du parent</label>
-                <input type="email" name="email_parent" required />
-              </div>
+--- Infos sportives ---
+Niveau actuel : ${niveau}
+Club / école actuelle : ${club || "Non précisé"}
 
-              <div className="form-group">
-                <label>Message / Informations complémentaires</label>
-                <textarea
-                  name="message"
-                  rows="4"
-                  placeholder="Ex : niveau de l'enfant, éventuels problèmes de santé, disponibilité..."
-                ></textarea>
-              </div>
+--- Message complémentaire ---
+${message || "Aucun message ajouté."}
+`;
 
-              <button type="submit" className="btn">
-                Envoyer la pré-inscription
-              </button>
+    const htmlBody = `
+      <h2>Nouvelle pré-inscription KAF Global Foot</h2>
+      <h3>Joueur</h3>
+      <ul>
+        <li><strong>Nom :</strong> ${nom}</li>
+        <li><strong>Âge :</strong> ${age}</li>
+        <li><strong>Poste :</strong> ${poste || "Non précisé"}</li>
+      </ul>
+      <h3>Parent / tuteur</h3>
+      <ul>
+        <li><strong>Nom :</strong> ${nomParent || "Non précisé"}</li>
+        <li><strong>Téléphone / WhatsApp :</strong> ${telephone}</li>
+        <li><strong>Email :</strong> ${email || "Non précisé"}</li>
+      </ul>
+      <h3>Informations sportives</h3>
+      <ul>
+        <li><strong>Niveau actuel :</strong> ${niveau}</li>
+        <li><strong>Club / école actuelle :</strong> ${
+          club || "Non précisé"
+        }</li>
+      </ul>
+      <h3>Message complémentaire</h3>
+      <p>${(message || "Aucun message ajouté.").replace(/\n/g, "<br />")}</p>
+    `;
 
-              <p className="section-text small" style={{ marginTop: "0.75rem" }}>
-                En cliquant sur &quot;Envoyer&quot;, ton application mail
-                s&apos;ouvrira avec les informations du formulaire. Vérifie les
-                données puis envoie-nous l&apos;email.
-              </p>
-            </form>
-          </div>
-        </main>
+    // Envoi du mail
+    await transporter.sendMail({
+      from: `"KAF Global Foot" <${process.env.SMTP_USER}>`,
+      to: toEmail,
+      subject,
+      text: plainText,
+      html: htmlBody,
+    });
 
-        <style jsx>{`
-          .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-          }
-
-          label {
-            font-weight: 500;
-          }
-
-          input,
-          select,
-          textarea {
-            padding: 0.55rem 0.6rem;
-            border-radius: 0.6rem;
-            border: 1px solid rgba(148, 163, 184, 0.6);
-            background: #020617;
-            color: #f9fafb;
-            font: inherit;
-          }
-
-          input:focus,
-          select:focus,
-          textarea:focus {
-            outline: 2px solid #1d4ed8;
-            outline-offset: 1px;
-          }
-        `}</style>
-      </div>
-    </>
-  );
+    // Si le navigateur attend du HTML (form classique) → on redirige vers /merci
+    const acceptHeader = req.headers.accept || "";
+    if (acceptHeader.includes("application/json")) {
+      return res.status(200).json({ ok: true });
+    } else {
+      return res.redirect(303, "/merci");
+    }
+  } catch (error) {
+    console.error("Erreur envoi inscription:", error);
+    return res
+      .status(500)
+      .send("Une erreur est survenue lors de l'envoi du formulaire.");
+  }
 }
