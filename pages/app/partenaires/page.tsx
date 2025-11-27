@@ -1,18 +1,13 @@
-// app/partenaires/page.tsx
-// ou pages/partenaires.tsx si tu utilises le dossier "pages"
-
 import Link from "next/link";
 
 export default function PartenairesPage() {
   return (
     <div className="page">
-      {/* HEADER SIMPLE */}
+      {/* HEADER */}
       <header className="site-header">
         <div className="site-header-inner">
           <div className="site-logo">
-            <Link href="/">
-              KAF Global Foot
-            </Link>
+            <Link href="/">KAF Global Foot</Link>
           </div>
 
           <nav className="main-nav">
@@ -20,6 +15,7 @@ export default function PartenairesPage() {
             <Link href="/#apropos">À propos</Link>
             <Link href="/#programmes">Programmes</Link>
             <Link href="/#horaires">Horaires</Link>
+            <Link href="/#photos">Photos</Link>
             <Link href="/#contact">Contact</Link>
             <Link href="/partenaires">Partenaires</Link>
           </nav>
@@ -32,19 +28,21 @@ export default function PartenairesPage() {
         </div>
       </header>
 
-      {/* CONTENU PRINCIPAL */}
+      {/* CONTENU */}
       <main className="page-main">
         <section className="page-hero">
           <h1>Devenir partenaire de KAF Global Foot</h1>
           <p>
-            KAF Global Foot est une académie de football basée à Kafountine, en Casamance (Sénégal),
-            qui accompagne des jeunes de 14 à 23 ans dans leur progression sportive et humaine.
+            KAF Global Foot est une académie de football basée à Kafountine, en
+            Casamance (Sénégal), qui accompagne des jeunes de 14 à 23 ans dans
+            leur progression sportive et humaine.
           </p>
           <p>
-            En devenant partenaire, vous contribuez directement à offrir à ces jeunes un cadre
-            d’entraînement sérieux, sécurisé et porteur d’avenir. Nous recherchons notamment des
-            partenaires capables d’ouvrir des opportunités à l’étranger pour nos joueurs et de
-            renforcer la formation de notre staff.
+            En devenant partenaire, vous contribuez directement à offrir à ces
+            jeunes un cadre d&apos;entraînement sérieux, sécurisé et porteur
+            d&apos;avenir. Nous recherchons notamment des partenaires capables
+            d&apos;ouvrir des opportunités à l&apos;étranger pour nos joueurs
+            et de renforcer la formation de notre staff.
           </p>
         </section>
 
@@ -52,16 +50,18 @@ export default function PartenairesPage() {
           <h2>Pourquoi nous soutenir ?</h2>
           <ul>
             <li>
-              <strong>Impact local fort :</strong> vous soutenez concrètement la jeunesse de
-              Kafountine et de la Casamance.
+              <strong>Impact local fort :</strong> vous soutenez concrètement la
+              jeunesse de Kafountine et de la Casamance.
             </li>
             <li>
-              <strong>Éducation par le sport :</strong> au-delà du football, nous travaillons sur les
-              valeurs : respect, discipline, esprit d’équipe, goût de l’effort, sens des responsabilités.
+              <strong>Éducation par le sport :</strong> au-delà du football,
+              nous travaillons sur les valeurs : respect, discipline, esprit
+              d&apos;équipe, goût de l&apos;effort, sens des responsabilités.
             </li>
             <li>
-              <strong>Transparence :</strong> nous expliquons comment sont utilisés les soutiens
-              (matériel, bourses, fonctionnement de l’académie).
+              <strong>Transparence :</strong> nous expliquons comment sont
+              utilisés les soutiens (matériel, bourses,
+              fonctionnement de l&apos;académie).
             </li>
           </ul>
         </section>
@@ -71,41 +71,47 @@ export default function PartenairesPage() {
 
           <h3>Partenaires équipement</h3>
           <p>
-            Fourniture ou financement de maillots, ballons, chasubles, plots, filets, et matériel
-            d’entraînement pour les séances quotidiennes et les compétitions.
+            Fourniture ou financement de maillots, ballons, chasubles, plots,
+            filets, et matériel d&apos;entraînement pour les séances
+            quotidiennes et les compétitions.
           </p>
 
           <h3>Partenaires institutionnels &amp; associatifs</h3>
           <p>
-            Collaboration avec des clubs, écoles, ONG, collectivités ou structures sportives
-            pour monter des projets sportifs et éducatifs autour des jeunes de Kafountine.
+            Collaboration avec des clubs, écoles, ONG, collectivités ou
+            structures sportives pour monter des projets sportifs et éducatifs
+            autour des jeunes de Kafountine.
           </p>
 
           <h3>Partenaires financiers</h3>
           <p>
-            Contribution au fonctionnement de l’académie : encadrement, infrastructures,
-            déplacements, organisation de tournois, bourses pour les familles les plus modestes.
+            Contribution au fonctionnement de l&apos;académie : encadrement,
+            infrastructures, déplacements, organisation de tournois, bourses
+            pour les familles les plus modestes.
           </p>
 
           <h3>Partenaires sportifs &amp; techniques internationaux</h3>
           <p>
-            Nous attendons aussi d’un partenaire un véritable programme sportif et technique qui puisse :
+            Nous attendons aussi d&apos;un partenaire un véritable programme
+            sportif et technique qui puisse :
           </p>
           <ul>
             <li>
-              <strong>Recruter ou placer nos meilleurs joueurs à l’étranger</strong>
-              {" "}
-              (stages, essais, intégration dans des clubs, visites de centres de formation).
+              <strong>
+                Recruter ou placer nos meilleurs joueurs à l&apos;étranger
+              </strong>{" "}
+              (stages, essais, intégration dans des clubs, visites de centres de
+              formation).
             </li>
             <li>
-              <strong>Accompagner la formation des joueurs</strong> :
-              méthodologies modernes d’entraînement, suivi individuel, préparation à un niveau
-              semi-pro ou pro.
+              <strong>Accompagner la formation des joueurs :</strong> méthodes
+              modernes d&apos;entraînement, suivi individuel, préparation à un
+              niveau semi-pro ou pro.
             </li>
             <li>
-              <strong>Former notre staff</strong> (coachs, préparateurs, encadrants) :
-              échanges de compétences, formations en présentiel ou en visio, accueil de membres
-              du staff en immersion dans vos structures.
+              <strong>Former notre staff</strong> (coachs, préparateurs,
+              encadrants) via des échanges de compétences, des formations en
+              présentiel ou en visio, et des immersions dans vos structures.
             </li>
           </ul>
         </section>
@@ -114,11 +120,17 @@ export default function PartenairesPage() {
           <h2>Visibilité pour nos partenaires</h2>
           <ul>
             <li>Logo et présentation de votre structure sur notre site.</li>
-            <li>Présence régulière dans nos photos et publications (réseaux sociaux, actualités).</li>
-            <li>Possibilité de venir sur place rencontrer les joueurs et découvrir le projet.</li>
             <li>
-              Mise en avant de vos actions de mécénat / RSE liées à KAF Global Foot
-              dans notre communication.
+              Présence régulière dans nos photos et publications (réseaux
+              sociaux, actualités).
+            </li>
+            <li>
+              Possibilité de venir sur place rencontrer les joueurs et découvrir
+              le projet.
+            </li>
+            <li>
+              Mise en avant de vos actions de mécénat / RSE liées à KAF Global
+              Foot dans notre communication.
             </li>
           </ul>
         </section>
@@ -126,19 +138,18 @@ export default function PartenairesPage() {
         <section className="page-section">
           <h2>Contact partenariats</h2>
           <p>
-            Pour discuter d’un partenariat ou recevoir un dossier de présentation complet, contactez-nous :
+            Pour discuter d&apos;un partenariat ou recevoir un dossier de
+            présentation complet, contactez-nous :
           </p>
           <p>
-            Téléphone / WhatsApp : <strong>+221 78 270 24 57</strong><br />
+            Téléphone / WhatsApp : <strong>+221 78 270 24 57</strong>
+            <br />
             Email : <strong>contact@kafglobalfoot.com</strong>
           </p>
           <p>
             Vous pouvez également utiliser le{" "}
-            <Link href="/inscription">
-              formulaire de pré-inscription
-            </Link>
-            {" "}
-            pour nous laisser un message détaillé.
+            <Link href="/inscription">formulaire de pré-inscription</Link> pour
+            nous laisser un message détaillé.
           </p>
         </section>
       </main>
@@ -146,7 +157,6 @@ export default function PartenairesPage() {
       {/* FOOTER */}
       <footer className="site-footer">
         <p>© 2025 KAF Global Foot. Tous droits réservés.</p>
-        <p>Site développé avec Next.js &amp; déployé sur Vercel.</p>
       </footer>
     </div>
   );
