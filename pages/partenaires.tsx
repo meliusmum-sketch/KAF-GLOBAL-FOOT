@@ -1,6 +1,10 @@
+import { useState } from "react";
 import Link from "next/link";
 
 export default function PartenairesPage() {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const closeMobileNav = () => setMobileNavOpen(false);
+
   return (
     <div className="page">
       {/* HEADER */}
@@ -10,14 +14,50 @@ export default function PartenairesPage() {
             <Link href="/">KAF Global Foot</Link>
           </div>
 
-          <nav className="main-nav">
-            <Link href="/">Accueil</Link>
-            <Link href="/#apropos">À propos</Link>
-            <Link href="/#programmes">Programmes</Link>
-            <Link href="/#horaires">Horaires</Link>
-            <Link href="/#photos">Photos</Link>
-            <Link href="/#contact">Contact</Link>
-            <Link href="/partenaires">Partenaires</Link>
+          <button
+            className={`mobile-nav-toggle ${
+              mobileNavOpen ? "is-open" : ""
+            }`}
+            onClick={() => setMobileNavOpen((open) => !open)}
+            aria-label={
+              mobileNavOpen ? "Fermer le menu" : "Ouvrir le menu"
+            }
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav
+            className={`main-nav ${
+              mobileNavOpen ? "is-open" : ""
+            }`}
+          >
+            <Link href="/#apropos" onClick={closeMobileNav}>
+              À propos
+            </Link>
+            <Link href="/#programmes" onClick={closeMobileNav}>
+              Programmes
+            </Link>
+            <Link href="/#horaires" onClick={closeMobileNav}>
+              Horaires
+            </Link>
+            <Link href="/#photos" onClick={closeMobileNav}>
+              Photos
+            </Link>
+            <Link href="/#contact" onClick={closeMobileNav}>
+              Contact
+            </Link>
+            <Link href="/partenaires" onClick={closeMobileNav}>
+              Partenaires
+            </Link>
+            <Link
+              href="/inscription"
+              className="nav-cta nav-cta-in-nav"
+              onClick={closeMobileNav}
+            >
+              Inscription
+            </Link>
           </nav>
 
           <div className="nav-actions">
@@ -60,8 +100,8 @@ export default function PartenairesPage() {
             </li>
             <li>
               <strong>Transparence :</strong> nous expliquons comment sont
-              utilisés les soutiens (matériel, bourses,
-              fonctionnement de l&apos;académie).
+              utilisés les soutiens (matériel, bourses, fonctionnement de
+              l&apos;académie).
             </li>
           </ul>
         </section>
@@ -112,25 +152,6 @@ export default function PartenairesPage() {
               <strong>Former notre staff</strong> (coachs, préparateurs,
               encadrants) via des échanges de compétences, des formations en
               présentiel ou en visio, et des immersions dans vos structures.
-            </li>
-          </ul>
-        </section>
-
-        <section className="page-section">
-          <h2>Visibilité pour nos partenaires</h2>
-          <ul>
-            <li>Logo et présentation de votre structure sur notre site.</li>
-            <li>
-              Présence régulière dans nos photos et publications (réseaux
-              sociaux, actualités).
-            </li>
-            <li>
-              Possibilité de venir sur place rencontrer les joueurs et découvrir
-              le projet.
-            </li>
-            <li>
-              Mise en avant de vos actions de mécénat / RSE liées à KAF Global
-              Foot dans notre communication.
             </li>
           </ul>
         </section>
