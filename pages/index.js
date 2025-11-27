@@ -1,12 +1,7 @@
-import { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
 export default function HomePage() {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
-  const closeMobileNav = () => setMobileNavOpen(false);
-
   return (
     <>
       <Head>
@@ -20,66 +15,16 @@ export default function HomePage() {
       <div className="page">
         {/* HEADER */}
         <header className="site-header">
-          <div className="site-header-inner">
-            <div className="site-logo">
-              <Link href="/">KAF Global Foot</Link>
-            </div>
-
-            {/* BOUTON HAMBURGER (MOBILE) */}
-            <button
-              className={`mobile-nav-toggle ${
-                mobileNavOpen ? "is-open" : ""
-              }`}
-              onClick={() => setMobileNavOpen((open) => !open)}
-              aria-label={
-                mobileNavOpen ? "Fermer le menu" : "Ouvrir le menu"
-              }
-            >
-              <span />
-              <span />
-              <span />
-            </button>
-
-            {/* MENU PRINCIPAL */}
-            <nav
-              className={`main-nav ${
-                mobileNavOpen ? "is-open" : ""
-              }`}
-            >
-              <a href="#apropos" onClick={closeMobileNav}>
-                À propos
-              </a>
-              <a href="#programmes" onClick={closeMobileNav}>
-                Programmes
-              </a>
-              <a href="#horaires" onClick={closeMobileNav}>
-                Horaires
-              </a>
-              <a href="#photos" onClick={closeMobileNav}>
-                Photos
-              </a>
-              <a href="#contact" onClick={closeMobileNav}>
-                Contact
-              </a>
-              <Link
-                href="/partenaires"
-                onClick={closeMobileNav}
-              >
-                Partenaires
-              </Link>
-
-              {/* Bouton inscription INSIDE menu en mobile */}
-              <Link
-                href="/inscription"
-                className="nav-cta nav-cta-in-nav"
-                onClick={closeMobileNav}
-              >
-                Inscription
-              </Link>
+          <div className="header-inner">
+            <div className="logo">KAF Global Foot</div>
+            <nav className="main-nav">
+              <a href="#apropos">À propos</a>
+              <a href="#programmes">Programmes</a>
+              <a href="#horaires">Horaires</a>
+              <a href="#photos">Photos</a>
+              <a href="#contact">Contact</a>
             </nav>
-
-            {/* Bouton inscription visible en DESKTOP */}
-            <div className="nav-actions">
+            <div className="header-actions">
               <Link href="/inscription" className="nav-cta">
                 Inscription
               </Link>
@@ -87,38 +32,41 @@ export default function HomePage() {
           </div>
         </header>
 
-        {/* CONTENU PRINCIPAL */}
-        <main className="page-main">
+        {/* CONTENU */}
+        <main className="main">
           {/* HERO */}
           <section className="hero" aria-labelledby="hero-title">
-            <div className="hero-content">
-              <h1 id="hero-title">
-                KAF Global Foot – académie de football à Kafountine pour les
-                jeunes
-              </h1>
-              <p className="hero-tagline">
-                Académie de football à Kafountine (Casamance), dédiée à la
-                formation des jeunes dans un cadre sérieux, sécurisé et
-                convivial.
-              </p>
+            <h1 id="hero-title">
+              KAF Global Foot – académie de football à Kafountine pour les
+              jeunes
+            </h1>
+            <p className="hero-text">
+              Académie de football à Kafountine (Casamance), dédiée à la
+              formation des jeunes dans un cadre sérieux, sécurisé et convivial.
+            </p>
 
-              <div className="hero-actions">
-                <Link href="/inscription" className="hero-primary">
-                  Je pré-inscris un joueur
-                </Link>
-                <a href="#programmes" className="hero-secondary">
-                  Voir les programmes
-                </a>
-              </div>
-
-              <p className="hero-meta">
-                Joueurs de 14 à 23 ans · Tous niveaux
-              </p>
+            <div className="hero-actions">
+              <Link href="/inscription" className="btn-primary">
+                Je pré-inscris un joueur
+              </Link>
+              <a href="#programmes" className="btn-secondary">
+                Voir les programmes
+              </a>
             </div>
+
+            <p className="hero-meta">
+              Joueurs de 14 à 23 ans · Tous niveaux
+            </p>
+          </section>
+
+          {/* IMAGE / VISUEL */}
+          <section className="section">
+            <h2 className="visually-hidden">Entraînement KAF Global Foot</h2>
+            <div className="image-placeholder">Entraînement KAF Global Foot</div>
           </section>
 
           {/* À PROPOS */}
-          <section id="apropos" className="page-section">
+          <section id="apropos" className="section">
             <h2>À propos de KAF Global Foot</h2>
             <p>
               KAF Global Foot est une académie de football basée à Kafountine,
@@ -147,14 +95,21 @@ export default function HomePage() {
               discipline, team spirit, work ethic, and a sense of
               responsibility.
             </p>
+            <p>
+              Training sessions take place from Monday to Saturday on the pitch
+              of the Lycée de Kafountine, with a program adapted to each
+              player’s age and level. KAF Global Foot welcomes motivated
+              players, whether they aspire to a higher level or simply want to
+              train in a structured and supportive environment.
+            </p>
 
             <div className="apropos-grid">
               <div>
                 <h3>Encadrement</h3>
                 <p>
-                  Coachs passionnés et expérimentés, avec une approche adaptée
-                  à l’âge et au niveau de chaque joueur. Exigence sur
-                  l’attitude, mais toujours dans la bienveillance.
+                  Coachs passionnés et expérimentés, avec une approche adaptée à
+                  l’âge et au niveau de chaque joueur. Exigence sur l’attitude,
+                  mais toujours dans la bienveillance.
                 </p>
               </div>
               <div>
@@ -178,11 +133,11 @@ export default function HomePage() {
           </section>
 
           {/* PROGRAMMES */}
-          <section id="programmes" className="page-section">
+          <section id="programmes" className="section">
             <h2>Nos programmes</h2>
 
             <div className="programmes-grid">
-              <div className="programme-card">
+              <div className="card">
                 <h3>Groupe formation</h3>
                 <p>Pour les joueurs qui veulent progresser sérieusement.</p>
                 <ul>
@@ -192,7 +147,7 @@ export default function HomePage() {
                 </ul>
               </div>
 
-              <div className="programme-card">
+              <div className="card">
                 <h3>Groupe performance</h3>
                 <p>Pour les joueurs les plus motivés.</p>
                 <ul>
@@ -205,11 +160,9 @@ export default function HomePage() {
 
             <div className="categories">
               <h3>Catégories KAF Global Foot</h3>
-              <p>
-                <strong>Cadets – U17 (14–16 ans)</strong> ·{" "}
-                <strong>Juniors – U20 (17–20 ans)</strong> ·{" "}
-                <strong>Espoirs – U23 (21–23 ans)</strong>
-              </p>
+              <p>Cadets – U17 (14–16 ans)</p>
+              <p>Juniors – U20 (17–20 ans)</p>
+              <p>Espoirs – U23 (21–23 ans)</p>
               <p>
                 Joueurs de 14 à 23 ans, tous niveaux. L&apos;affectation dans
                 une catégorie se fait en fonction de l&apos;âge et du niveau.
@@ -218,11 +171,11 @@ export default function HomePage() {
           </section>
 
           {/* HORAIRES & LIEU */}
-          <section id="horaires" className="page-section">
+          <section id="horaires" className="section">
             <h2>Horaires &amp; lieu d&apos;entraînement</h2>
 
             <div className="horaires-grid">
-              <div>
+              <div className="card">
                 <h3>Horaires KAF Global Foot</h3>
                 <ul>
                   <li>Du lundi au vendredi : 16h00 – 18h00</li>
@@ -236,7 +189,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div>
+              <div className="card">
                 <h3>Terrain d&apos;entraînement</h3>
                 <p>
                   Terrain du Lycée de Kafountine
@@ -253,30 +206,38 @@ export default function HomePage() {
           </section>
 
           {/* PHOTOS */}
-          <section id="photos" className="page-section">
+          <section id="photos" className="section">
             <h2>Photos de KAF Global Foot</h2>
             <div className="photos-grid">
               <div className="photo-card">
-                <div className="photo-placeholder" />
+                <div className="image-placeholder" />
                 <p>Terrain de football à Kafountine</p>
               </div>
               <div className="photo-card">
-                <div className="photo-placeholder" />
-                <p>Jeunes joueurs de Kafountine</p>
+                <div className="image-placeholder" />
+                <p>Jeunes joueurs de Kafountine au football</p>
               </div>
               <div className="photo-card">
-                <div className="photo-placeholder" />
+                <div className="image-placeholder" />
                 <p>Travail technique à l&apos;entraînement</p>
               </div>
               <div className="photo-card">
-                <div className="photo-placeholder" />
-                <p>Ambiance au sein de l&apos;académie</p>
+                <div className="image-placeholder" />
+                <p>Vue d&apos;ensemble de l&apos;académie KAF Global Foot</p>
+              </div>
+              <div className="photo-card">
+                <div className="image-placeholder" />
+                <p>Match d&apos;entraînement à Kafountine</p>
+              </div>
+              <div className="photo-card">
+                <div className="image-placeholder" />
+                <p>Ambiance au sein de KAF Global Foot</p>
               </div>
             </div>
           </section>
 
           {/* CONTACT */}
-          <section id="contact" className="page-section">
+          <section id="contact" className="section">
             <h2>Contact KAF Global Foot</h2>
             <p>
               Pour toute question (pré-inscriptions, horaires, tarifs,
@@ -292,18 +253,254 @@ export default function HomePage() {
               </li>
             </ul>
             <p>
-              Vous pouvez aussi remplir directement notre{" "}
-              <Link href="/inscription">formulaire de pré-inscription</Link>.
+              <Link href="/inscription">Aller au formulaire de pré-inscription</Link>
             </p>
           </section>
         </main>
 
         {/* FOOTER */}
-        <footer className="site-footer">
+        <footer className="footer">
           <p>© 2025 KAF Global Foot. Tous droits réservés.</p>
           <p>Site développé avec Next.js &amp; déployé sur Vercel.</p>
         </footer>
       </div>
+
+      {/* STYLE LOCAL POUR CETTE PAGE UNIQUEMENT */}
+      <style jsx>{`
+        .page {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          background: #f7fafc;
+          color: #111827;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+            sans-serif;
+        }
+
+        .site-header {
+          background: white;
+          border-bottom: 1px solid #e5e7eb;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+        }
+
+        .header-inner {
+          max-width: 960px;
+          margin: 0 auto;
+          padding: 0.75rem 1.25rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .logo {
+          font-weight: 700;
+          font-size: 1.1rem;
+        }
+
+        .main-nav {
+          display: flex;
+          gap: 1rem;
+          flex: 1;
+          flex-wrap: wrap;
+        }
+
+        .main-nav a {
+          font-size: 0.95rem;
+        }
+
+        .header-actions {
+          display: flex;
+        }
+
+        .nav-cta {
+          padding: 0.35rem 0.9rem;
+          border-radius: 999px;
+          background: #2563eb;
+          color: white;
+          font-size: 0.9rem;
+        }
+
+        .main {
+          flex: 1;
+          max-width: 960px;
+          margin: 0 auto;
+          padding: 1.5rem 1.25rem 2.5rem;
+        }
+
+        .hero {
+          margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+          font-size: 1.9rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .hero-text {
+          margin-bottom: 1rem;
+          max-width: 40rem;
+        }
+
+        .hero-actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.75rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+          display: inline-block;
+          padding: 0.55rem 1.15rem;
+          border-radius: 999px;
+          font-size: 0.95rem;
+        }
+
+        .btn-primary {
+          background: #2563eb;
+          color: white;
+        }
+
+        .btn-secondary {
+          border: 1px solid #d1d5db;
+        }
+
+        .hero-meta {
+          font-size: 0.9rem;
+          color: #4b5563;
+        }
+
+        .section {
+          margin-top: 2.5rem;
+        }
+
+        .section h2 {
+          font-size: 1.4rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .section h3 {
+          margin-top: 1.25rem;
+          margin-bottom: 0.35rem;
+          font-size: 1.05rem;
+        }
+
+        .section p {
+          line-height: 1.6;
+        }
+
+        .apropos-grid {
+          display: grid;
+          gap: 1rem;
+          margin-top: 1.25rem;
+        }
+
+        .apropos-grid > div {
+          background: white;
+          border-radius: 0.75rem;
+          padding: 0.9rem 1rem;
+          border: 1px solid #e5e7eb;
+        }
+
+        .programmes-grid {
+          display: grid;
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+
+        .card {
+          background: white;
+          border-radius: 0.75rem;
+          padding: 1rem 1.1rem;
+          border: 1px solid #e5e7eb;
+        }
+
+        .categories {
+          margin-top: 1.5rem;
+          background: #eff6ff;
+          border-radius: 0.75rem;
+          padding: 1rem 1.1rem;
+          border: 1px solid #bfdbfe;
+        }
+
+        .horaires-grid {
+          display: grid;
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+
+        .photos-grid {
+          display: grid;
+          gap: 1rem;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          margin-top: 1rem;
+        }
+
+        .photo-card {
+          background: white;
+          border-radius: 0.75rem;
+          padding: 0.9rem;
+          border: 1px solid #e5e7eb;
+          text-align: center;
+          font-size: 0.9rem;
+        }
+
+        .image-placeholder {
+          width: 100%;
+          aspect-ratio: 4 / 3;
+          border-radius: 0.6rem;
+          background: #e5e7eb;
+          margin-bottom: 0.5rem;
+        }
+
+        .image-placeholder:first-of-type {
+          margin-top: 1rem;
+        }
+
+        .footer {
+          border-top: 1px solid #e5e7eb;
+          padding: 1rem 1.25rem;
+          text-align: center;
+          font-size: 0.85rem;
+          color: #6b7280;
+          background: white;
+        }
+
+        .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+
+        @media (max-width: 768px) {
+          .header-inner {
+            flex-wrap: wrap;
+          }
+
+          .main-nav {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .header-actions {
+            width: 100%;
+            justify-content: center;
+            margin-top: 0.5rem;
+          }
+
+          .hero h1 {
+            font-size: 1.5rem;
+          }
+        }
+      `}</style>
     </>
   );
 }
