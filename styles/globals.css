@@ -383,3 +383,106 @@ a:hover {
     font-size: 1.6rem;
   }
 }
+
+/* === STYLE FORMULAIRE D'INSCRIPTION === */
+
+.form-section {
+  margin-top: 1rem;
+}
+
+.form-section h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #065f46;
+}
+
+.form-intro {
+  max-width: 40rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #bbf7d0;
+  padding: 1.5rem 1.5rem 1.8rem;
+  box-shadow: 0 18px 40px rgba(15, 118, 110, 0.12);
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #065f46;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  border-radius: 0.7rem;
+  border: 1px solid #a7f3d0;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.9rem;
+  outline: none;
+  background: #f0fdf4;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #16a34a;
+  background: #ecfdf3;
+  box-shadow: 0 0 0 1px #bbf7d0;
+}
+
+.form-help {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.form-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-submit {
+  width: fit-content;
+}
+
+.form-small-note {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.form-back-home {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
