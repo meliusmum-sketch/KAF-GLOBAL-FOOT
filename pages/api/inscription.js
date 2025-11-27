@@ -1,8 +1,6 @@
-// pages/api/inscription.js
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  // On accepte uniquement le POST
   if (req.method !== "POST") {
     return res.status(405).json({ ok: false, message: "Méthode non autorisée" });
   }
@@ -19,14 +17,12 @@ export default async function handler(req, res) {
     message,
   } = req.body || {};
 
-  // Champs obligatoires
   if (!nom || !age || !telephone || !niveau) {
-    return res.status(400).send(
-      "Merci de remplir tous les champs obligatoires (nom, âge, téléphone, niveau)."
-    );
+    return res
+      .status(400)
+      .send("Merci de remplir tous les champs obligatoires (nom, âge, téléphone, niveau).");
   }
 
-  // Récupération des variables d'environnement EXACTEMENT comme sur Vercel
   const smtpHost = process.env.SMTP_HOST;
   const smtpPort = Number(process.env.SMTP_PORT) || 465;
   const smtpUser = process.env.SMTP_USER;
@@ -35,19 +31,17 @@ export default async function handler(req, res) {
     process.env.RECEIVER_EMAIL || smtpUser || "contact@kafglobalfoot.com";
 
   if (!smtpHost || !smtpUser || !smtpPass) {
-    console.error("❌ SMTP_HOST / SMTP_USER / SMTP_PASS manquants");
+    console.error("❌ SMTP mal configuré (HOST/USER/PASS manquants)");
     return res
       .status(500)
-      .send(
-        "Configuration d'envoi d'e-mail incomplète sur le serveur (variables SMTP manquantes)."
-      );
+      .send("Une erreur de configuration est survenue côté serveur.");
   }
 
   try {
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: smtpPort === 465, // true pour le port SSL classique
+      secure: smtpPort === 465,
       auth: {
         user: smtpUser,
         pass: smtpPass,
@@ -103,16 +97,12 @@ ${message || "Aucun message ajouté."}
       </ul>
 
       <h3>Message complémentaire</h3>
-      <p>${(message || "Aucun message ajouté.").replace(
-        /\n/g,
-        "<br />"
-      )}</p>
+      <p>${(message || "Aucun message ajouté.").replace(/\n/g, "<br />")}</p>
 
       <hr />
       <p>Message envoyé automatiquement depuis le site <strong>kafglobalfoot.com</strong>.</p>
     `;
 
-    // Envoi de l'e-mail
     await transporter.sendMail({
       from: `"KAF Global Foot – Site" <${smtpUser}>`,
       to: receiverEmail,
@@ -123,7 +113,6 @@ ${message || "Aucun message ajouté."}
 
     console.log("✅ E-mail de pré-inscription envoyé à :", receiverEmail);
 
-    // Redirection classique de formulaire vers /merci
     res.writeHead(302, { Location: "/merci" });
     res.end();
   } catch (err) {
