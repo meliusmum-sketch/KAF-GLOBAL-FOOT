@@ -246,9 +246,18 @@ export default function Home() {
                   Ziguinchor (Casamance).
                 </p>
                 <p>
-                  Une carte Google Maps sera bientôt disponible ici pour vous
+                  Une carte Google Maps est disponible ci-dessous pour vous
                   aider à trouver facilement l’emplacement du terrain.
                 </p>
+
+                <div className="map-container">
+                  <iframe
+                    title="Terrain du Lycée de Kafountine"
+                    src="https://www.google.com/maps?q=Lyc%C3%A9e%20de%20Kafountine&output=embed"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </section>
@@ -258,27 +267,51 @@ export default function Home() {
             <h2>Photos de KAF Global Foot</h2>
             <div className="photos-grid">
               <div className="photo-card">
-                <div className="photo-placeholder" />
+                <img
+                  src="/terrain-kafountine.jpg"
+                  alt="Terrain de football à Kafountine"
+                  className="photo-image"
+                />
                 <p>Terrain de football à Kafountine</p>
               </div>
               <div className="photo-card">
-                <div className="photo-placeholder" />
+                <img
+                  src="/jeunes-joueurs-kafountine.jpg"
+                  alt="Jeunes joueurs de Kafountine au football"
+                  className="photo-image"
+                />
                 <p>Jeunes joueurs de Kafountine au football</p>
               </div>
               <div className="photo-card">
-                <div className="photo-placeholder" />
+                <img
+                  src="/entrainement-technique.jpg"
+                  alt="Travail technique à l'entraînement"
+                  className="photo-image"
+                />
                 <p>Travail technique à l&apos;entraînement</p>
               </div>
               <div className="photo-card">
-                <div className="photo-placeholder" />
+                <img
+                  src="/vue-academie-kaf-global-foot.jpg"
+                  alt="Vue d'ensemble de l'académie KAF Global Foot"
+                  className="photo-image"
+                />
                 <p>Vue d&apos;ensemble de l&apos;académie KAF Global Foot</p>
               </div>
               <div className="photo-card">
-                <div className="photo-placeholder" />
+                <img
+                  src="/match-entrainement.jpg"
+                  alt="Match d'entraînement à Kafountine"
+                  className="photo-image"
+                />
                 <p>Match d&apos;entraînement à Kafountine</p>
               </div>
               <div className="photo-card">
-                <div className="photo-placeholder" />
+                <img
+                  src="/ambiance-kaf-global-foot.jpg"
+                  alt="Ambiance au sein de KAF Global Foot"
+                  className="photo-image"
+                />
                 <p>Ambiance au sein de KAF Global Foot</p>
               </div>
             </div>
@@ -293,8 +326,7 @@ export default function Home() {
             </p>
             <ul>
               <li>
-                Téléphone / WhatsApp :{" "}
-                <strong>+221 78 270 24 57</strong>
+                Téléphone / WhatsApp : <strong>+221 78 270 24 57</strong>
               </li>
               <li>
                 Email : <strong>contact@kafglobalfoot.com</strong>
@@ -313,6 +345,16 @@ export default function Home() {
           <p>© 2025 KAF Global Foot. Tous droits réservés.</p>
           <p>Site développé avec Next.js &amp; déployé sur Vercel.</p>
         </footer>
+
+        {/* BOUTON WHATSAPP FLOTTANT */}
+        <a
+          href="https://wa.me/221782702457"
+          className="whatsapp-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          💬 WhatsApp
+        </a>
       </div>
     </>
   );
