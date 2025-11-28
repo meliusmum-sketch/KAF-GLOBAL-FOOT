@@ -95,7 +95,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding-top: 4.5rem; /* aligne avec le hero */
+  padding-top: 4.5rem; /* aligner avec le hero */
 }
 
 .rail-card {
@@ -129,7 +129,7 @@ a:hover {
   font-size: 0.85rem;
 }
 
-/* Sur mobile / tablette : on supprime les colonnes latérales */
+/* Sur mobile / tablette : 1 seule colonne */
 @media (max-width: 1024px) {
   .layout-shell {
     grid-template-columns: minmax(0, 1fr);
@@ -550,7 +550,7 @@ input[type="submit"]:hover {
 }
 
 /* ===========================
-   ADAPTATION MOBILE
+   ADAPTATION MOBILE GÉNÉRALE
    =========================== */
 
 @media (max-width: 640px) {
@@ -570,3 +570,4 @@ input[type="submit"]:hover {
     padding-inline: 1rem;
   }
 }
+
