@@ -463,4 +463,141 @@ a:hover {
 
 /* Bloc “Voir plus” */
 .details {
-  margi
+  margin-top: 0.7rem;
+  background: rgba(3, 30, 21, 0.96);
+  border-radius: 0.9rem;
+  padding: 0.65rem 0.9rem 0.75rem;
+  border: 1px solid rgba(52, 211, 153, 0.35);
+}
+
+.details summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent-sand);
+}
+
+.details summary::-webkit-details-marker {
+  display: none;
+}
+
+.details[open] summary {
+  margin-bottom: 0.35rem;
+}
+
+/* ===========================
+   PHOTOS
+   =========================== */
+
+.photo-strip {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.7rem;
+  padding: 0.3rem 0 0.1rem;
+}
+
+.photo-strip img {
+  flex: 0 0 70%;
+  border-radius: 0.9rem;
+  object-fit: cover;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+}
+
+/* ===========================
+   FORMULAIRES (/inscription)
+   =========================== */
+
+form {
+  margin-top: 0.8rem;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e5e7eb;
+  margin: 0.6rem 0 0.25rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.65rem;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #e5e7eb;
+  background: rgba(15, 23, 42, 0.95);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #22c55e;
+  outline-offset: 1px;
+  border-color: #22c55e;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button,
+input[type="submit"] {
+  margin-top: 0.9rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  border: none;
+  background: #22c55e;
+  color: #022c22;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: #16a34a;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+.site-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--accent-sand-soft-rgba);
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.footer-tech {
+  margin-top: 0.2rem;
+  color: #64748b;
+}
+
+/* ===========================
+   ADAPTATION MOBILE GÉNÉRALE
+   =========================== */
+
+@media (max-width: 640px) {
+  .layout-shell {
+    padding-inline: 1rem;
+  }
+
+  .hero {
+    padding-inline: 1.2rem;
+  }
+
+  body {
+    font-size: 0.95rem;
+  }
+
+  .site-header {
+    padding-inline: 1rem;
+  }
+}
