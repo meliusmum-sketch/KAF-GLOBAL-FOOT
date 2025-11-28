@@ -1,8 +1,8 @@
 /* ================
    globals.css / global.css
-   Nouveau style mobile-first pour KAF Global Foot
-   Tu peux remplacer TOUT ton ancien fichier par celui-ci.
-   ================= */
+   Style mobile-first pour KAF Global Foot
+   Remplace TOUT le contenu de ton ancien fichier.
+   ================ */
 
 /* --- Reset simple --- */
 *,
@@ -24,20 +24,19 @@ body {
   color: #111827;
 }
 
-/* Le conteneur principal (pages Next) */
 body > div {
   min-height: 100vh;
 }
 
-/* Le contenu principal (ta page) */
+/* --- Conteneur principal --- */
 main {
   max-width: 960px;
   margin: 0 auto;
   padding: 1.25rem 1rem 2.5rem;
-  background: #f9fafb; /* fond clair pour lire */
+  background: #f9fafb; /* fond clair pour le contenu */
 }
 
-/* Sur écran un peu plus grand, on ajoute arrondi + ombre */
+/* Sur écran moyen / grand : carte au centre avec ombre */
 @media (min-width: 768px) {
   main {
     margin-top: 1.5rem;
@@ -47,30 +46,69 @@ main {
   }
 }
 
-/* --- Header & navigation (barre du haut) --- */
-header {
+/* --- Header + logo + navigation --- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin: -1.25rem -1rem 0.75rem; /* colle le header au bord du main */
   background: linear-gradient(135deg, #0f766e, #22c55e);
   color: #ecfdf5;
-  padding: 0.75rem 1rem 0.6rem;
+  border-radius: 0 0 1rem 1rem;
 }
 
-header a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: 500;
+.site-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-header a:hover {
-  text-decoration: underline;
+.site-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: #ecfdf5;
 }
 
-/* Si un <nav> existe, on l’affiche proprement */
-header nav {
+.site-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  justify-content: flex-end;
+}
+
+.site-nav a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.site-nav a:hover {
+  background: rgba(15, 23, 42, 0.18);
+}
+
+/* Header sur mobile : tout sur deux lignes */
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.7rem 0.85rem;
+    margin: -1.25rem -0.85rem 0.8rem;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
 }
 
 /* --- Typographie globale --- */
@@ -84,28 +122,28 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
-  margin: 1.2rem 0 0.75rem;
+  font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+  margin: 0 0 0.75rem;
 }
 
 h2 {
   font-size: clamp(1.3rem, 3.6vw, 1.8rem);
-  margin: 2rem 0 0.75rem;
+  margin: 1.8rem 0 0.75rem;
 }
 
 h3 {
   font-size: clamp(1.05rem, 3.2vw, 1.25rem);
-  margin: 1.25rem 0 0.5rem;
+  margin: 0;
 }
 
 p {
-  margin: 0.4rem 0 0.6rem;
+  margin: 0.35rem 0 0.6rem;
   color: #374151;
   font-size: 0.96rem;
 }
 
 ul {
-  margin: 0.5rem 0 0.8rem;
+  margin: 0.4rem 0 0.8rem;
   padding-left: 1.1rem;
   color: #374151;
   font-size: 0.95rem;
@@ -115,14 +153,17 @@ li + li {
   margin-top: 0.2rem;
 }
 
-/* Petite ligne “meta” (âge, niveaux, etc.) si tu utilises cette classe */
+.section {
+  padding-top: 1.2rem;
+}
+
 .meta-line {
   font-size: 0.9rem;
   color: #4b5563;
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
 }
 
-/* --- Liens & boutons de base --- */
+/* --- Liens & boutons --- */
 a {
   color: #0f766e;
   text-decoration: none;
@@ -132,7 +173,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Bouton “style appli” si tu ajoutes des classes plus tard */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -159,29 +199,121 @@ a:hover {
   border-color: #d1d5db;
 }
 
-/* --- Style “cartes” pour les sous-parties (h3 + texte) --- */
-/* Exemple : Encadrement, Groupe formation, Groupe performance, etc. */
-h3 + p,
-h3 + ul {
+/* --- Hero (premier écran) --- */
+.hero {
+  padding-top: 0.25rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 0.98rem;
+  color: #374151;
+}
+
+.hero-meta {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 0.8rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+/* Bloc photos à droite du hero (sur grand écran) */
+.hero-photos-strip {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+
+.hero-photo {
+  flex: 0 0 66%;
+  border-radius: 0.9rem;
+  object-fit: cover;
+}
+
+/* Hero en 2 colonnes sur écran >= 768px */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-text {
+    flex: 1.2;
+  }
+
+  .hero-photos {
+    flex: 1;
+  }
+}
+
+/* --- Cartes (programmes, horaires, etc.) --- */
+.card {
   background: #ffffff;
   border-radius: 0.9rem;
-  padding: 0.8rem 0.9rem;
+  padding: 0.9rem 0.95rem;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  margin-top: 0.8rem;
 }
 
-/* Quand un h2 (nouvelle grande section) arrive, on espace bien */
-h2 + p,
-h2 + ul {
-  margin-top: 0.3rem;
+.card h3 {
+  margin-bottom: 0.35rem;
 }
 
-/* --- Images (section Photos, logo, etc.) --- */
+/* --- Bloc “Voir plus” --- */
+.details {
+  margin-top: 0.7rem;
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+}
+
+.details summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #0f766e;
+}
+
+.details summary::marker,
+.details summary::-webkit-details-marker {
+  display: none;
+}
+
+.details[open] summary {
+  margin-bottom: 0.4rem;
+}
+
+/* --- Images générales (hors hero) --- */
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 0.9rem;
   display: block;
-  margin: 0.5rem 0 1rem;
+}
+
+/* --- Galerie de photos --- */
+.photo-strip {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+}
+
+.photo-strip img {
+  flex: 0 0 70%;
+  border-radius: 0.9rem;
+  object-fit: cover;
 }
 
 /* --- Formulaires (page /inscription) --- */
@@ -244,29 +376,24 @@ input[type="submit"]:hover {
   background: #115e59;
 }
 
-/* --- Pied de page --- */
-footer {
+/* --- Footer --- */
+.site-footer {
   margin-top: 2rem;
   font-size: 0.85rem;
   color: #6b7280;
 }
 
-/* --- Optimisation mobile (petits écrans) --- */
+.footer-tech {
+  margin-top: 0.15rem;
+}
+
+/* --- Ajustements mobile --- */
 @media (max-width: 640px) {
   main {
-    padding: 1rem 0.8rem 1.8rem;
+    padding: 1rem 0.85rem 1.8rem;
   }
 
   body {
     font-size: 0.95rem;
-  }
-
-  header {
-    padding-left: 0.85rem;
-    padding-right: 0.85rem;
-  }
-
-  header nav {
-    gap: 0.35rem;
   }
 }
