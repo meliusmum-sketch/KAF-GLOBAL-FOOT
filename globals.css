@@ -1,6 +1,6 @@
 /* ===========================
-   GLOBALS.CSS – VERSION FULL ÉCRAN
-   Casamance verte, plus de bandes sur les côtés
+   GLOBALS.CSS – PLEIN ÉCRAN
+   Plus de “page au milieu” : tout s’étire sur la largeur
    =========================== */
 
 /* Reset simple */
@@ -24,7 +24,7 @@ body {
   color: #e5e7eb;
 }
 
-/* Images par défaut */
+/* Images */
 img {
   max-width: 100%;
   height: auto;
@@ -88,11 +88,10 @@ main {
   width: 100%;
 }
 
-/* Chaque section de la page (À propos, Programmes, etc.) */
+/* Chaque section de la page prend TOUTE la largeur */
 .section {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 1.75rem 1rem 0;
+  width: 100%;
+  padding: 1.75rem 1.25rem 0;
 }
 
 .section h2 {
@@ -104,7 +103,6 @@ main {
   color: #e5e7eb;
 }
 
-/* Petite ligne de description (meta-line) */
 .meta-line {
   font-size: 0.88rem;
   color: #a7f3d0;
@@ -123,7 +121,7 @@ main {
   background: rgba(4, 47, 31, 0.96);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(34, 197, 94, 0.35);
-  padding: 0.6rem 1rem;
+  padding: 0.6rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -175,7 +173,7 @@ main {
   .site-header {
     flex-direction: column;
     align-items: flex-start;
-    padding-inline: 0.85rem;
+    padding-inline: 0.9rem;
   }
 
   .site-nav {
@@ -188,22 +186,21 @@ main {
    =========================== */
 
 .hero {
-  padding: 1.6rem 1rem 2rem;
+  width: 100%;
+  padding: 1.6rem 1.25rem 2rem;
   background:
     radial-gradient(circle at top left, rgba(22, 163, 74, 0.35), transparent 60%),
     radial-gradient(circle at bottom right, rgba(74, 222, 128, 0.22), transparent 55%);
 }
 
 .hero-content {
-  max-width: 1120px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
 .hero-text {
-  max-width: 540px;
+  max-width: 560px;
 }
 
 .hero-subtitle {
@@ -226,7 +223,7 @@ main {
   margin-bottom: 0.3rem;
 }
 
-/* Bloc photos à droite */
+/* Bloc photos hero */
 .hero-photos {
   width: 100%;
 }
@@ -245,7 +242,8 @@ main {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Sur écran plus large : texte + photos côte à côte */
+/* Sur écran plus large : texte + photos côte à côte,
+   mais toujours sur TOUTE la largeur */
 @media (min-width: 768px) {
   .hero-content {
     flex-direction: row;
@@ -253,7 +251,7 @@ main {
   }
 
   .hero-text {
-    flex: 1.2;
+    flex: 1.1;
   }
 
   .hero-photos {
@@ -307,6 +305,7 @@ main {
    =========================== */
 
 .card {
+  width: 100%;
   background: rgba(6, 78, 59, 0.9);
   border-radius: 0.9rem;
   padding: 0.9rem 1rem;
@@ -366,9 +365,9 @@ main {
    =========================== */
 
 .site-footer {
-  max-width: 1120px;
-  margin: 2.5rem auto 0;
-  padding: 1rem 1rem 1.3rem;
+  width: 100%;
+  margin-top: 2.5rem;
+  padding: 1rem 1.25rem 1.3rem;
   border-top: 1px solid rgba(34, 197, 94, 0.3);
   text-align: center;
   font-size: 0.85rem;
@@ -381,15 +380,15 @@ main {
 }
 
 /* ===========================
-   ADAPTATION MOBILE GLOBALE
+   ADAPTATION MOBILE
    =========================== */
 
 @media (max-width: 640px) {
   .section {
-    padding-inline: 0.85rem;
+    padding-inline: 0.9rem;
   }
 
   .hero {
-    padding-inline: 0.85rem;
+    padding-inline: 0.9rem;
   }
 }
