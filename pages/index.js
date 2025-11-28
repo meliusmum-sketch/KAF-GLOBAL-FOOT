@@ -302,7 +302,7 @@ export default function Home() {
         </aside>
       </div>
 
-      {/* BOUTON WHATSAPP FLOTTANT */}
+      {/* BOUTON WHATSAPP FLOTTANT (toujours visible) */}
       <a
         href="https://wa.me/221782702457"
         className="whatsapp-float"
