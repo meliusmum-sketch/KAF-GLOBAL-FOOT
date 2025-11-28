@@ -28,7 +28,7 @@ export default function Home() {
 
       {/* LAYOUT 3 COLONNES SUR GRAND ÉCRAN */}
       <div className="layout-shell">
-        {/* COLONNE GAUCHE – INFOS RAPIDES + CONTACT DIRECT */}
+        {/* COLONNE GAUCHE – INFOS RAPIDES */}
         <aside className="layout-rail layout-rail-left">
           <div className="rail-card">
             <h3>Infos rapides</h3>
@@ -59,17 +59,12 @@ export default function Home() {
           <section className="hero" aria-labelledby="hero-title">
             <div className="hero-content">
               <div className="hero-text">
-                {/* Nouveau message d'inscription ouverte */}
-                <p className="hero-meta">
-                  <strong>Inscriptions ouvertes pour la saison 2025–2026</strong>
-                </p>
-
                 <h1 id="hero-title">
                   KAF Global Foot – académie de football à Kafountine
                 </h1>
                 <p className="hero-subtitle">
-                  Formation des joueurs de 14 à 23 ans dans un cadre sérieux,
-                  sécurisé et convivial.
+                  Académie de football à Kafountine pour les jeunes de 14 à 23
+                  ans, dans un cadre sérieux, sécurisé et convivial.
                 </p>
                 <p className="hero-meta">
                   Joueurs de 14 à 23 ans · Tous niveaux
@@ -93,7 +88,7 @@ export default function Home() {
                 <div className="hero-photos-strip">
                   <img
                     src="/gallery1.jpg"
-                    alt="Jeune joueur à l'entraînement à Kafountine"
+                    alt="Entraînement à Kafountine"
                     className="hero-photo"
                   />
                   <img
@@ -103,7 +98,7 @@ export default function Home() {
                   />
                   <img
                     src="/gallery3.jpg"
-                    alt="Match d'entraînement avec KAF Global Foot"
+                    alt="Match d'entraînement KAF Global Foot"
                     className="hero-photo"
                   />
                 </div>
@@ -111,22 +106,22 @@ export default function Home() {
             </div>
           </section>
 
-          {/* À PROPOS */}
+          {/* À PROPOS – TEXTE ALLÉGÉ */}
           <section id="apropos" className="section">
             <h2>À propos de KAF Global Foot</h2>
             <p>
               KAF Global Foot est une académie de football basée à Kafountine,
-              en Casamance (Sénégal). Nous accompagnons les jeunes joueurs de 14
-              à 23 ans dans leur progression sportive et humaine.
+              en Casamance. Nous accompagnons les jeunes de 14 à 23 ans dans
+              leur progression sportive et humaine.
             </p>
             <details className="details">
               <summary>Voir plus</summary>
               <p>
                 Notre projet repose sur trois piliers : un encadrement sérieux,
                 un cadre sécurisé et une vision éducative du football. Au-delà
-                de la performance, nous cherchons à transmettre des valeurs
-                fortes : respect, discipline, esprit d’équipe, goût de l’effort
-                et sens des responsabilités.
+                de la performance, nous transmettons des valeurs fortes :
+                respect, discipline, esprit d’équipe, goût de l’effort et sens
+                des responsabilités.
               </p>
               <p>
                 Les entraînements se déroulent du lundi au samedi sur le terrain
@@ -220,17 +215,21 @@ export default function Home() {
             </div>
           </section>
 
-          {/* PHOTOS */}
+          {/* PHOTOS – LÉGÈRE AMÉLIORATION */}
           <section id="photos" className="section">
             <h2>Photos de KAF Global Foot</h2>
+            <p>
+              Quelques images de l&apos;académie : terrain, entraînements,
+              matchs et ambiance à Kafountine.
+            </p>
             <div className="photo-strip">
               <img
                 src="/gallery1.jpg"
-                alt="Terrain de football à Kafountine"
+                alt="Terrain de Kafountine"
               />
               <img
                 src="/gallery2.jpg"
-                alt="Jeunes joueurs de Kafountine au football"
+                alt="Jeunes joueurs de KAF Global Foot"
               />
               <img
                 src="/gallery3.jpg"
@@ -238,32 +237,85 @@ export default function Home() {
               />
               <img
                 src="/gallery4.jpg"
-                alt="Vue d'ensemble de l'académie KAF Global Foot"
+                alt="Vue d'ensemble de l'académie"
               />
               <img
                 src="/gallery5.jpg"
-                alt="Match d'entraînement à Kafountine"
+                alt="Match d'entraînement"
               />
               <img
                 src="/gallery6.jpg"
-                alt="Ambiance au sein de KAF Global Foot"
+                alt="Ambiance de groupe à KAF Global Foot"
               />
             </div>
           </section>
 
-          {/* CONTACT – VERSION PLUS WHATSAPP */}
+          {/* CONTACT – ON NE TOUCHE PAS À LA LOGIQUE */}
           <section id="contact" className="section">
             <h2>Contact KAF Global Foot</h2>
+            <p>
+              Pour toute question (pré-inscriptions, horaires, tarifs,
+              partenariats), contactez-nous :
+            </p>
+            <ul>
+              <li>Téléphone / WhatsApp : +221 78 270 24 57</li>
+              <li>Email : contact@kafglobalfoot.com</li>
+            </ul>
+            <p>
+              <a href="/inscription" className="btn btn-primary">
+                Aller au formulaire de pré-inscription
+              </a>
+            </p>
+            <p>
+              <a
+                href="https://wa.me/221782702457"
+                className="btn btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Parler sur WhatsApp
+              </a>
+            </p>
+          </section>
 
-            {/* Bloc WhatsApp rapide */}
-            <div className="card">
-              <h3>Contact rapide WhatsApp</h3>
-              <p>
-                Pour vos questions sur les pré-inscriptions, les horaires ou les
-                tarifs, écrivez-nous directement sur WhatsApp.
-              </p>
-              <p className="rail-strong">+221 78 270 24 57</p>
-              <p>
-                <a
-                  href="https://wa.me/221782702457"
-                  className="bt
+          {/* FOOTER */}
+          <footer className="site-footer">
+            <p>© 2025 KAF Global Foot. Tous droits réservés.</p>
+            <p className="footer-tech">
+              Site développé avec Next.js &amp; déployé sur Vercel.
+            </p>
+          </footer>
+        </div>
+
+        {/* COLONNE DROITE – VISION / CASAMANCE VERTE */}
+        <aside className="layout-rail layout-rail-right">
+          <div className="rail-card">
+            <h3>Vision du projet</h3>
+            <p>
+              Former des joueurs complets, avec des valeurs humaines fortes et
+              une ouverture internationale.
+            </p>
+          </div>
+          <div className="rail-card">
+            <h3>Casamance verte</h3>
+            <p>
+              Un projet ancré à Kafountine, au cœur de la Casamance, dans un
+              environnement calme et inspirant.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      {/* BOUTON WHATSAPP FLOTTANT (toujours visible) */}
+      <a
+        href="https://wa.me/221782702457"
+        className="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Discuter avec KAF Global Foot sur WhatsApp"
+      >
+        WhatsApp
+      </a>
+    </main>
+  );
+}
