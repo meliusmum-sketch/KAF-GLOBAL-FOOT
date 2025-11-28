@@ -1,5 +1,5 @@
 // pages/index.tsx
-// Remplace TOUT le contenu du fichier par ce code.
+// Remplace TOUT le contenu de ce fichier par ce code.
 
 export default function Home() {
   return (
@@ -63,7 +63,7 @@ export default function Home() {
                   KAF Global Foot – académie de football à Kafountine
                 </h1>
                 <p className="hero-subtitle">
-                  Formation des joueurs de 14 à 23 ans dans un cadre sérieux,
+                  Formation de joueurs de 14 à 23 ans, dans un cadre sérieux,
                   sécurisé et convivial.
                 </p>
                 <p className="hero-meta">
@@ -151,35 +151,56 @@ export default function Home() {
 
             <div className="card">
               <h3>Groupe formation</h3>
-              <p>Pour les joueurs qui veulent progresser sérieusement.</p>
-              <ul>
-                <li>Entraînements réguliers du lundi au samedi</li>
-                <li>Travail technique, coordination, motricité</li>
-                <li>Jeux, oppositions et mises en situation</li>
-              </ul>
+              <p>
+                Pour les joueurs qui veulent progresser sérieusement et poser
+                des bases solides.
+              </p>
+              <details className="details">
+                <summary>Voir le détail du programme</summary>
+                <ul>
+                  <li>Entraînements du lundi au samedi</li>
+                  <li>Travail technique : conduite de balle, contrôle, passes</li>
+                  <li>Coordination, motricité, déplacements sans ballon</li>
+                  <li>Jeux réduits, oppositions et mises en situation</li>
+                </ul>
+              </details>
             </div>
 
             <div className="card">
               <h3>Groupe performance</h3>
-              <p>Pour les joueurs les plus motivés.</p>
-              <ul>
-                <li>Travail spécifique par poste</li>
-                <li>Préparation physique et mentale</li>
-                <li>Accompagnement pour détections et essais</li>
-              </ul>
+              <p>
+                Pour les joueurs les plus motivés, avec un objectif de haut
+                niveau et de détections.
+              </p>
+              <details className="details">
+                <summary>Voir le détail du programme</summary>
+                <ul>
+                  <li>Travail spécifique par poste (gardien, défenseur, etc.)</li>
+                  <li>Préparation physique, renforcement et prévention blessures</li>
+                  <li>Préparation mentale, concentration, gestion du stress</li>
+                  <li>Accompagnement pour détections et essais</li>
+                </ul>
+              </details>
             </div>
 
             <div className="card">
               <h3>Catégories KAF Global Foot</h3>
-              <ul>
-                <li>Cadets – U17 (14–16 ans)</li>
-                <li>Juniors – U20 (17–20 ans)</li>
-                <li>Espoirs – U23 (21–23 ans)</li>
-              </ul>
-              <p className="meta-line">
-                Joueurs de 14 à 23 ans, tous niveaux. L’affectation dans une
-                catégorie se fait en fonction de l’âge et du niveau.
+              <p>
+                Les joueurs sont répartis par âge et par niveau pour garantir un
+                bon rythme de progression.
               </p>
+              <details className="details">
+                <summary>Voir les catégories</summary>
+                <ul>
+                  <li>Cadets – U17 : 14–16 ans</li>
+                  <li>Juniors – U20 : 17–20 ans</li>
+                  <li>Espoirs – U23 : 21–23 ans</li>
+                </ul>
+                <p className="meta-line">
+                  L’affectation dans une catégorie se fait en fonction de l’âge,
+                  du niveau et de la maturité du joueur.
+                </p>
+              </details>
             </div>
           </section>
 
@@ -189,29 +210,34 @@ export default function Home() {
 
             <div className="card">
               <h3>Horaires KAF Global Foot</h3>
-              <ul>
-                <li>Du lundi au vendredi : 16h00 – 18h00</li>
-                <li>Samedi : 9h30 – 11h30</li>
-              </ul>
-              <p>
-                Entraînements tous les jours sauf le dimanche. Les horaires
-                peuvent légèrement varier en fonction du planning et des
-                compétitions. En cas de changement, les joueurs et les parents
-                sont informés à l’avance.
-              </p>
+              <p>Entraînements quasi tous les jours, avec un cadre régulier.</p>
+              <details className="details">
+                <summary>Voir le détail des horaires</summary>
+                <ul>
+                  <li>Du lundi au vendredi : 16h00 – 18h00</li>
+                  <li>Samedi : 9h30 – 11h30</li>
+                </ul>
+                <p>
+                  En cas de changement (match, tournoi, détection), les joueurs
+                  et les parents sont informés à l’avance.
+                </p>
+              </details>
             </div>
 
             <div className="card">
               <h3>Terrain d’entraînement</h3>
               <p>Terrain du Lycée de Kafountine</p>
-              <p>
-                Crewane, Kafountine, département de Bignona, région de
-                Ziguinchor (Casamance).
-              </p>
-              <p>
-                Une carte Google Maps est disponible ci-dessous pour vous aider
-                à trouver le terrain.
-              </p>
+              <details className="details">
+                <summary>Voir plus d’informations</summary>
+                <p>
+                  Crewane, Kafountine, département de Bignona, région de
+                  Ziguinchor (Casamance).
+                </p>
+                <p>
+                  Un environnement calme, propice au travail, avec une vraie
+                  ambiance de football local et de Casamance.
+                </p>
+              </details>
             </div>
           </section>
 
@@ -249,10 +275,7 @@ export default function Home() {
           {/* CONTACT */}
           <section id="contact" className="section">
             <h2>Contact KAF Global Foot</h2>
-            <p>
-              Pour toute question (pré-inscriptions, horaires, tarifs,
-              partenariats), contactez-nous :
-            </p>
+            <p>Pour toute question (pré-inscriptions, horaires, tarifs) :</p>
             <ul>
               <li>Téléphone / WhatsApp : +221 78 270 24 57</li>
               <li>Email : contact@kafglobalfoot.com</li>
