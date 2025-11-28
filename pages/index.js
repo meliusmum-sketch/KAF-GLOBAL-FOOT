@@ -1,5 +1,5 @@
 // pages/index.tsx
-// Remplace TOUT le contenu de ce fichier par ce code.
+// Remplace TOUT le contenu du fichier par ce code.
 
 export default function Home() {
   return (
@@ -301,6 +301,17 @@ export default function Home() {
           </div>
         </aside>
       </div>
+
+      {/* BOUTON WHATSAPP FLOTTANT */}
+      <a
+        href="https://wa.me/221782702457"
+        className="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Discuter avec KAF Global Foot sur WhatsApp"
+      >
+        WhatsApp
+      </a>
     </main>
   );
 }
