@@ -1,5 +1,5 @@
 // pages/index.tsx
-// Remplace TOUT le contenu de ce fichier par ce code.
+// Remplace TOUT le contenu du fichier par ce code.
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
 
       {/* LAYOUT 3 COLONNES SUR GRAND ÉCRAN */}
       <div className="layout-shell">
-        {/* COLONNE GAUCHE – RUBRIQUES */}
+        {/* COLONNE GAUCHE – INFOS RAPIDES + CONTACT DIRECT */}
         <aside className="layout-rail layout-rail-left">
           <div className="rail-card">
             <h3>Infos rapides</h3>
@@ -59,6 +59,11 @@ export default function Home() {
           <section className="hero" aria-labelledby="hero-title">
             <div className="hero-content">
               <div className="hero-text">
+                {/* Nouveau message d'inscription ouverte */}
+                <p className="hero-meta">
+                  <strong>Inscriptions ouvertes pour la saison 2025–2026</strong>
+                </p>
+
                 <h1 id="hero-title">
                   KAF Global Foot – académie de football à Kafountine
                 </h1>
@@ -145,7 +150,7 @@ export default function Home() {
             </details>
           </section>
 
-          {/* PROGRAMMES – VERSION SIMPLE (COMME AVANT) */}
+          {/* PROGRAMMES – VERSION SIMPLE */}
           <section id="programmes" className="section">
             <h2>Nos programmes</h2>
 
@@ -183,7 +188,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* HORAIRES – VERSION SIMPLE (COMME AVANT) */}
+          {/* HORAIRES */}
           <section id="horaires" className="section">
             <h2>Horaires &amp; lieu d’entraînement</h2>
 
@@ -246,72 +251,19 @@ export default function Home() {
             </div>
           </section>
 
-          {/* CONTACT */}
+          {/* CONTACT – VERSION PLUS WHATSAPP */}
           <section id="contact" className="section">
             <h2>Contact KAF Global Foot</h2>
-            <p>
-              Pour toute question (pré-inscriptions, horaires, tarifs,
-              partenariats), contactez-nous :
-            </p>
-            <ul>
-              <li>Téléphone / WhatsApp : +221 78 270 24 57</li>
-              <li>Email : contact@kafglobalfoot.com</li>
-            </ul>
-            <p>
-              <a href="/inscription" className="btn btn-primary">
-                Aller au formulaire de pré-inscription
-              </a>
-            </p>
-            <p>
-              <a
-                href="https://wa.me/221782702457"
-                className="btn btn-secondary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Parler sur WhatsApp
-              </a>
-            </p>
-          </section>
 
-          {/* FOOTER */}
-          <footer className="site-footer">
-            <p>© 2025 KAF Global Foot. Tous droits réservés.</p>
-            <p className="footer-tech">
-              Site développé avec Next.js &amp; déployé sur Vercel.
-            </p>
-          </footer>
-        </div>
-
-        {/* COLONNE DROITE – RUBRIQUES */}
-        <aside className="layout-rail layout-rail-right">
-          <div className="rail-card">
-            <h3>Vision du projet</h3>
-            <p>
-              Former des joueurs complets, avec des valeurs humaines fortes et
-              une ouverture internationale.
-            </p>
-          </div>
-          <div className="rail-card">
-            <h3>Casamance verte</h3>
-            <p>
-              Un projet ancré à Kafountine, au cœur de la Casamance, dans un
-              environnement calme et inspirant.
-            </p>
-          </div>
-        </aside>
-      </div>
-
-      {/* BOUTON WHATSAPP FLOTTANT (toujours visible) */}
-      <a
-        href="https://wa.me/221782702457"
-        className="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Discuter avec KAF Global Foot sur WhatsApp"
-      >
-        WhatsApp
-      </a>
-    </main>
-  );
-}
+            {/* Bloc WhatsApp rapide */}
+            <div className="card">
+              <h3>Contact rapide WhatsApp</h3>
+              <p>
+                Pour vos questions sur les pré-inscriptions, les horaires ou les
+                tarifs, écrivez-nous directement sur WhatsApp.
+              </p>
+              <p className="rail-strong">+221 78 270 24 57</p>
+              <p>
+                <a
+                  href="https://wa.me/221782702457"
+                  className="bt
