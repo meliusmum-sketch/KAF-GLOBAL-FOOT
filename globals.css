@@ -11,7 +11,8 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  background: #0b1020;
+  /* Fond nuit verte Casamance */
+  background: #02130f;
   color: #f8fafc;
 }
 
@@ -25,7 +26,6 @@ ul {
 }
 
 /* Layout général */
-
 .page {
   min-height: 100vh;
   display: flex;
@@ -33,13 +33,13 @@ ul {
 }
 
 /* HEADER */
-
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   backdrop-filter: blur(8px);
-  background: rgba(11, 16, 32, 0.9);
+  /* Barre du haut en vert très sombre */
+  background: rgba(4, 47, 31, 0.9);
   border-bottom: 1px solid rgba(148, 163, 184, 0.25);
 }
 
@@ -59,7 +59,6 @@ ul {
 }
 
 /* NAVIGATION */
-
 .main-nav {
   display: flex;
   gap: 1rem;
@@ -82,24 +81,24 @@ ul {
   display: flex;
 }
 
+/* Bouton "Inscription" / CTA en vert Casamance */
 .nav-cta {
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
-  border: 1px solid #22c55e;
+  border: 1px solid #16a34a;
   font-size: 0.9rem;
   font-weight: 500;
-  background: #22c55e;
-  color: #020617;
+  background: #16a34a;
+  color: #02130f;
   transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .nav-cta:hover {
-  background: #16a34a;
+  background: #15803d;
   transform: translateY(-1px);
 }
 
-/* Bouton hamburger */
-
+/* Bouton hamburger (menu mobile) */
 .mobile-nav-toggle {
   display: none; /* visible seulement en mobile */
   border: 1px solid rgba(148, 163, 184, 0.6);
@@ -142,7 +141,6 @@ ul {
 }
 
 /* MAIN */
-
 .page-main {
   flex: 1;
   max-width: 1080px;
@@ -151,7 +149,6 @@ ul {
 }
 
 /* HERO */
-
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
@@ -159,8 +156,10 @@ ul {
   align-items: center;
   padding: 2.2rem 1.5rem;
   margin: 1rem -1.5rem 2.5rem;
-  background: radial-gradient(circle at top left, #22c55e22, transparent 60%),
-    radial-gradient(circle at bottom right, #22c55e11, transparent 55%);
+  /* Halos verts lumineux derrière le hero */
+  background:
+    radial-gradient(circle at top left, #16a34a33, transparent 60%),
+    radial-gradient(circle at bottom right, #4ade8033, transparent 55%);
   border-bottom: 1px solid rgba(148, 163, 184, 0.25);
 }
 
@@ -182,19 +181,20 @@ ul {
   margin-bottom: 0.6rem;
 }
 
+/* Bouton principal du hero */
 .hero-primary {
   padding: 0.55rem 1.2rem;
   border-radius: 999px;
   border: none;
-  background: #22c55e;
-  color: #020617;
+  background: #16a34a;
+  color: #02130f;
   font-weight: 600;
   font-size: 0.95rem;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .hero-primary:hover {
-  background: #16a34a;
+  background: #15803d;
   transform: translateY(-1px);
 }
 
@@ -212,7 +212,6 @@ ul {
 }
 
 /* Sections */
-
 .page-section {
   margin-top: 2.5rem;
 }
@@ -234,7 +233,6 @@ ul {
 }
 
 /* À propos grid */
-
 .apropos-grid {
   display: grid;
   gap: 1.3rem;
@@ -244,12 +242,12 @@ ul {
 .apropos-grid > div {
   padding: 1rem 1.1rem;
   border-radius: 0.9rem;
-  background: rgba(15, 23, 42, 0.9);
+  /* Cartes en vert profond */
+  background: rgba(6, 78, 59, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
 /* Programmes */
-
 .programmes-grid {
   display: grid;
   gap: 1.4rem;
@@ -259,7 +257,7 @@ ul {
 .programme-card {
   padding: 1.1rem 1.2rem;
   border-radius: 0.9rem;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(6, 78, 59, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
@@ -273,11 +271,10 @@ ul {
   padding: 1rem 1.1rem;
   border-radius: 0.9rem;
   border: 1px dashed rgba(148, 163, 184, 0.5);
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(6, 78, 59, 0.8);
 }
 
 /* Horaires */
-
 .horaires-grid {
   display: grid;
   gap: 1.4rem;
@@ -287,12 +284,11 @@ ul {
 .horaires-grid > div {
   padding: 1rem 1.1rem;
   border-radius: 0.9rem;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(6, 78, 59, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
 /* Photos */
-
 .photos-grid {
   display: grid;
   gap: 1.2rem;
@@ -303,7 +299,7 @@ ul {
 .photo-card {
   padding: 0.9rem;
   border-radius: 0.9rem;
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(6, 78, 59, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.25);
   text-align: center;
   font-size: 0.9rem;
@@ -314,16 +310,16 @@ ul {
   aspect-ratio: 4 / 3;
   border-radius: 0.6rem;
   margin-bottom: 0.5rem;
-  background: radial-gradient(circle at top left, #22c55e33, #020617);
+  /* Halo vert derrière les images */
+  background: radial-gradient(circle at top left, #16a34a33, #02130f);
 }
 
 /* PAGE PARTENAIRES */
-
 .page-hero {
   margin-top: 1.5rem;
   padding: 1.5rem 1.5rem 1.3rem;
   border-radius: 1.1rem;
-  background: radial-gradient(circle at top left, #22c55e22, #020617);
+  background: radial-gradient(circle at top left, #16a34a33, #02130f);
   border: 1px solid rgba(148, 163, 184, 0.3);
 }
 
@@ -338,7 +334,6 @@ ul {
 }
 
 /* FOOTER */
-
 .site-footer {
   border-top: 1px solid rgba(148, 163, 184, 0.25);
   padding: 1rem 1.5rem;
@@ -348,7 +343,6 @@ ul {
 }
 
 /* Responsive */
-
 @media (max-width: 768px) {
   .site-header-inner {
     padding-inline: 1rem;
@@ -364,7 +358,8 @@ ul {
     left: 0;
     right: 0;
     top: 100%;
-    background: rgba(11, 16, 32, 0.98);
+    /* Menu mobile aussi sur fond vert sombre */
+    background: rgba(4, 47, 31, 0.98);
     border-bottom: 1px solid rgba(148, 163, 184, 0.25);
     padding: 0.75rem 1.25rem 1.1rem;
     display: none;
