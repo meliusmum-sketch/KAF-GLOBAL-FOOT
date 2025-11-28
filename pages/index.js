@@ -28,19 +28,28 @@ export default function Home() {
 
       {/* LAYOUT 3 COLONNES SUR GRAND ÉCRAN */}
       <div className="layout-shell">
-        {/* COLONNE GAUCHE – HORAIRES D’ENTRAÎNEMENT */}
+        {/* COLONNE GAUCHE – RUBRIQUES */}
         <aside className="layout-rail layout-rail-left">
           <div className="rail-card">
-            <h3>Horaires d’entraînement</h3>
+            <h3>Infos rapides</h3>
             <ul>
-              <li>Du lundi au vendredi : 16h00 – 18h00</li>
-              <li>Samedi : 9h30 – 11h30</li>
+              <li>Âge : 14 à 23 ans</li>
+              <li>Lieu : Kafountine, Casamance</li>
+              <li>6 séances / semaine</li>
             </ul>
-            <p className="meta-line">
-              Entraînements tous les jours sauf le dimanche. En cas de changement
-              (match, tournoi, détection), les joueurs et les parents sont
-              informés à l’avance.
-            </p>
+          </div>
+          <div className="rail-card">
+            <h3>Contact direct</h3>
+            <p>WhatsApp / Téléphone :</p>
+            <p className="rail-strong">+221 78 270 24 57</p>
+            <a
+              href="https://wa.me/221782702457"
+              className="btn btn-rail"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Écrire sur WhatsApp
+            </a>
           </div>
         </aside>
 
@@ -136,7 +145,7 @@ export default function Home() {
             </details>
           </section>
 
-          {/* PROGRAMMES – VERSION SIMPLE */}
+          {/* PROGRAMMES – VERSION SIMPLE (COMME AVANT) */}
           <section id="programmes" className="section">
             <h2>Nos programmes</h2>
 
@@ -161,6 +170,38 @@ export default function Home() {
             </div>
 
             <div className="card">
+              <h3>Catégories KAF Global Foot</h3>
+              <ul>
+                <li>Cadets – U17 (14–16 ans)</li>
+                <li>Juniors – U20 (17–20 ans)</li>
+                <li>Espoirs – U23 (21–23 ans)</li>
+              </ul>
+              <p className="meta-line">
+                Joueurs de 14 à 23 ans, tous niveaux. L’affectation dans une
+                catégorie se fait en fonction de l’âge et du niveau.
+              </p>
+            </div>
+          </section>
+
+          {/* HORAIRES – VERSION SIMPLE (COMME AVANT) */}
+          <section id="horaires" className="section">
+            <h2>Horaires &amp; lieu d’entraînement</h2>
+
+            <div className="card">
+              <h3>Horaires KAF Global Foot</h3>
+              <ul>
+                <li>Du lundi au vendredi : 16h00 – 18h00</li>
+                <li>Samedi : 9h30 – 11h30</li>
+              </ul>
+              <p>
+                Entraînements tous les jours sauf le dimanche. Les horaires
+                peuvent légèrement varier en fonction du planning et des
+                compétitions. En cas de changement, les joueurs et les parents
+                sont informés à l’avance.
+              </p>
+            </div>
+
+            <div className="card">
               <h3>Terrain d’entraînement</h3>
               <p>Terrain du Lycée de Kafountine</p>
               <p>
@@ -172,15 +213,6 @@ export default function Home() {
                 à trouver le terrain.
               </p>
             </div>
-          </section>
-
-          {/* HORAIRES – (la partie détaillée reste ici si tu veux) */}
-          <section id="horaires" className="section">
-            <h2>Horaires &amp; organisation</h2>
-            <p>
-              Les entraînements sont organisés en fonction de l’âge, du niveau
-              et de la catégorie du joueur.
-            </p>
           </section>
 
           {/* PHOTOS */}
@@ -251,24 +283,26 @@ export default function Home() {
           </footer>
         </div>
 
-        {/* COLONNE DROITE – CATÉGORIES */}
+        {/* COLONNE DROITE – RUBRIQUES */}
         <aside className="layout-rail layout-rail-right">
           <div className="rail-card">
-            <h3>Catégories KAF Global Foot</h3>
-            <ul>
-              <li>Cadets – U17 (14–16 ans)</li>
-              <li>Juniors – U20 (17–20 ans)</li>
-              <li>Espoirs – U23 (21–23 ans)</li>
-            </ul>
-            <p className="meta-line">
-              Joueurs de 14 à 23 ans. La catégorie dépend de l’âge, du niveau et
-              de la maturité du joueur.
+            <h3>Vision du projet</h3>
+            <p>
+              Former des joueurs complets, avec des valeurs humaines fortes et
+              une ouverture internationale.
+            </p>
+          </div>
+          <div className="rail-card">
+            <h3>Casamance verte</h3>
+            <p>
+              Un projet ancré à Kafountine, au cœur de la Casamance, dans un
+              environnement calme et inspirant.
             </p>
           </div>
         </aside>
       </div>
 
-      {/* BOUTON WHATSAPP FLOTTANT */}
+      {/* BOUTON WHATSAPP FLOTTANT (toujours visible) */}
       <a
         href="https://wa.me/221782702457"
         className="whatsapp-float"
