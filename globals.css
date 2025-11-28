@@ -1,3 +1,8 @@
+/* ===========================
+   GLOBALS.CSS – VERSION FULL ÉCRAN
+   Casamance verte, plus de bandes sur les côtés
+   =========================== */
+
 /* Reset simple */
 *,
 *::before,
@@ -7,386 +12,384 @@
 
 html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  /* Fond nuit verte Casamance */
-  background: #02130f;
-  color: #f8fafc;
+  padding: 0;
 }
 
+/* Fond général : vert nuit Casamance */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #02130f;
+  color: #e5e7eb;
+}
+
+/* Images par défaut */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Liens */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+/* Titres & texte */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 2.2vw + 1.4rem, 2.4rem);
+}
+
+h2 {
+  font-size: clamp(1.35rem, 1.6vw + 1.1rem, 1.8rem);
+}
+
+h3 {
+  font-size: clamp(1.05rem, 1.2vw + 0.9rem, 1.3rem);
+}
+
+p {
+  margin: 0.35rem 0 0.6rem;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
 ul {
-  padding-left: 1.2rem;
+  margin: 0.4rem 0 0.8rem;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
 }
 
-/* Layout général */
-.page {
+li + li {
+  margin-top: 0.2rem;
+}
+
+/* ===========================
+   LAYOUT GÉNÉRAL
+   =========================== */
+
+main {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
 }
 
-/* HEADER */
+/* Chaque section de la page (À propos, Programmes, etc.) */
+.section {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.75rem 1rem 0;
+}
+
+.section h2 {
+  color: #bbf7d0;
+  margin-bottom: 0.6rem;
+}
+
+.section p {
+  color: #e5e7eb;
+}
+
+/* Petite ligne de description (meta-line) */
+.meta-line {
+  font-size: 0.88rem;
+  color: #a7f3d0;
+  margin-top: 0.3rem;
+}
+
+/* ===========================
+   HEADER – MENU DU HAUT
+   =========================== */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(8px);
-  /* Barre du haut en vert très sombre */
-  background: rgba(4, 47, 31, 0.9);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-}
-
-.site-header-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0.8rem 1.5rem;
+  width: 100%;
+  background: rgba(4, 47, 31, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.35);
+  padding: 0.6rem 1rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
-.site-logo a {
+.site-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.site-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #022c22;
+  padding: 4px;
+  object-fit: contain;
+}
+
+.site-title {
   font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.03em;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-/* NAVIGATION */
-.main-nav {
+.site-nav {
   display: flex;
-  gap: 1rem;
-  flex: 1;
   flex-wrap: wrap;
+  gap: 0.55rem;
+  font-size: 0.85rem;
 }
 
-.main-nav a {
-  font-size: 0.95rem;
-  opacity: 0.85;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+.site-nav a {
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  opacity: 0.9;
 }
 
-.main-nav a:hover {
+.site-nav a:hover {
+  background: rgba(16, 185, 129, 0.18);
   opacity: 1;
-  transform: translateY(-1px);
+  text-decoration: none;
 }
 
-.nav-actions {
-  display: flex;
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline: 0.85rem;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
 }
 
-/* Bouton "Inscription" / CTA en vert Casamance */
-.nav-cta {
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid #16a34a;
-  font-size: 0.9rem;
-  font-weight: 500;
-  background: #16a34a;
-  color: #02130f;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
+/* ===========================
+   HERO – PREMIER ÉCRAN
+   =========================== */
 
-.nav-cta:hover {
-  background: #15803d;
-  transform: translateY(-1px);
-}
-
-/* Bouton hamburger (menu mobile) */
-.mobile-nav-toggle {
-  display: none; /* visible seulement en mobile */
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  background: transparent;
-  padding: 0.35rem;
-  border-radius: 999px;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.mobile-nav-toggle span {
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: #e5e7eb;
-  border-radius: 999px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.mobile-nav-toggle span + span {
-  margin-top: 3px;
-}
-
-.mobile-nav-toggle.is-open span:nth-child(1) {
-  transform: translateY(5px) rotate(45deg);
-}
-
-.mobile-nav-toggle.is-open span:nth-child(2) {
-  opacity: 0;
-}
-
-.mobile-nav-toggle.is-open span:nth-child(3) {
-  transform: translateY(-5px) rotate(-45deg);
-}
-
-/* Bouton inscription à l'intérieur du menu mobile */
-.nav-cta-in-nav {
-  display: none;
-}
-
-/* MAIN */
-.page-main {
-  flex: 1;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 1.5rem 1.5rem 3rem;
-}
-
-/* HERO */
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
-  gap: 2rem;
-  align-items: center;
-  padding: 2.2rem 1.5rem;
-  margin: 1rem -1.5rem 2.5rem;
-  /* Halos verts lumineux derrière le hero */
+  padding: 1.6rem 1rem 2rem;
   background:
-    radial-gradient(circle at top left, #16a34a33, transparent 60%),
-    radial-gradient(circle at bottom right, #4ade8033, transparent 55%);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.35), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(74, 222, 128, 0.22), transparent 55%);
 }
 
-.hero-content h1 {
-  font-size: clamp(1.8rem, 2.2vw + 1.4rem, 2.4rem);
-  margin: 0 0 0.75rem;
+.hero-content {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.hero-tagline {
-  margin: 0 0 1.2rem;
-  color: #e2e8f0;
-  max-width: 34rem;
+.hero-text {
+  max-width: 540px;
 }
 
+.hero-subtitle {
+  margin-top: 0.4rem;
+  color: #d1fae5;
+}
+
+.hero-meta {
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #a7f3d0;
+}
+
+/* Boutons du hero */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 0.6rem;
-}
-
-/* Bouton principal du hero */
-.hero-primary {
-  padding: 0.55rem 1.2rem;
-  border-radius: 999px;
-  border: none;
-  background: #16a34a;
-  color: #02130f;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.hero-primary:hover {
-  background: #15803d;
-  transform: translateY(-1px);
-}
-
-.hero-secondary {
-  padding: 0.5rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  font-size: 0.9rem;
-  opacity: 0.9;
-}
-
-.hero-meta {
-  font-size: 0.85rem;
-  color: #cbd5f5;
-}
-
-/* Sections */
-.page-section {
-  margin-top: 2.5rem;
-}
-
-.page-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.page-section h3 {
-  font-size: 1.1rem;
-  margin-top: 1.4rem;
   margin-bottom: 0.3rem;
 }
 
-.page-section p {
-  color: #e5e7eb;
-  line-height: 1.6;
-}
-
-/* À propos grid */
-.apropos-grid {
-  display: grid;
-  gap: 1.3rem;
-  margin-top: 1.4rem;
-}
-
-.apropos-grid > div {
-  padding: 1rem 1.1rem;
-  border-radius: 0.9rem;
-  /* Cartes en vert profond */
-  background: rgba(6, 78, 59, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-}
-
-/* Programmes */
-.programmes-grid {
-  display: grid;
-  gap: 1.4rem;
-  margin-top: 1.2rem;
-}
-
-.programme-card {
-  padding: 1.1rem 1.2rem;
-  border-radius: 0.9rem;
-  background: rgba(6, 78, 59, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-}
-
-.programme-card ul {
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-}
-
-.categories {
-  margin-top: 1.8rem;
-  padding: 1rem 1.1rem;
-  border-radius: 0.9rem;
-  border: 1px dashed rgba(148, 163, 184, 0.5);
-  background: rgba(6, 78, 59, 0.8);
-}
-
-/* Horaires */
-.horaires-grid {
-  display: grid;
-  gap: 1.4rem;
-  margin-top: 1.1rem;
-}
-
-.horaires-grid > div {
-  padding: 1rem 1.1rem;
-  border-radius: 0.9rem;
-  background: rgba(6, 78, 59, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-}
-
-/* Photos */
-.photos-grid {
-  display: grid;
-  gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  margin-top: 1.1rem;
-}
-
-.photo-card {
-  padding: 0.9rem;
-  border-radius: 0.9rem;
-  background: rgba(6, 78, 59, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.photo-placeholder {
+/* Bloc photos à droite */
+.hero-photos {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 0.6rem;
-  margin-bottom: 0.5rem;
-  /* Halo vert derrière les images */
-  background: radial-gradient(circle at top left, #16a34a33, #02130f);
 }
 
-/* PAGE PARTENAIRES */
-.page-hero {
-  margin-top: 1.5rem;
-  padding: 1.5rem 1.5rem 1.3rem;
-  border-radius: 1.1rem;
-  background: radial-gradient(circle at top left, #16a34a33, #02130f);
-  border: 1px solid rgba(148, 163, 184, 0.3);
+.hero-photos-strip {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding: 0.3rem 0 0.2rem;
 }
 
-.page-hero h1 {
-  margin-top: 0;
-  margin-bottom: 0.7rem;
-  font-size: 1.8rem;
+.hero-photo {
+  flex: 0 0 70%;
+  border-radius: 0.9rem;
+  object-fit: cover;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-.page-hero p {
-  max-width: 42rem;
+/* Sur écran plus large : texte + photos côte à côte */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-text {
+    flex: 1.2;
+  }
+
+  .hero-photos {
+    flex: 1;
+  }
 }
 
-/* FOOTER */
+/* ===========================
+   BOUTONS GÉNÉRAUX
+   =========================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #022c22;
+}
+
+.btn-primary:hover {
+  background: #15803d;
+  border-color: #15803d;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: rgba(148, 163, 184, 0.8);
+  color: #e5e7eb;
+}
+
+.btn-secondary:hover {
+  background: rgba(15, 23, 42, 0.7);
+  text-decoration: none;
+}
+
+/* ===========================
+   CARTES (Programmes, Horaires…)
+   =========================== */
+
+.card {
+  background: rgba(6, 78, 59, 0.9);
+  border-radius: 0.9rem;
+  padding: 0.9rem 1rem;
+  margin-top: 0.8rem;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+}
+
+.card h3 {
+  margin-bottom: 0.3rem;
+}
+
+/* Bloc “Voir plus” */
+.details {
+  margin-top: 0.7rem;
+  background: rgba(6, 78, 59, 0.9);
+  border-radius: 0.9rem;
+  padding: 0.65rem 0.8rem 0.75rem;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.details summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #4ade80;
+}
+
+.details summary::-webkit-details-marker {
+  display: none;
+}
+
+.details[open] summary {
+  margin-bottom: 0.35rem;
+}
+
+/* ===========================
+   GALERIE PHOTOS
+   =========================== */
+
+.photo-strip {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.7rem;
+  padding: 0.3rem 0 0.2rem;
+}
+
+.photo-strip img {
+  flex: 0 0 70%;
+  border-radius: 0.9rem;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
 .site-footer {
-  border-top: 1px solid rgba(148, 163, 184, 0.25);
-  padding: 1rem 1.5rem;
+  max-width: 1120px;
+  margin: 2.5rem auto 0;
+  padding: 1rem 1rem 1.3rem;
+  border-top: 1px solid rgba(34, 197, 94, 0.3);
   text-align: center;
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: #9ca3af;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .site-header-inner {
-    padding-inline: 1rem;
-    justify-content: space-between;
-  }
+.site-footer .footer-tech {
+  margin-top: 0.15rem;
+  color: #64748b;
+}
 
-  .mobile-nav-toggle {
-    display: inline-flex;
-  }
+/* ===========================
+   ADAPTATION MOBILE GLOBALE
+   =========================== */
 
-  .main-nav {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    /* Menu mobile aussi sur fond vert sombre */
-    background: rgba(4, 47, 31, 0.98);
-    border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-    padding: 0.75rem 1.25rem 1.1rem;
-    display: none;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .main-nav.is-open {
-    display: flex;
-  }
-
-  .nav-actions {
-    display: none;
-  }
-
-  .nav-cta-in-nav {
-    display: inline-flex;
-    justify-content: center;
-    margin-top: 0.5rem;
+@media (max-width: 640px) {
+  .section {
+    padding-inline: 0.85rem;
   }
 
   .hero {
-    grid-template-columns: minmax(0, 1fr);
-    margin: 0.5rem -1.5rem 2rem;
-  }
-
-  .page-main {
-    padding-inline: 1rem;
+    padding-inline: 0.85rem;
   }
 }
