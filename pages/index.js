@@ -62,7 +62,12 @@ export default function Home() {
               alt="Logo KAF Global Foot"
               className="site-logo"
             />
-            <span className="site-title">KAF Global Foot</span>
+            <div className="site-title-block">
+              <span className="site-title">KAF Global Foot</span>
+              <span className="site-tagline">
+                Académie de football · Casamance
+              </span>
+            </div>
           </div>
           <nav className="site-nav">
             <a href="#apropos">À propos</a>
@@ -138,6 +143,9 @@ export default function Home() {
                     >
                       Écrire sur WhatsApp
                     </a>
+                    <a href="#programmes" className="btn btn-secondary">
+                      Voir les programmes
+                    </a>
                   </div>
                 </div>
 
@@ -177,10 +185,10 @@ export default function Home() {
                 <p>
                   Notre projet repose sur trois piliers : un encadrement
                   qualifié, un environnement de travail serein et une vision
-                  éducative du football. Le terrain est un lieu d&apos;apprentissage
-                  où nous transmettons le respect, la discipline, l&apos;esprit
-                  d&apos;équipe, le goût de l&apos;effort et le sens des
-                  responsabilités.
+                  éducative du football. Le terrain est un lieu
+                  d&apos;apprentissage où nous transmettons le respect, la
+                  discipline, l&apos;esprit d&apos;équipe, le goût de l&apos;effort
+                  et le sens des responsabilités.
                 </p>
                 <p>
                   Les entraînements se déroulent du lundi au samedi sur le
