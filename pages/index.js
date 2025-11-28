@@ -1,5 +1,5 @@
-// app/page.tsx ou pages/index.tsx
-// Remplace TOUT le contenu de ce fichier par ce code.
+// pages/index.tsx
+// Tu peux remplacer TOUT le contenu de ce fichier par ce code.
 
 export default function Home() {
   return (
@@ -7,7 +7,7 @@ export default function Home() {
       <header className="site-header">
         <div className="site-header-left">
           <img
-            src="/logo.png"
+            src="/logo-kaf.svg"
             alt="Logo KAF Global Foot"
             className="site-logo"
           />
@@ -178,10 +178,7 @@ export default function Home() {
       <section id="photos" className="section">
         <h2>Photos de KAF Global Foot</h2>
         <div className="photo-strip">
-          <img
-            src="/gallery1.jpg"
-            alt="Terrain de football à Kafountine"
-          />
+          <img src="/gallery1.jpg" alt="Terrain de football à Kafountine" />
           <img
             src="/gallery2.jpg"
             alt="Jeunes joueurs de Kafountine au football"
@@ -241,3 +238,4 @@ export default function Home() {
     </main>
   );
 }
+
