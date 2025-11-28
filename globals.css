@@ -71,11 +71,12 @@ a:hover {
    LAYOUT GLOBAL
    =========================== */
 
+/* Nouveau wrapper principal (utilisé sur la home) */
 .page-shell {
   min-height: 100vh;
 }
 
-/* Grille : colonnes gauche / centre / droite */
+/* Grille : colonnes gauche / centre / droite sur grand écran */
 .layout-shell {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 2.4fr) minmax(0, 0.95fr);
@@ -129,7 +130,8 @@ a:hover {
   font-size: 0.85rem;
 }
 
-/* Sur mobile / tablette : on supprime les colonnes latérales */
+/* Sur mobile / tablette : on supprime les colonnes latérales,
+   on garde seulement la colonne centrale */
 @media (max-width: 1024px) {
   .layout-shell {
     grid-template-columns: minmax(0, 1fr);
