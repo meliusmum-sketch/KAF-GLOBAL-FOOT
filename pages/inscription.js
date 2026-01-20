@@ -1,4 +1,3 @@
-
 import Head from "next/head";
 import Link from "next/link";
 
@@ -46,12 +45,44 @@ export default function Inscription() {
               e-mail pour confirmer les informations et expliquer la suite.
             </p>
 
-            <div className="form-card">
-              <form
-                method="POST"
-                action="/api/inscription"
-                className="form-grid"
+            {/* BLOC : DÉJÀ INSCRIT */}
+            <div className="form-card" style={{ marginBottom: 18 }}>
+              <h2 style={{ marginTop: 0 }}>Déjà inscrit ?</h2>
+              <p style={{ marginBottom: 12 }}>
+                Si le joueur est déjà inscrit, téléchargez et remplissez le
+                formulaire complet pour constituer un dossier (club à
+                l&apos;étranger / camp d&apos;entraînement).
+              </p>
+
+              <a
+                href="/downloads/KAF_Global_Foot_Player_Form_Final.pdf"
+                className="btn-principal"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: "inline-block", textDecoration: "none" }}
               >
+                Télécharger le formulaire joueur (PDF)
+              </a>
+
+              <p className="form-small-note" style={{ marginTop: 10 }}>
+                Conseil : préparez une photo d&apos;identité, une pièce
+                d&apos;identité/passeport (si disponible) et un lien vidéo.
+              </p>
+
+              <p className="form-small-note" style={{ marginTop: 8 }}>
+                <strong>Protection des données :</strong> les informations
+                transmises sont traitées de manière confidentielle par KAF
+                Global Foot, uniquement pour constituer et gérer le dossier du
+                joueur (placement en club à l&apos;étranger, stages/camps). Elles
+                peuvent être communiquées à des clubs, agents ou organisateurs
+                de camps <strong>uniquement avec votre accord</strong>. Vous
+                pouvez demander la modification ou la suppression de vos données
+                à tout moment via <strong>contact@kafglobalfoot.com</strong>.
+              </p>
+            </div>
+
+            <div className="form-card">
+              <form method="POST" action="/api/inscription" className="form-grid">
                 {/* Identité du joueur */}
                 <div className="form-field">
                   <label htmlFor="nom">Nom complet du joueur *</label>
@@ -111,7 +142,7 @@ export default function Inscription() {
                       id="telephone"
                       name="telephone"
                       type="tel"
-                      placeholder="Ex : +221 78 270 24 57"
+                      placeholder="Ex : +221 783616382"
                       required
                     />
                     <p className="form-help">
@@ -190,11 +221,16 @@ export default function Inscription() {
         <footer className="site-footer">
           <p>© 2025 KAF Global Foot. Tous droits réservés.</p>
           <p>Site développé avec Next.js &amp; déployé sur Vercel.</p>
+          <p>
+            <a href="/confidentialite" style={{ textDecoration: "underline" }}>
+              Politique de confidentialité
+            </a>
+          </p>
         </footer>
 
         {/* BOUTON WHATSAPP FLOTTANT */}
         <a
-          href="https://wa.me/221782702457"
+          href="https://wa.me/221783616382"
           className="whatsapp-button"
           target="_blank"
           rel="noopener noreferrer"
