@@ -7,21 +7,17 @@ export default function Home() {
   return (
     <>
       <Head>
-        {/* Titre onglet navigateur */}
         <title>
           KAF Global Foot – Académie de football à Kafountine (Casamance)
         </title>
 
-        {/* Description pour Google */}
         <meta
           name="description"
           content="Académie de football à Kafountine en Casamance pour les jeunes joueurs de 14 à 23 ans : entraînements sérieux, cadre sécurisé, 6 séances par semaine."
         />
 
-        {/* SEO simple */}
         <link rel="canonical" href="https://kafglobalfoot.com" />
 
-        {/* Open Graph pour partage WhatsApp / Facebook */}
         <meta
           property="og:title"
           content="KAF Global Foot – Académie de football à Kafountine"
@@ -37,7 +33,6 @@ export default function Home() {
           content="https://kafglobalfoot.com/logo-kaf.svg"
         />
 
-        {/* Twitter card (même info) */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -82,9 +77,9 @@ export default function Home() {
           </nav>
         </header>
 
-        {/* LAYOUT 3 COLONNES SUR GRAND ÉCRAN */}
+        {/* LAYOUT 3 COLONNES */}
         <div className="layout-shell">
-          {/* COLONNE GAUCHE – INFOS RAPIDES */}
+          {/* COLONNE GAUCHE */}
           <aside className="layout-rail layout-rail-left">
             <div className="rail-card">
               <h3>Infos rapides</h3>
@@ -122,16 +117,23 @@ export default function Home() {
               >
                 Télécharger le PDF
               </a>
+              <p className="meta-line" style={{ marginTop: 10 }}>
+                <strong>Protection des données :</strong> informations traitées
+                de manière confidentielle, uniquement pour constituer et gérer
+                le dossier du joueur (placement en club à l&apos;étranger,
+                stages/camps). Partage possible avec clubs/agents/organisateurs{" "}
+                <strong>uniquement avec votre accord</strong>. Demande de
+                modification/suppression : <strong>contact@kafglobalfoot.com</strong>.
+              </p>
             </div>
           </aside>
 
-          {/* COLONNE CENTRALE – CONTENU PRINCIPAL */}
+          {/* COLONNE CENTRALE */}
           <div className="layout-main">
             {/* HERO */}
             <section className="hero" aria-labelledby="hero-title">
               <div className="hero-content">
                 <div className="hero-text">
-                  {/* Petit bandeau inscriptions */}
                   <p className="hero-meta">
                     Inscriptions en cours – saison 2025–2026
                   </p>
@@ -148,6 +150,7 @@ export default function Home() {
                     Joueurs de 14 à 23 ans · Tous niveaux · Cadets, Juniors,
                     Espoirs
                   </p>
+
                   <div className="hero-actions">
                     <a href="/inscription" className="btn btn-primary">
                       Je pré-inscris un joueur
@@ -199,7 +202,7 @@ export default function Home() {
               </div>
             </section>
 
-            {/* À PROPOS – TEXTE ALLÉGÉ */}
+            {/* À PROPOS */}
             <section id="apropos" className="section">
               <h2>À propos de KAF Global Foot</h2>
               <p>
@@ -208,6 +211,7 @@ export default function Home() {
                 leur progression sportive et humaine, avec un encadrement
                 sérieux et un cadre sécurisé.
               </p>
+
               <details className="details">
                 <summary>Voir plus</summary>
                 <p>
@@ -223,6 +227,7 @@ export default function Home() {
                   terrain du Lycée de Kafountine, avec un programme adapté à
                   l&apos;âge, au niveau et à la réalité de chaque joueur.
                 </p>
+
                 <h3>About KAF Global Foot (English)</h3>
                 <p>
                   KAF Global Foot is a football academy based in Kafountine, in
@@ -240,7 +245,7 @@ export default function Home() {
               </details>
             </section>
 
-            {/* PROGRAMMES – VERSION CLARIFIÉE */}
+            {/* PROGRAMMES */}
             <section id="programmes" className="section">
               <h2>Nos programmes</h2>
 
@@ -321,7 +326,7 @@ export default function Home() {
               </div>
             </section>
 
-            {/* PHOTOS – TEXTE INTRO */}
+            {/* PHOTOS */}
             <section id="photos" className="section">
               <h2>Photos de KAF Global Foot</h2>
               <p>
@@ -329,34 +334,16 @@ export default function Home() {
                 matchs et ambiance de groupe à Kafountine.
               </p>
               <div className="photo-strip">
-                <img
-                  src="/gallery1.jpg"
-                  alt="Terrain de football à Kafountine"
-                />
-                <img
-                  src="/gallery2.jpg"
-                  alt="Jeunes joueurs de KAF Global Foot"
-                />
-                <img
-                  src="/gallery3.jpg"
-                  alt="Travail technique à l'entraînement"
-                />
-                <img
-                  src="/gallery4.jpg"
-                  alt="Vue d'ensemble de l'académie"
-                />
-                <img
-                  src="/gallery5.jpg"
-                  alt="Match d'entraînement"
-                />
-                <img
-                  src="/gallery6.jpg"
-                  alt="Ambiance de groupe à KAF Global Foot"
-                />
+                <img src="/gallery1.jpg" alt="Terrain de football à Kafountine" />
+                <img src="/gallery2.jpg" alt="Jeunes joueurs de KAF Global Foot" />
+                <img src="/gallery3.jpg" alt="Travail technique à l'entraînement" />
+                <img src="/gallery4.jpg" alt="Vue d'ensemble de l'académie" />
+                <img src="/gallery5.jpg" alt="Match d'entraînement" />
+                <img src="/gallery6.jpg" alt="Ambiance de groupe à KAF Global Foot" />
               </div>
             </section>
 
-            {/* FORMULAIRES – NOUVELLE SECTION */}
+            {/* FORMULAIRES */}
             <section id="formulaires" className="section">
               <h2>Formulaire joueurs (déjà inscrits)</h2>
               <p>
@@ -385,10 +372,20 @@ export default function Home() {
                   Conseil : préparez une photo d&apos;identité, une pièce
                   d&apos;identité/passeport (si disponible) et un lien vidéo.
                 </p>
+                <p className="meta-line">
+                  <strong>Protection des données :</strong> les informations
+                  transmises sont traitées de manière confidentielle par KAF
+                  Global Foot, uniquement pour constituer et gérer le dossier
+                  du joueur (placement en club à l&apos;étranger, stages/camps).
+                  Elles peuvent être communiquées à des clubs, agents ou
+                  organisateurs de camps <strong>uniquement avec votre accord</strong>. Vous
+                  pouvez demander la modification ou la suppression de vos
+                  données à tout moment via <strong>contact@kafglobalfoot.com</strong>.
+                </p>
               </div>
             </section>
 
-            {/* CONTACT – ON NE TOUCHE PAS À LA LOGIQUE D’INSCRIPTION */}
+            {/* CONTACT */}
             <section id="contact" className="section">
               <h2>Contact KAF Global Foot</h2>
               <p>
@@ -422,10 +419,15 @@ export default function Home() {
               <p className="footer-tech">
                 Site développé avec Next.js &amp; déployé sur Vercel.
               </p>
+              <p className="footer-tech">
+                <a href="/confidentialite" style={{ textDecoration: "underline" }}>
+                  Politique de confidentialité
+                </a>
+              </p>
             </footer>
           </div>
 
-          {/* COLONNE DROITE – VISION / CASAMANCE VERTE */}
+          {/* COLONNE DROITE */}
           <aside className="layout-rail layout-rail-right">
             <div className="rail-card">
               <h3>Vision du projet</h3>
@@ -444,7 +446,7 @@ export default function Home() {
           </aside>
         </div>
 
-        {/* BOUTON WHATSAPP FLOTTANT (toujours visible) */}
+        {/* BOUTON WHATSAPP FLOTTANT */}
         <a
           href="https://wa.me/221783616382"
           className="whatsapp-float"
