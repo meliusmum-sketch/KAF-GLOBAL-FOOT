@@ -74,6 +74,7 @@ export default function Home() {
             <a href="#programmes">Programmes</a>
             <a href="#horaires">Horaires</a>
             <a href="#photos">Photos</a>
+            <a href="#formulaires">Formulaires</a>
             <a href="#contact">Contact</a>
             <a href="/inscription" className="site-nav-cta">
               Inscription
@@ -93,17 +94,33 @@ export default function Home() {
                 <li>6 séances d&apos;entraînement / semaine</li>
               </ul>
             </div>
+
             <div className="rail-card">
               <h3>Contact direct</h3>
               <p>WhatsApp / Téléphone :</p>
-              <p className="rail-strong">+221 78 270 24 57</p>
+              <p className="rail-strong">+221 783616382</p>
               <a
-                href="https://wa.me/221782702457"
+                href="https://wa.me/221783616382"
                 className="btn btn-rail"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Écrire sur WhatsApp
+              </a>
+            </div>
+
+            <div className="rail-card">
+              <h3>Formulaire (déjà inscrit)</h3>
+              <p className="meta-line">
+                Pour constituer un dossier (club à l&apos;étranger / camp).
+              </p>
+              <a
+                href="/downloads/KAF_Global_Foot_Player_Form_Final.pdf"
+                className="btn btn-rail"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Télécharger le PDF
               </a>
             </div>
           </aside>
@@ -135,14 +152,25 @@ export default function Home() {
                     <a href="/inscription" className="btn btn-primary">
                       Je pré-inscris un joueur
                     </a>
+
                     <a
-                      href="https://wa.me/221782702457"
+                      href="https://wa.me/221783616382"
                       className="btn btn-secondary"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Écrire sur WhatsApp
                     </a>
+
+                    <a
+                      href="/downloads/KAF_Global_Foot_Player_Form_Final.pdf"
+                      className="btn btn-secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Télécharger le formulaire (PDF)
+                    </a>
+
                     <a href="#programmes" className="btn btn-secondary">
                       Voir les programmes
                     </a>
@@ -328,6 +356,38 @@ export default function Home() {
               </div>
             </section>
 
+            {/* FORMULAIRES – NOUVELLE SECTION */}
+            <section id="formulaires" className="section">
+              <h2>Formulaire joueurs (déjà inscrits)</h2>
+              <p>
+                Ce formulaire sert à constituer un dossier complet pour vous
+                aider à trouver un club à l&apos;étranger ou un camp
+                d&apos;entraînement.
+              </p>
+
+              <div className="card">
+                <h3>Télécharger le formulaire (PDF)</h3>
+                <p className="meta-line">
+                  Informations personnelles, profil football, projet
+                  international, contacts, autorisations.
+                </p>
+                <p>
+                  <a
+                    href="/downloads/KAF_Global_Foot_Player_Form_Final.pdf"
+                    className="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Télécharger le PDF
+                  </a>
+                </p>
+                <p className="meta-line">
+                  Conseil : préparez une photo d&apos;identité, une pièce
+                  d&apos;identité/passeport (si disponible) et un lien vidéo.
+                </p>
+              </div>
+            </section>
+
             {/* CONTACT – ON NE TOUCHE PAS À LA LOGIQUE D’INSCRIPTION */}
             <section id="contact" className="section">
               <h2>Contact KAF Global Foot</h2>
@@ -336,7 +396,7 @@ export default function Home() {
                 partenariats), contactez-nous :
               </p>
               <ul>
-                <li>Téléphone / WhatsApp : +221 78 270 24 57</li>
+                <li>Téléphone / WhatsApp : +221 783616382</li>
                 <li>Email : contact@kafglobalfoot.com</li>
               </ul>
               <p>
@@ -346,7 +406,7 @@ export default function Home() {
               </p>
               <p>
                 <a
-                  href="https://wa.me/221782702457"
+                  href="https://wa.me/221783616382"
                   className="btn btn-secondary"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -386,7 +446,7 @@ export default function Home() {
 
         {/* BOUTON WHATSAPP FLOTTANT (toujours visible) */}
         <a
-          href="https://wa.me/221782702457"
+          href="https://wa.me/221783616382"
           className="whatsapp-float"
           target="_blank"
           rel="noopener noreferrer"
