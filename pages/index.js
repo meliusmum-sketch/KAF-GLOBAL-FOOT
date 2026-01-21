@@ -12,89 +12,162 @@ export default function Home() {
         <title>KAF Global Foot – Académie de football à Kafountine (Casamance)</title>
         <meta
           name="description"
-          content="Académie de football à Kafountine (Casamance) pour jeunes joueurs : entraînements sérieux, cadre sécurisé, préparation et orientation club/camp."
+          content="Académie de football à Kafountine (Casamance) : formation, détection, dossier joueur pour clubs à l’étranger et camps."
         />
         <link rel="canonical" href="https://kafglobalfoot.com" />
         <meta property="og:title" content="KAF Global Foot – Académie de football à Kafountine" />
         <meta
           property="og:description"
-          content="Académie à Kafountine (Casamance). Formation, détection, dossiers joueurs pour clubs à l’étranger et camps."
+          content="Formation, détection, dossier joueur (club à l’étranger / camp). Kafountine, Casamance."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://kafglobalfoot.com" />
         <meta property="og:image" content="https://kafglobalfoot.com/logo-kaf.svg" />
       </Head>
 
-      {/* HEADER */}
-      <header className="site-header">
-        <div className="site-header-inner">
-          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-            <img src="/logo-kaf.svg" alt="Logo KAF Global Foot" className="site-logo" />
-            <div className="site-title-block">
-              <span className="site-title">KAF Global Foot</span>
-              <span className="site-tagline">Académie de football · Casamance</span>
+      {/* ===== TOP BAR + HERO (turquoise pro) ===== */}
+      <div
+        style={{
+          background:
+            "linear-gradient(135deg, #0ea5a6 0%, #0b7ea0 55%, #065f73 100%)",
+          color: "white",
+        }}
+      >
+        {/* HEADER */}
+        <header className="site-header" style={{ background: "transparent", borderBottom: "1px solid rgba(255,255,255,0.18)" }}>
+          <div className="site-header-inner" style={{ color: "white" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <img
+                src="/logo-kaf.svg"
+                alt="Logo KAF Global Foot"
+                className="site-logo"
+                style={{
+                  background: "rgba(255,255,255,0.12)",
+                  border: "1px solid rgba(255,255,255,0.25)",
+                }}
+              />
+              <div className="site-title-block">
+                <span className="site-title" style={{ color: "white" }}>
+                  KAF Global Foot
+                </span>
+                <span className="site-tagline" style={{ color: "rgba(255,255,255,0.85)" }}>
+                  Académie de football · Casamance
+                </span>
+              </div>
             </div>
+
+            <nav className="site-nav">
+              <a href="#apropos" style={{ color: "rgba(255,255,255,0.90)" }}>À propos</a>
+              <a href="#programmes" style={{ color: "rgba(255,255,255,0.90)" }}>Programmes</a>
+              <a href="#horaires" style={{ color: "rgba(255,255,255,0.90)" }}>Horaires</a>
+              <a href="#formulaires" style={{ color: "rgba(255,255,255,0.90)" }}>Formulaires</a>
+              <a
+                href="#contact"
+                className="site-nav-cta"
+                style={{
+                  background: "rgba(255,255,255,0.95)",
+                  color: "#063b46",
+                }}
+              >
+                Contact
+              </a>
+            </nav>
           </div>
+        </header>
 
-          <nav className="site-nav">
-            <a href="#apropos">À propos</a>
-            <a href="#programmes">Programmes</a>
-            <a href="#horaires">Horaires</a>
-            <a href="#photos">Photos</a>
-            <a href="#formulaires">Formulaires</a>
-            <a href="#contact" className="site-nav-cta">Contact</a>
-          </nav>
-        </div>
-      </header>
-
-      <main>
         {/* HERO */}
-        <section className="section">
+        <section className="section" style={{ paddingTop: 34, paddingBottom: 30 }}>
           <div className="container">
-            <div className="card" style={{ padding: 22 }}>
-              <p style={{ marginBottom: 6, fontWeight: 800, color: "#111827" }}>
+            <div
+              className="card"
+              style={{
+                padding: 22,
+                background: "rgba(255,255,255,0.10)",
+                border: "1px solid rgba(255,255,255,0.20)",
+                boxShadow: "none",
+              }}
+            >
+              <p style={{ marginBottom: 8, fontWeight: 900, color: "rgba(255,255,255,0.92)" }}>
                 Inscriptions en cours – saison 2025–2026
               </p>
-              <h1 style={{ marginTop: 0 }}>
+
+              <h1 style={{ marginTop: 0, color: "white" }}>
                 Académie de football à Kafountine (Casamance)
               </h1>
-              <p style={{ maxWidth: 820 }}>
+
+              <p style={{ maxWidth: 860, color: "rgba(255,255,255,0.90)" }}>
                 Formation + détection + constitution de dossier joueur pour faciliter
                 les opportunités : <strong>club à l’étranger</strong> ou <strong>camp d’entraînement</strong>.
               </p>
 
-              <div className="form-actions" style={{ marginTop: 12 }}>
-                <a className="btn btn-primary" href="/inscription">
+              <div className="form-actions" style={{ marginTop: 14 }}>
+                <a
+                  className="btn btn-primary"
+                  href="/inscription"
+                  style={{
+                    background: "white",
+                    color: "#063b46",
+                    border: "1px solid rgba(255,255,255,0.30)",
+                  }}
+                >
                   Je pré-inscris un joueur
                 </a>
-                <a className="btn btn-secondary" href={waLink} target="_blank" rel="noopener noreferrer">
+
+                <a
+                  className="btn btn-secondary"
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    background: "transparent",
+                    color: "white",
+                    border: "1px solid rgba(255,255,255,0.45)",
+                  }}
+                >
                   WhatsApp
                 </a>
               </div>
 
-              <p style={{ marginTop: 10, marginBottom: 0 }}>
+              <p style={{ marginTop: 12, marginBottom: 0, color: "rgba(255,255,255,0.90)" }}>
                 Contact direct : <strong>{phone}</strong>
               </p>
             </div>
 
-            {/* Quick facts (aéré, lisible) */}
-            <div style={{ display: "grid", gap: 14, marginTop: 18, gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))" }}>
-              <div className="card" style={{ padding: 16 }}>
-                <h3>Âge</h3>
-                <p>14 à 23 ans</p>
-              </div>
-              <div className="card" style={{ padding: 16 }}>
-                <h3>Lieu</h3>
-                <p>Kafountine, Casamance</p>
-              </div>
-              <div className="card" style={{ padding: 16 }}>
-                <h3>Rythme</h3>
-                <p>6 séances / semaine</p>
-              </div>
+            {/* Quick facts */}
+            <div
+              style={{
+                display: "grid",
+                gap: 14,
+                marginTop: 18,
+                gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
+              }}
+            >
+              {[
+                { title: "Âge", text: "14 à 23 ans" },
+                { title: "Lieu", text: "Kafountine, Casamance" },
+                { title: "Rythme", text: "6 séances / semaine" },
+              ].map((b) => (
+                <div
+                  key={b.title}
+                  className="card"
+                  style={{
+                    padding: 16,
+                    background: "rgba(255,255,255,0.10)",
+                    border: "1px solid rgba(255,255,255,0.20)",
+                    boxShadow: "none",
+                  }}
+                >
+                  <h3 style={{ color: "white" }}>{b.title}</h3>
+                  <p style={{ margin: 0, color: "rgba(255,255,255,0.90)" }}>{b.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
+      </div>
 
+      {/* ===== REST OF PAGE (white / airy) ===== */}
+      <main>
         {/* À PROPOS */}
         <section id="apropos" className="section">
           <div className="container">
@@ -143,23 +216,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PHOTOS */}
-        <section id="photos" className="section">
-          <div className="container">
-            <h2>Photos</h2>
-            <p>Ambiance, entraînements, matchs.</p>
-
-            <div style={{ display: "grid", gap: 12, gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))" }}>
-              {["gallery1.jpg","gallery2.jpg","gallery3.jpg","gallery4.jpg","gallery5.jpg","gallery6.jpg"].map((img) => (
-                <div key={img} className="card" style={{ padding: 0, overflow: "hidden" }}>
-                  <img src={`/${img}`} alt="KAF Global Foot" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FORMULAIRES (UN SEUL ENDROIT) */}
+        {/* FORMULAIRES */}
         <section id="formulaires" className="section">
           <div className="container">
             <h2>Formulaire joueurs (déjà inscrits)</h2>
@@ -178,7 +235,7 @@ export default function Home() {
             </div>
 
             <p style={{ marginTop: 12 }}>
-              Données : utilisées uniquement pour le dossier joueur. Suppression/modification : contact@kafglobalfoot.com
+              Données utilisées uniquement pour le dossier joueur. Contact : contact@kafglobalfoot.com
             </p>
           </div>
         </section>
@@ -193,7 +250,9 @@ export default function Home() {
               </p>
               <p style={{ marginBottom: 12 }}>Email : contact@kafglobalfoot.com</p>
               <div className="form-actions">
-                <a className="btn btn-primary" href="/inscription">Pré-inscription</a>
+                <a className="btn btn-primary" href="/inscription">
+                  Pré-inscription
+                </a>
                 <a className="btn btn-secondary" href={waLink} target="_blank" rel="noopener noreferrer">
                   WhatsApp
                 </a>
