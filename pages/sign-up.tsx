@@ -33,10 +33,9 @@ export default function SignUp() {
               <Link href="/#apropos">À propos</Link>
               <Link href="/#programmes">Programmes</Link>
               <Link href="/#horaires">Horaires</Link>
-              <Link href="/#photos">Photos</Link>
-              <Link href="/#contact">Contact</Link>
-              <Link href="/inscription" className="site-nav-cta">
-                Inscription
+              <Link href="/#formulaires">Formulaires</Link>
+              <Link href="/#contact" className="site-nav-cta">
+                Contact
               </Link>
             </nav>
           </div>
@@ -51,11 +50,12 @@ export default function SignUp() {
             </p>
 
             <div className="signup-grid">
-              {/* COL GAUCHE (infos) */}
+              {/* COLONNE GAUCHE */}
               <div className="card">
                 <h2>Avant de remplir</h2>
                 <p>
-                  Plus c’est précis, mieux c’est : poste, club actuel, dispo, liens vidéos.
+                  Plus c’est précis, mieux c’est : poste, club actuel, disponibilités,
+                  liens vidéos.
                 </p>
 
                 <div className="hr" />
@@ -87,12 +87,11 @@ export default function SignUp() {
                 </a>
               </div>
 
-              {/* COL DROITE (form) */}
+              {/* COLONNE DROITE */}
               <div className="form-card">
                 <h2 style={{ marginBottom: 6 }}>Apply to join the academy</h2>
                 <p style={{ marginTop: 0, maxWidth: 760 }}>
-                  Formulaire structuré comme une page “Sign Up” classique (Nom, Email, DOB,
-                  poste, centre, transport, consentement). :contentReference[oaicite:2]{index=2}
+                  Remplis le formulaire ci-dessous pour soumettre ton dossier.
                 </p>
 
                 <form method="POST" action="/api/inscription" className="form-grid">
@@ -126,14 +125,24 @@ export default function SignUp() {
                     </div>
                     <div className="form-field">
                       <label htmlFor="poste">Playing position</label>
-                      <input id="poste" name="poste" type="text" placeholder="Ex : Ailier, 6, 10, Gardien…" />
+                      <input
+                        id="poste"
+                        name="poste"
+                        type="text"
+                        placeholder="Ex : Ailier, 6, 10, Gardien…"
+                      />
                     </div>
                   </div>
 
                   <div className="form-row">
                     <div className="form-field">
                       <label htmlFor="centre">Local centre</label>
-                      <input id="centre" name="centre" type="text" placeholder="Ex : Kafountine / Dakar / Ziguinchor…" />
+                      <input
+                        id="centre"
+                        name="centre"
+                        type="text"
+                        placeholder="Ex : Kafountine / Dakar / Ziguinchor…"
+                      />
                     </div>
                     <div className="form-field">
                       <label htmlFor="transport">Nearest transport station</label>
@@ -154,7 +163,13 @@ export default function SignUp() {
                   <div className="form-field">
                     <label>Consent (Required)</label>
                     <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                      <input id="consent" name="consent" type="checkbox" required style={{ marginTop: 4 }} />
+                      <input
+                        id="consent"
+                        name="consent"
+                        type="checkbox"
+                        required
+                        style={{ marginTop: 4 }}
+                      />
                       <label
                         htmlFor="consent"
                         style={{
@@ -210,7 +225,6 @@ export default function SignUp() {
 
                 <div className="hr" />
 
-                {/* “Not old enough” (accordion => pas de doublon visible) */}
                 <details>
                   <summary style={{ cursor: "pointer", fontWeight: 900 }}>
                     Not old enough to join? (Reserve your place)
@@ -244,7 +258,13 @@ export default function SignUp() {
                       <div className="form-field">
                         <label>Consent (Required)</label>
                         <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
-                          <input id="consent2" name="consent" type="checkbox" required style={{ marginTop: 4 }} />
+                          <input
+                            id="consent2"
+                            name="consent"
+                            type="checkbox"
+                            required
+                            style={{ marginTop: 4 }}
+                          />
                           <label
                             htmlFor="consent2"
                             style={{
@@ -274,7 +294,9 @@ export default function SignUp() {
                 </details>
 
                 <p style={{ marginTop: 16 }}>
-                  <Link href="/" className="btn-link">← Back to home</Link>
+                  <Link href="/" className="btn-link">
+                    ← Back to home
+                  </Link>
                 </p>
               </div>
             </div>
