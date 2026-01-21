@@ -1,4 +1,14 @@
+// pages/api/inscription.js
 import nodemailer from "nodemailer";
+
+function escapeHtml(str = "") {
+  return String(str)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -6,6 +16,7 @@ export default async function handler(req, res) {
   }
 
   const {
+    formType, // "dossier-joueur" ou "preinscription"
     nom,
     age,
     poste,
@@ -27,31 +38,41 @@ export default async function handler(req, res) {
   const smtpPort = Number(process.env.SMTP_PORT) || 465;
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
+
   const receiverEmail =
     process.env.RECEIVER_EMAIL || smtpUser || "contact@kafglobalfoot.com";
 
   if (!smtpHost || !smtpUser || !smtpPass) {
     console.error("❌ SMTP mal configuré (HOST/USER/PASS manquants)");
-    return res
-      .status(500)
-      .send("Une erreur de configuration est survenue côté serveur.");
+    return res.status(500).send("Une erreur de configuration est survenue côté serveur.");
   }
+
+  const kind = formType === "dossier-joueur" ? "Dossier joueur" : "Pré-inscription";
 
   try {
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
       secure: smtpPort === 465,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
+      auth: { user: smtpUser, pass: smtpPass },
     });
 
-    const subject = `Nouvelle pré-inscription : ${nom} (${age} ans)`;
+    const subject = `${kind} : ${nom} (${age} ans)`;
+
+    const safe = {
+      nom: escapeHtml(nom),
+      age: escapeHtml(age),
+      poste: escapeHtml(poste || "Non précisé"),
+      nomParent: escapeHtml(nomParent || "Non précisé"),
+      telephone: escapeHtml(telephone),
+      email: escapeHtml(email || "Non précisé"),
+      niveau: escapeHtml(niveau),
+      club: escapeHtml(club || "Non précisé"),
+      message: escapeHtml(message || "Aucun message ajouté.").replace(/\n/g, "<br />"),
+    };
 
     const text = `
-Nouvelle pré-inscription KAF Global Foot
+${kind} — KAF Global Foot
 
 --- Joueur ---
 Nom : ${nom}
@@ -64,43 +85,41 @@ Téléphone / WhatsApp : ${telephone}
 E-mail : ${email || "Non précisé"}
 
 --- Infos sportives ---
-Niveau actuel : ${niveau}
-Club / école actuelle : ${club || "Non précisé"}
+Niveau : ${niveau}
+Club / école : ${club || "Non précisé"}
 
---- Message complémentaire ---
+--- Message / Détails ---
 ${message || "Aucun message ajouté."}
     `.trim();
 
     const html = `
-      <h2>Nouvelle pré-inscription KAF Global Foot</h2>
+      <h2>${kind} — KAF Global Foot</h2>
 
       <h3>Joueur</h3>
       <ul>
-        <li><strong>Nom :</strong> ${nom}</li>
-        <li><strong>Âge :</strong> ${age}</li>
-        <li><strong>Poste :</strong> ${poste || "Non précisé"}</li>
+        <li><strong>Nom :</strong> ${safe.nom}</li>
+        <li><strong>Âge :</strong> ${safe.age}</li>
+        <li><strong>Poste :</strong> ${safe.poste}</li>
       </ul>
 
       <h3>Parent / tuteur</h3>
       <ul>
-        <li><strong>Nom :</strong> ${nomParent || "Non précisé"}</li>
-        <li><strong>Téléphone / WhatsApp :</strong> ${telephone}</li>
-        <li><strong>E-mail :</strong> ${email || "Non précisé"}</li>
+        <li><strong>Nom :</strong> ${safe.nomParent}</li>
+        <li><strong>Téléphone / WhatsApp :</strong> ${safe.telephone}</li>
+        <li><strong>E-mail :</strong> ${safe.email}</li>
       </ul>
 
       <h3>Informations sportives</h3>
       <ul>
-        <li><strong>Niveau actuel :</strong> ${niveau}</li>
-        <li><strong>Club / école actuelle :</strong> ${
-          club || "Non précisé"
-        }</li>
+        <li><strong>Niveau :</strong> ${safe.niveau}</li>
+        <li><strong>Club / école :</strong> ${safe.club}</li>
       </ul>
 
-      <h3>Message complémentaire</h3>
-      <p>${(message || "Aucun message ajouté.").replace(/\n/g, "<br />")}</p>
+      <h3>Message / Détails</h3>
+      <p>${safe.message}</p>
 
       <hr />
-      <p>Message envoyé automatiquement depuis le site <strong>kafglobalfoot.com</strong>.</p>
+      <p>Envoi automatique depuis <strong>kafglobalfoot.com</strong>.</p>
     `;
 
     await transporter.sendMail({
@@ -109,16 +128,14 @@ ${message || "Aucun message ajouté."}
       subject,
       text,
       html,
+      replyTo: email ? email : undefined,
     });
 
-    console.log("✅ E-mail de pré-inscription envoyé à :", receiverEmail);
-
+    // redirection vers /merci
     res.writeHead(302, { Location: "/merci" });
-    res.end();
+    return res.end();
   } catch (err) {
     console.error("❌ Erreur lors de l'envoi de l'email :", err);
-    return res
-      .status(500)
-      .send("Une erreur est survenue lors de l'envoi du formulaire.");
+    return res.status(500).send("Une erreur est survenue lors de l'envoi du formulaire.");
   }
 }
