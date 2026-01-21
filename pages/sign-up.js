@@ -1,4 +1,3 @@
-// pages/sign-up.js
 import Head from "next/head";
 import Link from "next/link";
 
@@ -19,11 +18,10 @@ export default function SignUp() {
         <link rel="canonical" href={`${siteUrl}/sign-up`} />
       </Head>
 
-      {/* TOPBAR */}
       <div className="topbar">
         <header className="site-header">
           <div className="site-header-inner">
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div className="brand">
               <img src="/logo-kaf.svg" alt="Logo KAF Global Foot" className="site-logo" />
               <div className="site-title-block">
                 <span className="site-title">KAF Global Foot</span>
@@ -34,9 +32,7 @@ export default function SignUp() {
             <nav className="site-nav">
               <Link href="/">Accueil</Link>
               <Link href="/inscription">Pré-inscription</Link>
-              <a href={pdfLink} target="_blank" rel="noopener noreferrer">
-                PDF
-              </a>
+              <a href={pdfLink} target="_blank" rel="noopener noreferrer">PDF</a>
               <a href={waLink} target="_blank" rel="noopener noreferrer" className="site-nav-cta">
                 WhatsApp
               </a>
@@ -46,13 +42,13 @@ export default function SignUp() {
 
         <section className="section" style={{ paddingTop: 28, paddingBottom: 26 }}>
           <div className="container">
-            <div className="card" style={{ padding: 22 }}>
-              <h1 style={{ marginTop: 0 }}>Dossier joueur (club à l’étranger / camp)</h1>
-              <p style={{ maxWidth: 900 }}>
+            <div className="card hero-card">
+              <h1 className="hero-title">Dossier joueur (club à l’étranger / camp)</h1>
+              <p className="hero-sub" style={{ maxWidth: 900 }}>
                 Remplis ce formulaire pour constituer un dossier complet. Ensuite, envoie les documents (photo, pièce
                 d’identité, vidéo) sur WhatsApp.
               </p>
-              <div className="form-actions" style={{ marginTop: 10 }}>
+              <div className="form-actions">
                 <a className="btn btn-secondary" href={pdfLink} target="_blank" rel="noopener noreferrer">
                   Télécharger le PDF
                 </a>
@@ -60,7 +56,7 @@ export default function SignUp() {
                   Envoyer pièces sur WhatsApp
                 </a>
               </div>
-              <p style={{ marginTop: 12, marginBottom: 0 }}>
+              <p className="hero-contact">
                 Contact direct : <strong>{phone}</strong>
               </p>
             </div>
@@ -68,13 +64,11 @@ export default function SignUp() {
         </section>
       </div>
 
-      {/* DARK MAIN */}
       <main className="dark-main">
         <section className="section">
           <div className="container">
             <div className="form-card">
               <form method="POST" action="/api/inscription" className="form-grid">
-                {/* Petit marqueur pour identifier ce formulaire côté backend */}
                 <input type="hidden" name="formType" value="dossier-joueur" />
 
                 <div className="form-field">
@@ -127,12 +121,12 @@ export default function SignUp() {
                     name="message"
                     rows={7}
                     required
-                    placeholder="1) Objectif : club à l’étranger ou camp
+                    placeholder={`1) Objectif : club à l’étranger ou camp
 2) Taille / poids (si possible)
 3) Pied fort
 4) Lien vidéo (YouTube/Drive)
 5) Disponibilités / pays souhaités
-6) Documents disponibles (CNI/Passeport) "
+6) Documents disponibles (CNI/Passeport)`}
                   />
                   <p className="form-help">
                     Ensuite, envoie les pièces (photo + vidéo + document) sur WhatsApp : {phone}
@@ -145,9 +139,6 @@ export default function SignUp() {
                   </button>
                   <a className="btn btn-secondary" href={waLink} target="_blank" rel="noopener noreferrer">
                     WhatsApp
-                  </a>
-                  <a className="btn btn-secondary" href={pdfLink} target="_blank" rel="noopener noreferrer">
-                    PDF
                   </a>
                 </div>
               </form>
