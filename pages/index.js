@@ -1,4 +1,3 @@
-// pages/index.js
 import Head from "next/head";
 
 export default function Home() {
@@ -29,7 +28,7 @@ export default function Home() {
       <div className="topbar">
         <header className="site-header">
           <div className="site-header-inner">
-            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div className="brand">
               <img src="/logo-kaf.svg" alt="Logo KAF Global Foot" className="site-logo" />
               <div className="site-title-block">
                 <span className="site-title">KAF Global Foot</span>
@@ -47,55 +46,45 @@ export default function Home() {
           </div>
         </header>
 
-        <section className="section" style={{ paddingTop: 34, paddingBottom: 30 }}>
+        <section className="section hero">
           <div className="container">
-            <div className="card" style={{ padding: 22 }}>
-              <p style={{ marginBottom: 8, fontWeight: 900 }}>
-                Inscriptions en cours – saison 2025–2026
-              </p>
+            <div className="card hero-card">
+              <p className="hero-kicker">Inscriptions en cours – saison 2025–2026</p>
 
-              <h1 style={{ marginTop: 0 }}>Académie de football à Kafountine (Casamance)</h1>
+              <h1 className="hero-title">Académie de football à Kafountine (Casamance)</h1>
 
-              <p style={{ maxWidth: 860 }}>
+              <p className="hero-sub">
                 Formation + détection + constitution de dossier joueur pour faciliter les opportunités :{" "}
                 <strong>club à l’étranger</strong> ou <strong>camp d’entraînement</strong>.
               </p>
 
-              <div className="form-actions" style={{ marginTop: 14 }}>
+              <div className="form-actions">
                 <a className="btn btn-primary" href="/inscription">
                   Je pré-inscris un joueur
                 </a>
                 <a className="btn btn-secondary" href={waLink} target="_blank" rel="noopener noreferrer">
                   WhatsApp
                 </a>
-                <a className="btn btn-secondary" href={pdfLink} target="_blank" rel="noopener noreferrer">
-                  Télécharger le PDF
-                </a>
               </div>
 
-              <p style={{ marginTop: 12, marginBottom: 0 }}>
+              <p className="hero-contact">
                 Contact direct : <strong>{phone}</strong>
               </p>
             </div>
 
-            <div
-              style={{
-                display: "grid",
-                gap: 14,
-                marginTop: 18,
-                gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
-              }}
-            >
-              {[
-                { title: "Âge", text: "14 à 23 ans" },
-                { title: "Lieu", text: "Kafountine, Casamance" },
-                { title: "Rythme", text: "6 séances / semaine" },
-              ].map((b) => (
-                <div key={b.title} className="card" style={{ padding: 16 }}>
-                  <h3>{b.title}</h3>
-                  <p style={{ margin: 0 }}>{b.text}</p>
-                </div>
-              ))}
+            <div className="hero-grid">
+              <div className="card hero-mini">
+                <h3>Âge</h3>
+                <p>14 à 23 ans</p>
+              </div>
+              <div className="card hero-mini">
+                <h3>Lieu</h3>
+                <p>Kafountine, Casamance</p>
+              </div>
+              <div className="card hero-mini">
+                <h3>Rythme</h3>
+                <p>6 séances / semaine</p>
+              </div>
             </div>
           </div>
         </section>
@@ -152,8 +141,8 @@ export default function Home() {
           <div className="container">
             <h2>Formulaire joueurs (déjà inscrits)</h2>
             <p style={{ maxWidth: 900 }}>
-              Pour constituer un dossier complet (club à l’étranger / camp d’entraînement). Préparez une photo
-              d’identité, une pièce d’identité (si dispo) et un lien vidéo.
+              Pour constituer un dossier complet (club à l’étranger / camp d’entraînement).
+              Préparez une photo d’identité, une pièce d’identité (si dispo) et un lien vidéo.
             </p>
 
             <div className="form-actions">
