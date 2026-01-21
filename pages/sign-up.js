@@ -1,3 +1,4 @@
+// pages/sign-up.js
 import Head from "next/head";
 import Link from "next/link";
 
@@ -21,7 +22,7 @@ export default function SignUp() {
       <div className="topbar">
         <header className="site-header">
           <div className="site-header-inner">
-            <div className="brand">
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <img src="/logo-kaf.svg" alt="Logo KAF Global Foot" className="site-logo" />
               <div className="site-title-block">
                 <span className="site-title">KAF Global Foot</span>
@@ -31,34 +32,27 @@ export default function SignUp() {
 
             <nav className="site-nav">
               <Link href="/">Accueil</Link>
-              <Link href="/inscription">Pré-inscription</Link>
-              <a href={pdfLink} target="_blank" rel="noopener noreferrer">PDF</a>
-              <a href={waLink} target="_blank" rel="noopener noreferrer" className="site-nav-cta">
-                WhatsApp
-              </a>
+              <Link href="/inscription" className="site-nav-cta">
+                Inscription
+              </Link>
             </nav>
           </div>
         </header>
 
-        <section className="section" style={{ paddingTop: 28, paddingBottom: 26 }}>
+        <section className="section" style={{ paddingTop: 22, paddingBottom: 22 }}>
           <div className="container">
-            <div className="card hero-card">
-              <h1 className="hero-title">Dossier joueur (club à l’étranger / camp)</h1>
-              <p className="hero-sub" style={{ maxWidth: 900 }}>
-                Remplis ce formulaire pour constituer un dossier complet. Ensuite, envoie les documents (photo, pièce
-                d’identité, vidéo) sur WhatsApp.
+            <div className="card" style={{ padding: 18 }}>
+              <h1 style={{ marginTop: 0 }}>Dossier joueur</h1>
+              <p style={{ maxWidth: 900, color: "rgba(255,255,255,0.90)" }}>
+                Remplis ce formulaire pour constituer un dossier complet. Pour les pièces (photo / vidéo / document),
+                envoie-les ensuite sur WhatsApp : <strong>{phone}</strong>.
               </p>
-              <div className="form-actions">
+
+              <div className="form-actions" style={{ marginTop: 10 }}>
                 <a className="btn btn-secondary" href={pdfLink} target="_blank" rel="noopener noreferrer">
                   Télécharger le PDF
                 </a>
-                <a className="btn btn-secondary" href={waLink} target="_blank" rel="noopener noreferrer">
-                  Envoyer pièces sur WhatsApp
-                </a>
               </div>
-              <p className="hero-contact">
-                Contact direct : <strong>{phone}</strong>
-              </p>
             </div>
           </div>
         </section>
@@ -129,7 +123,7 @@ export default function SignUp() {
 6) Documents disponibles (CNI/Passeport)`}
                   />
                   <p className="form-help">
-                    Ensuite, envoie les pièces (photo + vidéo + document) sur WhatsApp : {phone}
+                    Après envoi, transmets les pièces sur WhatsApp : <strong>{phone}</strong>
                   </p>
                 </div>
 
@@ -137,24 +131,17 @@ export default function SignUp() {
                   <button type="submit" className="btn btn-primary">
                     Envoyer le dossier
                   </button>
-                  <a className="btn btn-secondary" href={waLink} target="_blank" rel="noopener noreferrer">
-                    WhatsApp
-                  </a>
+                  <Link href="/" className="btn btn-secondary">
+                    Retour accueil
+                  </Link>
                 </div>
               </form>
-            </div>
-
-            <div style={{ marginTop: 12 }}>
-              <Link href="/" className="btn btn-secondary">
-                ← Retour à l’accueil
-              </Link>
             </div>
           </div>
         </section>
 
         <footer className="site-footer">
           <p>© 2025 KAF Global Foot. Tous droits réservés.</p>
-          <p>Site développé avec Next.js &amp; déployé sur Vercel.</p>
         </footer>
 
         <a href={waLink} className="whatsapp-float" target="_blank" rel="noopener noreferrer">
