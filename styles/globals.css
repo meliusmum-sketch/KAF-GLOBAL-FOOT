@@ -1,324 +1,269 @@
-/* styles/globals.css */
-/* Thème "premium academy" (inspiré d'un style dark moderne) */
+/* styles/globals.css — Clean / airy / academy style */
 
-:root {
-  --bg: #0b0f17;
-  --bg2: #0a0d14;
-  --surface: rgba(255, 255, 255, 0.06);
-  --surface-2: rgba(255, 255, 255, 0.09);
-  --border: rgba(255, 255, 255, 0.12);
+:root{
+  --bg:#ffffff;
+  --bg-soft:#f6f7f9;
+  --text:#111827;
+  --muted:#6b7280;
+  --border:#e5e7eb;
 
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.68);
-  --faint: rgba(255, 255, 255, 0.50);
+  /* ✅ Couleur principale (respecte le vert “academy”) */
+  --accent:#16a34a; /* change ici si tu veux un vert plus clair/foncé */
+  --accent-hover:#15803d;
 
-  /* Accent (change ici si tu veux une autre couleur) */
-  --accent: #23d18b;         /* vert premium */
-  --accent-2: #7c3aed;       /* violet léger */
-  --danger: #ff3b30;
+  --radius:16px;
+  --radius-sm:12px;
 
-  --radius: 18px;
-  --radius-sm: 14px;
-  --shadow: 0 14px 50px rgba(0, 0, 0, 0.45);
-
-  --max: 1160px;
+  --max:1120px;
+  --shadow: 0 12px 28px rgba(17,24,39,0.08);
 }
 
-* { box-sizing: border-box; }
-html, body { padding: 0; margin: 0; }
-body {
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  color: var(--text);
-  background:
-    radial-gradient(900px 380px at 20% 10%, rgba(35, 209, 139, 0.14), transparent 60%),
-    radial-gradient(900px 380px at 80% 0%, rgba(124, 58, 237, 0.14), transparent 60%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
-  min-height: 100vh;
+*{ box-sizing:border-box; }
+html,body{ padding:0; margin:0; }
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  color:var(--text);
+  background:var(--bg);
 }
 
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
 
-.page {
-  min-height: 100vh;
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 18px;
 }
 
-.container {
-  width: 100%;
-  max-width: var(--max);
-  padding: 0 18px;
-  margin: 0 auto;
-}
-
-/* HEADER (compatible avec tes classes existantes) */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(14px);
-  background: rgba(10, 13, 20, 0.55);
-  border-bottom: 1px solid var(--border);
+/* ===== HEADER ===== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--border);
 }
 
 .site-header-inner,
-.site-header {
-  padding: 14px 0;
+.site-header{
+  padding:12px 0;
 }
 
-.site-header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+.site-header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 18px;
 }
 
-.site-header-left,
-.site-header-inner {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding-left: 18px;
-  padding-right: 18px;
+.site-logo{
+  width:44px;
+  height:44px;
+  padding:8px;
+  border-radius:12px;
+  background:var(--bg-soft);
+  border:1px solid var(--border);
 }
 
-.site-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border);
-  padding: 8px;
+.site-title-block{ display:flex; flex-direction:column; line-height:1.1; }
+.site-title{ font-weight:900; letter-spacing:-0.2px; }
+.site-tagline{ font-size:13px; color:var(--muted); margin-top:3px; }
+
+.site-nav{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:flex-end;
 }
 
-.site-title-block { display: flex; flex-direction: column; line-height: 1.1; }
-.site-title { font-weight: 800; letter-spacing: 0.3px; }
-.site-tagline { color: var(--muted); font-size: 13px; margin-top: 2px; }
-
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+.site-nav a{
+  font-size:14px;
+  color:var(--muted);
+  padding:10px 10px;
+  border-radius:12px;
+  transition:.15s ease;
 }
 
-.site-nav a {
-  color: var(--muted);
-  font-size: 14px;
-  padding: 10px 10px;
-  border-radius: 12px;
-  transition: 0.2s ease;
-}
-
-.site-nav a:hover {
-  color: var(--text);
-  background: rgba(255,255,255,0.06);
+.site-nav a:hover{
+  background:var(--bg-soft);
+  color:var(--text);
 }
 
 .site-nav-cta,
-.btn-inscription {
-  background: linear-gradient(90deg, rgba(35, 209, 139, 0.95), rgba(124, 58, 237, 0.95));
-  color: #071017 !important;
-  font-weight: 800;
-  padding: 10px 14px !important;
-  border-radius: 14px !important;
-  box-shadow: 0 10px 28px rgba(35, 209, 139, 0.18);
+.btn-inscription{
+  background:var(--accent);
+  color:white !important;
+  font-weight:800;
+  padding:10px 14px !important;
+  border-radius:999px !important;
 }
 
-/* TITRES / SECTIONS */
-h1, h2, h3 { margin: 0 0 10px; }
-h1 {
-  font-size: clamp(28px, 2.6vw, 44px);
-  letter-spacing: -0.6px;
-}
-h2 {
-  font-size: clamp(22px, 2vw, 30px);
-}
-p { color: var(--muted); line-height: 1.65; }
+.site-nav-cta:hover,
+.btn-inscription:hover{ background:var(--accent-hover); }
 
-.section {
-  padding: 26px 0;
+/* ===== TITRES / SECTIONS ===== */
+.page{ min-height:100vh; }
+.section{
+  padding:44px 0;
 }
-
-/* CARTES */
-.card, .rail-card, .form-card {
-  background: linear-gradient(180deg, var(--surface), rgba(255,255,255,0.04));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+h1{
+  font-size: clamp(28px, 3vw, 44px);
+  letter-spacing: -0.7px;
+  margin:0 0 10px;
 }
-
-.card {
-  padding: 18px;
-  margin: 14px 0;
+h2{
+  font-size: clamp(20px, 2vw, 28px);
+  letter-spacing: -0.4px;
+  margin:0 0 10px;
 }
+h3{
+  margin:0 0 8px;
+  font-size:16px;
+}
+p{ color:var(--muted); line-height:1.7; margin:0 0 12px; }
 
-.rail-card { padding: 16px; margin: 14px 0; }
-.rail-card h3 { font-size: 16px; margin-bottom: 10px; }
-.rail-strong { font-weight: 900; color: var(--text); }
-
-/* BOUTONS */
-.btn, button.btn, .btn-principal {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  border: 1px solid transparent;
-  border-radius: 14px;
-  padding: 12px 14px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+/* ===== BOUTONS ===== */
+.btn, button.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:12px 16px;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-weight:800;
+  cursor:pointer;
+  transition:.15s ease;
 }
 
-.btn:hover { transform: translateY(-1px); }
+.btn-primary{
+  background:var(--accent);
+  color:white;
+}
+.btn-primary:hover{ background:var(--accent-hover); }
 
-.btn-primary, .btn-principal {
-  background: linear-gradient(90deg, rgba(35, 209, 139, 0.98), rgba(124, 58, 237, 0.98));
-  color: #071017;
+.btn-secondary{
+  background:white;
+  border-color:var(--border);
+  color:var(--text);
+}
+.btn-secondary:hover{ background:var(--bg-soft); }
+
+.btn-link{
+  color:var(--accent);
+  font-weight:800;
+  text-decoration:underline;
+  text-underline-offset: 4px;
 }
 
-.btn-secondary {
-  background: rgba(255,255,255,0.06);
-  border-color: var(--border);
-  color: var(--text);
+/* ===== CARTES ===== */
+.card, .form-card, .rail-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
 }
 
-.btn-ghost {
-  background: transparent;
-  border-color: var(--border);
-  color: var(--text);
+.card{ padding:18px; margin:14px 0; }
+.form-card{ padding:18px; }
+
+/* ===== SIGN-UP GRID (2 colonnes) ===== */
+.signup-wrap{
+  padding:34px 0 54px;
+}
+.signup-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  margin-top:16px;
+}
+@media (min-width:980px){
+  .signup-grid{ grid-template-columns: 0.95fr 1.05fr; }
 }
 
-.btn-small { padding: 10px 12px; border-radius: 12px; font-size: 14px; }
-
-/* FORMULAIRES (look premium) */
-.form-section {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 26px 18px 40px;
+/* ===== FORMULAIRE (style Pro / simple) ===== */
+.form-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
+.form-row{ display:grid; grid-template-columns:1fr; gap:14px; }
+@media (min-width:860px){
+  .form-row{ grid-template-columns:1fr 1fr; }
 }
 
-.form-card {
-  padding: 18px;
-  margin-top: 16px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-
-@media (min-width: 860px) {
-  .form-row { grid-template-columns: 1fr 1fr; }
-}
-
-.form-field label {
-  display: block;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--faint);
-  margin-bottom: 8px;
+.form-field label{
+  display:block;
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:#374151;
+  margin-bottom:8px;
 }
 
 .form-field input,
 .form-field select,
-.form-field textarea {
-  width: 100%;
-  background: rgba(10, 13, 20, 0.55);
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 12px 12px;
-  border-radius: var(--radius-sm);
-  outline: none;
-  transition: border-color .15s ease, box-shadow .15s ease;
+.form-field textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  background:white;
+  color:var(--text);
+  outline:none;
+  transition:.15s ease;
 }
 
 .form-field input:focus,
 .form-field select:focus,
-.form-field textarea:focus {
-  border-color: rgba(35, 209, 139, 0.65);
-  box-shadow: 0 0 0 4px rgba(35, 209, 139, 0.12);
+.form-field textarea:focus{
+  border-color: rgba(22,163,74,0.65);
+  box-shadow: 0 0 0 4px rgba(22,163,74,0.12);
 }
 
-.form-help { margin: 8px 0 0; color: var(--faint); font-size: 13px; }
-.form-actions { display: grid; gap: 10px; margin-top: 10px; }
-
-.form-small-note { font-size: 13px; color: var(--faint); }
-
-/* SIGN-UP LAYOUT */
-.signup-hero {
-  padding: 26px 0 0;
+.form-help{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:8px;
 }
 
-.signup-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-  margin-top: 14px;
+.form-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin-top:6px;
 }
 
-@media (min-width: 980px) {
-  .signup-grid { grid-template-columns: 1.05fr 0.95fr; }
+.hr{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:16px 0;
 }
 
-.kicker {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  color: var(--faint);
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+/* ===== FOOTER ===== */
+.site-footer{
+  border-top:1px solid var(--border);
+  padding:28px 18px;
+  text-align:center;
+  color:var(--muted);
+  background:var(--bg);
 }
 
-.badge {
-  display: inline-flex;
-  padding: 7px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.05);
-  color: var(--muted);
-  font-size: 13px;
+/* ===== WhatsApp floating (discret) ===== */
+.whatsapp-button, .whatsapp-float{
+  position:fixed;
+  right:16px;
+  bottom:16px;
+  z-index:60;
+  background:var(--accent);
+  color:white;
+  font-weight:900;
+  padding:12px 14px;
+  border-radius:999px;
+  box-shadow: 0 12px 24px rgba(22,163,74,0.18);
 }
-
-.list {
-  margin: 10px 0 0;
-  padding-left: 18px;
-}
-
-hr.sep {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 18px 0;
-}
-
-/* FOOTER */
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding: 26px 18px;
-  text-align: center;
-  color: var(--faint);
-}
-
-/* WhatsApp float */
-.whatsapp-button, .whatsapp-float {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  z-index: 60;
-  background: linear-gradient(90deg, rgba(35, 209, 139, 0.98), rgba(124, 58, 237, 0.98));
-  color: #071017;
-  font-weight: 900;
-  padding: 12px 14px;
-  border-radius: 999px;
-  box-shadow: 0 18px 50px rgba(35, 209, 139, 0.18);
+.whatsapp-button:hover, .whatsapp-float:hover{
+  background:var(--accent-hover);
 }
