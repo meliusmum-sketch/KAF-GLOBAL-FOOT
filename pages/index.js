@@ -1,3 +1,4 @@
+// pages/index.js
 import Head from "next/head";
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
       <div className="topbar">
         <header className="site-header">
           <div className="site-header-inner">
-            <div className="brand">
+            <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
               <img src="/logo-kaf.svg" alt="Logo KAF Global Foot" className="site-logo" />
               <div className="site-title-block">
                 <span className="site-title">KAF Global Foot</span>
@@ -41,49 +42,33 @@ export default function Home() {
               <a href="#programmes">Programmes</a>
               <a href="#horaires">Horaires</a>
               <a href="#formulaires">Formulaires</a>
-              <a href="#contact" className="site-nav-cta">Contact</a>
+              <a href="/inscription" className="site-nav-cta">
+                Inscription
+              </a>
             </nav>
           </div>
         </header>
 
-        <section className="section hero">
+        {/* HERO : PHOTO (plus de texte) */}
+        <section className="section" style={{ paddingTop: 26, paddingBottom: 30 }}>
           <div className="container">
-            <div className="card hero-card">
-              <p className="hero-kicker">Inscriptions en cours – saison 2025–2026</p>
-
-              <h1 className="hero-title">Académie de football à Kafountine (Casamance)</h1>
-
-              <p className="hero-sub">
-                Formation + détection + constitution de dossier joueur pour faciliter les opportunités :{" "}
-                <strong>club à l’étranger</strong> ou <strong>camp d’entraînement</strong>.
-              </p>
-
-              <div className="form-actions">
-                <a className="btn btn-primary" href="/inscription">
-                  Je pré-inscris un joueur
-                </a>
-                <a className="btn btn-secondary" href={waLink} target="_blank" rel="noopener noreferrer">
-                  WhatsApp
-                </a>
-              </div>
-
-              <p className="hero-contact">
-                Contact direct : <strong>{phone}</strong>
-              </p>
+            <div className="card hero-media-card">
+              <img src="/hero.jpg" alt="KAF Global Foot" className="hero-media" />
             </div>
 
-            <div className="hero-grid">
-              <div className="card hero-mini">
-                <h3>Âge</h3>
-                <p>14 à 23 ans</p>
+            {/* Quick facts */}
+            <div className="grid-cards">
+              <div className="card" style={{ padding: 16 }}>
+                <h3 style={{ color: "white" }}>Âge</h3>
+                <p style={{ margin: 0, color: "rgba(255,255,255,0.90)" }}>14 à 23 ans</p>
               </div>
-              <div className="card hero-mini">
-                <h3>Lieu</h3>
-                <p>Kafountine, Casamance</p>
+              <div className="card" style={{ padding: 16 }}>
+                <h3 style={{ color: "white" }}>Lieu</h3>
+                <p style={{ margin: 0, color: "rgba(255,255,255,0.90)" }}>Kafountine, Casamance</p>
               </div>
-              <div className="card hero-mini">
-                <h3>Rythme</h3>
-                <p>6 séances / semaine</p>
+              <div className="card" style={{ padding: 16 }}>
+                <h3 style={{ color: "white" }}>Rythme</h3>
+                <p style={{ margin: 0, color: "rgba(255,255,255,0.90)" }}>6 séances / semaine</p>
               </div>
             </div>
           </div>
@@ -96,8 +81,8 @@ export default function Home() {
           <div className="container">
             <h2>À propos</h2>
             <p style={{ maxWidth: 900 }}>
-              KAF Global Foot accompagne les jeunes joueurs dans leur progression sportive et humaine : discipline,
-              travail, valeurs, et préparation aux opportunités.
+              KAF Global Foot accompagne les jeunes joueurs dans leur progression sportive et humaine :
+              discipline, travail, valeurs, et préparation aux opportunités.
             </p>
           </div>
         </section>
@@ -139,10 +124,9 @@ export default function Home() {
 
         <section id="formulaires" className="section">
           <div className="container">
-            <h2>Formulaire joueurs (déjà inscrits)</h2>
+            <h2>Formulaires joueurs</h2>
             <p style={{ maxWidth: 900 }}>
-              Pour constituer un dossier complet (club à l’étranger / camp d’entraînement).
-              Préparez une photo d’identité, une pièce d’identité (si dispo) et un lien vidéo.
+              Télécharger le PDF ou remplir le dossier joueur en ligne (club à l’étranger / camp d’entraînement).
             </p>
 
             <div className="form-actions">
@@ -163,25 +147,16 @@ export default function Home() {
               <p style={{ marginBottom: 6 }}>
                 WhatsApp / Téléphone : <strong>{phone}</strong>
               </p>
-              <p style={{ marginBottom: 12 }}>Email : contact@kafglobalfoot.com</p>
-
-              <div className="form-actions">
-                <a className="btn btn-primary" href="/inscription">
-                  Pré-inscription
-                </a>
-                <a className="btn btn-secondary" href={waLink} target="_blank" rel="noopener noreferrer">
-                  WhatsApp
-                </a>
-              </div>
+              <p style={{ marginBottom: 0 }}>Email : contact@kafglobalfoot.com</p>
             </div>
           </div>
         </section>
 
         <footer className="site-footer">
           <p>© 2025 KAF Global Foot. Tous droits réservés.</p>
-          <p>Site développé avec Next.js &amp; déployé sur Vercel.</p>
         </footer>
 
+        {/* WhatsApp floating (1 seule fois) */}
         <a
           href={waLink}
           className="whatsapp-float"
