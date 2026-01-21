@@ -1,15 +1,16 @@
-/* styles/globals.css — Clean / airy / academy style */
+/* styles/globals.css — Clean / airy / pro turquoise */
 
 :root{
   --bg:#ffffff;
   --bg-soft:#f6f7f9;
-  --text:#111827;
+  --text:#0f172a;
   --muted:#6b7280;
   --border:#e5e7eb;
 
-  /* ✅ Couleur principale (respecte le vert “academy”) */
-  --accent:#16a34a; /* change ici si tu veux un vert plus clair/foncé */
-  --accent-hover:#15803d;
+  /* ✅ TURQUOISE PRO */
+  --accent:#0ea5a6;
+  --accent-hover:#0b8b8c;
+  --accent-ink:#063b46;
 
   --radius:16px;
   --radius-sm:12px;
@@ -33,6 +34,29 @@ img{ max-width:100%; display:block; }
   max-width:var(--max);
   margin:0 auto;
   padding:0 18px;
+}
+
+/* ===== TURQUOISE TOP AREA (header + hero) ===== */
+.topbar{
+  background: linear-gradient(135deg, #0ea5a6 0%, #0b7ea0 55%, #065f73 100%);
+  color: white;
+}
+.topbar .site-header{
+  background: transparent;
+  border-bottom:1px solid rgba(255,255,255,0.18);
+}
+.topbar .site-title,
+.topbar h1,
+.topbar h2,
+.topbar h3{ color:white; }
+.topbar p{ color: rgba(255,255,255,0.88); }
+.topbar .site-tagline{ color: rgba(255,255,255,0.82); }
+.topbar .site-nav a{
+  color: rgba(255,255,255,0.90);
+}
+.topbar .site-nav a:hover{
+  background: rgba(255,255,255,0.10);
+  color:white;
 }
 
 /* ===== HEADER ===== */
@@ -69,6 +93,11 @@ img{ max-width:100%; display:block; }
   border:1px solid var(--border);
 }
 
+.topbar .site-logo{
+  background: rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.22);
+}
+
 .site-title-block{ display:flex; flex-direction:column; line-height:1.1; }
 .site-title{ font-weight:900; letter-spacing:-0.2px; }
 .site-tagline{ font-size:13px; color:var(--muted); margin-top:3px; }
@@ -102,15 +131,22 @@ img{ max-width:100%; display:block; }
   padding:10px 14px !important;
   border-radius:999px !important;
 }
-
 .site-nav-cta:hover,
 .btn-inscription:hover{ background:var(--accent-hover); }
 
+/* CTA en haut sur turquoise : bouton blanc */
+.topbar .site-nav-cta{
+  background: rgba(255,255,255,0.95);
+  color: var(--accent-ink) !important;
+}
+.topbar .site-nav-cta:hover{
+  background: rgba(255,255,255,0.88);
+}
+
 /* ===== TITRES / SECTIONS ===== */
 .page{ min-height:100vh; }
-.section{
-  padding:44px 0;
-}
+.section{ padding:44px 0; }
+
 h1{
   font-size: clamp(28px, 3vw, 44px);
   letter-spacing: -0.7px;
@@ -121,11 +157,9 @@ h2{
   letter-spacing: -0.4px;
   margin:0 0 10px;
 }
-h3{
-  margin:0 0 8px;
-  font-size:16px;
-}
-p{ color:var(--muted); line-height:1.7; margin:0 0 12px; }
+h3{ margin:0 0 8px; font-size:16px; }
+
+p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
 
 /* ===== BOUTONS ===== */
 .btn, button.btn{
@@ -161,6 +195,24 @@ p{ color:var(--muted); line-height:1.7; margin:0 0 12px; }
   text-underline-offset: 4px;
 }
 
+/* Sur topbar : boutons adaptés */
+.topbar .btn-primary{
+  background: rgba(255,255,255,0.95);
+  color: var(--accent-ink);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.topbar .btn-primary:hover{
+  background: rgba(255,255,255,0.88);
+}
+.topbar .btn-secondary{
+  background: transparent;
+  border-color: rgba(255,255,255,0.45);
+  color: white;
+}
+.topbar .btn-secondary:hover{
+  background: rgba(255,255,255,0.10);
+}
+
 /* ===== CARTES ===== */
 .card, .form-card, .rail-card{
   background:white;
@@ -172,26 +224,17 @@ p{ color:var(--muted); line-height:1.7; margin:0 0 12px; }
 .card{ padding:18px; margin:14px 0; }
 .form-card{ padding:18px; }
 
-/* ===== SIGN-UP GRID (2 colonnes) ===== */
-.signup-wrap{
-  padding:34px 0 54px;
-}
-.signup-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:18px;
-  margin-top:16px;
-}
-@media (min-width:980px){
-  .signup-grid{ grid-template-columns: 0.95fr 1.05fr; }
+/* cartes sur topbar */
+.topbar .card{
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+  box-shadow: none;
 }
 
-/* ===== FORMULAIRE (style Pro / simple) ===== */
+/* ===== FORMULAIRE ===== */
 .form-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
 .form-row{ display:grid; grid-template-columns:1fr; gap:14px; }
-@media (min-width:860px){
-  .form-row{ grid-template-columns:1fr 1fr; }
-}
+@media (min-width:860px){ .form-row{ grid-template-columns:1fr 1fr; } }
 
 .form-field label{
   display:block;
@@ -218,15 +261,11 @@ p{ color:var(--muted); line-height:1.7; margin:0 0 12px; }
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus{
-  border-color: rgba(22,163,74,0.65);
-  box-shadow: 0 0 0 4px rgba(22,163,74,0.12);
+  border-color: rgba(14,165,166,0.65);
+  box-shadow: 0 0 0 4px rgba(14,165,166,0.14);
 }
 
-.form-help{
-  font-size:13px;
-  color:var(--muted);
-  margin-top:8px;
-}
+.form-help{ font-size:13px; color:var(--muted); margin-top:8px; }
 
 .form-actions{
   display:flex;
@@ -251,7 +290,7 @@ p{ color:var(--muted); line-height:1.7; margin:0 0 12px; }
   background:var(--bg);
 }
 
-/* ===== WhatsApp floating (discret) ===== */
+/* ===== WhatsApp floating ===== */
 .whatsapp-button, .whatsapp-float{
   position:fixed;
   right:16px;
@@ -262,7 +301,7 @@ p{ color:var(--muted); line-height:1.7; margin:0 0 12px; }
   font-weight:900;
   padding:12px 14px;
   border-radius:999px;
-  box-shadow: 0 12px 24px rgba(22,163,74,0.18);
+  box-shadow: 0 12px 24px rgba(14,165,166,0.20);
 }
 .whatsapp-button:hover, .whatsapp-float:hover{
   background:var(--accent-hover);
