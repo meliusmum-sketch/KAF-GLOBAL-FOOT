@@ -1,4 +1,4 @@
-/* styles/globals.css — Clean / airy / pro turquoise */
+/* styles/globals.css — Clean / airy / pro turquoise + dark main */
 
 :root{
   --bg:#ffffff;
@@ -17,6 +17,14 @@
 
   --max:1120px;
   --shadow: 0 12px 28px rgba(17,24,39,0.08);
+
+  /* ✅ DARK THEME TOKENS */
+  --dark:#0b1220;
+  --dark-soft:#0f172a;
+  --dark-card: rgba(255,255,255,0.06);
+  --dark-border: rgba(255,255,255,0.12);
+  --dark-text:#e5e7eb;
+  --dark-muted: rgba(229,231,235,0.75);
 }
 
 *{ box-sizing:border-box; }
@@ -51,9 +59,7 @@ img{ max-width:100%; display:block; }
 .topbar h3{ color:white; }
 .topbar p{ color: rgba(255,255,255,0.88); }
 .topbar .site-tagline{ color: rgba(255,255,255,0.82); }
-.topbar .site-nav a{
-  color: rgba(255,255,255,0.90);
-}
+.topbar .site-nav a{ color: rgba(255,255,255,0.90); }
 .topbar .site-nav a:hover{
   background: rgba(255,255,255,0.10);
   color:white;
@@ -201,17 +207,13 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
   color: var(--accent-ink);
   border: 1px solid rgba(255,255,255,0.25);
 }
-.topbar .btn-primary:hover{
-  background: rgba(255,255,255,0.88);
-}
+.topbar .btn-primary:hover{ background: rgba(255,255,255,0.88); }
 .topbar .btn-secondary{
   background: transparent;
   border-color: rgba(255,255,255,0.45);
   color: white;
 }
-.topbar .btn-secondary:hover{
-  background: rgba(255,255,255,0.10);
-}
+.topbar .btn-secondary:hover{ background: rgba(255,255,255,0.10); }
 
 /* ===== CARTES ===== */
 .card, .form-card, .rail-card{
@@ -224,7 +226,7 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
 .card{ padding:18px; margin:14px 0; }
 .form-card{ padding:18px; }
 
-/* cartes sur topbar */
+/* cartes sur topbar (effet glass) */
 .topbar .card{
   background: rgba(255,255,255,0.10);
   border: 1px solid rgba(255,255,255,0.20);
@@ -305,4 +307,86 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
 }
 .whatsapp-button:hover, .whatsapp-float:hover{
   background:var(--accent-hover);
+}
+
+/* =========================================================
+   ✅ DARK PRO — "de la bande blanche jusqu'à la fin"
+   Utilise <main className="dark-main"> (comme dans ton index.js)
+   ========================================================= */
+
+.dark-main{
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(14,165,166,0.18), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(11,126,160,0.18), transparent 55%),
+    linear-gradient(180deg, var(--dark) 0%, #070b14 100%);
+  color: var(--dark-text);
+}
+
+.dark-main h1,
+.dark-main h2,
+.dark-main h3{
+  color: var(--dark-text);
+}
+
+.dark-main p{
+  color: var(--dark-muted);
+}
+
+.dark-main a:hover{
+  opacity: 0.95;
+}
+
+/* Cartes en dark */
+.dark-main .card,
+.dark-main .form-card,
+.dark-main .rail-card{
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  box-shadow: none;
+}
+
+/* Boutons en dark */
+.dark-main .btn-secondary{
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.14);
+  color: var(--dark-text);
+}
+.dark-main .btn-secondary:hover{
+  background: rgba(255,255,255,0.10);
+}
+
+/* Form en dark */
+.dark-main .form-field label{
+  color: rgba(229,231,235,0.88);
+}
+
+.dark-main .form-field input,
+.dark-main .form-field select,
+.dark-main .form-field textarea{
+  background: rgba(15,23,42,0.70);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--dark-text);
+}
+
+.dark-main .form-field input::placeholder,
+.dark-main .form-field textarea::placeholder{
+  color: rgba(229,231,235,0.45);
+}
+
+.dark-main .form-field input:focus,
+.dark-main .form-field select:focus,
+.dark-main .form-field textarea:focus{
+  border-color: rgba(14,165,166,0.75);
+  box-shadow: 0 0 0 4px rgba(14,165,166,0.18);
+}
+
+.dark-main .hr{
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+/* Footer en dark */
+.dark-main .site-footer{
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  color: rgba(229,231,235,0.70);
 }
