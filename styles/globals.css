@@ -7,7 +7,6 @@
   --muted:#6b7280;
   --border:#e5e7eb;
 
-  /* ✅ TURQUOISE PRO */
   --accent:#0ea5a6;
   --accent-hover:#0b8b8c;
   --accent-ink:#063b46;
@@ -18,7 +17,6 @@
   --max:1120px;
   --shadow: 0 12px 28px rgba(17,24,39,0.08);
 
-  /* ✅ DARK THEME TOKENS */
   --dark:#0b1220;
   --dark-soft:#0f172a;
   --dark-card: rgba(255,255,255,0.06);
@@ -44,7 +42,23 @@ img{ max-width:100%; display:block; }
   padding:0 18px;
 }
 
-/* ===== TURQUOISE TOP AREA (header + hero) ===== */
+/* helpers */
+.brand{ display:flex; align-items:center; gap:10px; }
+.hero{ padding-top:34px; padding-bottom:30px; }
+.hero-card{ padding:22px; }
+.hero-kicker{ margin-bottom:8px; font-weight:900; }
+.hero-title{ margin-top:0; }
+.hero-sub{ max-width:860px; }
+.hero-contact{ margin-top:12px; margin-bottom:0; }
+.hero-grid{
+  display:grid;
+  gap:14px;
+  margin-top:18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.hero-mini{ padding:16px; }
+
+/* ===== TOPBAR ===== */
 .topbar{
   background: linear-gradient(135deg, #0ea5a6 0%, #0b7ea0 55%, #065f73 100%);
   color: white;
@@ -74,11 +88,8 @@ img{ max-width:100%; display:block; }
   backdrop-filter: blur(10px);
   border-bottom:1px solid var(--border);
 }
-
 .site-header-inner,
-.site-header{
-  padding:12px 0;
-}
+.site-header{ padding:12px 0; }
 
 .site-header-inner{
   display:flex;
@@ -98,7 +109,6 @@ img{ max-width:100%; display:block; }
   background:var(--bg-soft);
   border:1px solid var(--border);
 }
-
 .topbar .site-logo{
   background: rgba(255,255,255,0.12);
   border:1px solid rgba(255,255,255,0.22);
@@ -115,7 +125,6 @@ img{ max-width:100%; display:block; }
   flex-wrap:wrap;
   justify-content:flex-end;
 }
-
 .site-nav a{
   font-size:14px;
   color:var(--muted);
@@ -123,36 +132,28 @@ img{ max-width:100%; display:block; }
   border-radius:12px;
   transition:.15s ease;
 }
-
 .site-nav a:hover{
   background:var(--bg-soft);
   color:var(--text);
 }
 
-.site-nav-cta,
-.btn-inscription{
+.site-nav-cta{
   background:var(--accent);
   color:white !important;
   font-weight:800;
   padding:10px 14px !important;
   border-radius:999px !important;
 }
-.site-nav-cta:hover,
-.btn-inscription:hover{ background:var(--accent-hover); }
+.site-nav-cta:hover{ background:var(--accent-hover); }
 
-/* CTA en haut sur turquoise : bouton blanc */
 .topbar .site-nav-cta{
   background: rgba(255,255,255,0.95);
   color: var(--accent-ink) !important;
 }
-.topbar .site-nav-cta:hover{
-  background: rgba(255,255,255,0.88);
-}
+.topbar .site-nav-cta:hover{ background: rgba(255,255,255,0.88); }
 
-/* ===== TITRES / SECTIONS ===== */
-.page{ min-height:100vh; }
+/* ===== SECTIONS ===== */
 .section{ padding:44px 0; }
-
 h1{
   font-size: clamp(28px, 3vw, 44px);
   letter-spacing: -0.7px;
@@ -164,10 +165,9 @@ h2{
   margin:0 0 10px;
 }
 h3{ margin:0 0 8px; font-size:16px; }
-
 p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
 
-/* ===== BOUTONS ===== */
+/* ===== BUTTONS ===== */
 .btn, button.btn{
   display:inline-flex;
   align-items:center;
@@ -180,28 +180,16 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
   cursor:pointer;
   transition:.15s ease;
 }
-
-.btn-primary{
-  background:var(--accent);
-  color:white;
-}
+.btn-primary{ background:var(--accent); color:white; }
 .btn-primary:hover{ background:var(--accent-hover); }
 
 .btn-secondary{
   background:white;
-  border-color:var(--border);
+  border:1px solid var(--border);
   color:var(--text);
 }
 .btn-secondary:hover{ background:var(--bg-soft); }
 
-.btn-link{
-  color:var(--accent);
-  font-weight:800;
-  text-decoration:underline;
-  text-underline-offset: 4px;
-}
-
-/* Sur topbar : boutons adaptés */
 .topbar .btn-primary{
   background: rgba(255,255,255,0.95);
   color: var(--accent-ink);
@@ -215,25 +203,31 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
 }
 .topbar .btn-secondary:hover{ background: rgba(255,255,255,0.10); }
 
-/* ===== CARTES ===== */
-.card, .form-card, .rail-card{
+.form-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin-top:6px;
+}
+
+/* ===== CARDS ===== */
+.card, .form-card{
   background:white;
   border:1px solid var(--border);
   border-radius:var(--radius);
   box-shadow:var(--shadow);
 }
-
 .card{ padding:18px; margin:14px 0; }
 .form-card{ padding:18px; }
 
-/* cartes sur topbar (effet glass) */
 .topbar .card{
   background: rgba(255,255,255,0.10);
   border: 1px solid rgba(255,255,255,0.20);
   box-shadow: none;
 }
 
-/* ===== FORMULAIRE ===== */
+/* ===== FORMS ===== */
 .form-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
 .form-row{ display:grid; grid-template-columns:1fr; gap:14px; }
 @media (min-width:860px){ .form-row{ grid-template-columns:1fr 1fr; } }
@@ -259,29 +253,13 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
   outline:none;
   transition:.15s ease;
 }
-
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus{
   border-color: rgba(14,165,166,0.65);
   box-shadow: 0 0 0 4px rgba(14,165,166,0.14);
 }
-
 .form-help{ font-size:13px; color:var(--muted); margin-top:8px; }
-
-.form-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  align-items:center;
-  margin-top:6px;
-}
-
-.hr{
-  border:none;
-  border-top:1px solid var(--border);
-  margin:16px 0;
-}
 
 /* ===== FOOTER ===== */
 .site-footer{
@@ -293,7 +271,7 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
 }
 
 /* ===== WhatsApp floating ===== */
-.whatsapp-button, .whatsapp-float{
+.whatsapp-float{
   position:fixed;
   right:16px;
   bottom:16px;
@@ -305,15 +283,9 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
   border-radius:999px;
   box-shadow: 0 12px 24px rgba(14,165,166,0.20);
 }
-.whatsapp-button:hover, .whatsapp-float:hover{
-  background:var(--accent-hover);
-}
+.whatsapp-float:hover{ background:var(--accent-hover); }
 
-/* =========================================================
-   ✅ DARK PRO — "de la bande blanche jusqu'à la fin"
-   Utilise <main className="dark-main"> (comme dans ton index.js)
-   ========================================================= */
-
+/* ===== DARK MAIN ===== */
 .dark-main{
   background:
     radial-gradient(1200px 600px at 10% -10%, rgba(14,165,166,0.18), transparent 55%),
@@ -321,45 +293,26 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
     linear-gradient(180deg, var(--dark) 0%, #070b14 100%);
   color: var(--dark-text);
 }
-
 .dark-main h1,
 .dark-main h2,
-.dark-main h3{
-  color: var(--dark-text);
-}
+.dark-main h3{ color: var(--dark-text); }
+.dark-main p{ color: var(--dark-muted); }
 
-.dark-main p{
-  color: var(--dark-muted);
-}
-
-.dark-main a:hover{
-  opacity: 0.95;
-}
-
-/* Cartes en dark */
 .dark-main .card,
-.dark-main .form-card,
-.dark-main .rail-card{
+.dark-main .form-card{
   background: var(--dark-card);
   border: 1px solid var(--dark-border);
   box-shadow: none;
 }
 
-/* Boutons en dark */
 .dark-main .btn-secondary{
   background: rgba(255,255,255,0.06);
   border-color: rgba(255,255,255,0.14);
   color: var(--dark-text);
 }
-.dark-main .btn-secondary:hover{
-  background: rgba(255,255,255,0.10);
-}
+.dark-main .btn-secondary:hover{ background: rgba(255,255,255,0.10); }
 
-/* Form en dark */
-.dark-main .form-field label{
-  color: rgba(229,231,235,0.88);
-}
-
+.dark-main .form-field label{ color: rgba(229,231,235,0.88); }
 .dark-main .form-field input,
 .dark-main .form-field select,
 .dark-main .form-field textarea{
@@ -367,12 +320,10 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
   border: 1px solid rgba(255,255,255,0.12);
   color: var(--dark-text);
 }
-
 .dark-main .form-field input::placeholder,
 .dark-main .form-field textarea::placeholder{
   color: rgba(229,231,235,0.45);
 }
-
 .dark-main .form-field input:focus,
 .dark-main .form-field select:focus,
 .dark-main .form-field textarea:focus{
@@ -380,13 +331,13 @@ p{ color:var(--muted); line-height:1.75; margin:0 0 12px; }
   box-shadow: 0 0 0 4px rgba(14,165,166,0.18);
 }
 
-.dark-main .hr{
-  border-top: 1px solid rgba(255,255,255,0.10);
-}
-
-/* Footer en dark */
 .dark-main .site-footer{
   background: transparent;
   border-top: 1px solid rgba(255,255,255,0.10);
   color: rgba(229,231,235,0.70);
+}
+
+@media (max-width: 720px){
+  .site-nav{ gap:6px; }
+  .site-nav a{ padding:8px 8px; font-size:13px; }
 }
